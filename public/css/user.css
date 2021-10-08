@@ -1,0 +1,100 @@
+/*--- MyProfile ---*/
+.my-profile-box {
+    margin: 2em auto;
+    padding: 0em 0em 1em;
+    border: solid 4px rgba(11,223,144,1);
+    border-radius: 10px;
+}
+
+.my-profile-name {
+    margin: 0; 
+    padding: 0.2em 0 0.2em 0.5em;
+    background-color: rgba(11,223,144,1);
+    font-size: 2vw;
+    color: #FFF;
+}
+
+.my-profile-set {
+    font-size: 1.2vw;
+    margin: 1em 0 1em 2em;
+}
+.my-profile-img img {
+    height: 5vw;
+    width: 5vw;
+    border-radius: 50%;
+}
+
+
+
+/*--- My記事一覧 ---*/
+.my-article-box {
+    border: rgba(11,223,144,1) solid 5px;
+    padding: 1em 0.5em;
+    border-radius: 15px;
+    max-width: 1000px;
+    justify-content: center;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.my-article-card {
+    width: 300px;
+    height: 750px;
+}
+.my-article-card img{
+    max-width: 350px;
+    max-height: 300px;
+}
+.my-article-card .card-title {
+    font-size: 1vw;
+    background: rgb(232,247,6);
+    background: linear-gradient(11deg, rgba(232,247,6,0.5) 0%, rgba(11,223,144,0.5) 33%, rgba(0,127,255,0.8) 100%);
+}
+.my-article-card .card-text {
+    margin: 0 1em !important;
+    font-size: 1vw;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 10;
+    -webkit-box-orient: vertical;
+}
+
+.photo-card {
+    margin-bottom: 1em;
+    font-size: 0.8vw;
+}
+.photo-card a {
+    font-size: 0.5vw;
+}
+
+
+
+/*--- 風景画像欄 ---*/
+.view-box {
+    border: rgba(11,223,144,1) solid 5px;
+    padding: 0.5em;
+    border-radius: 15px;
+    max-width: 1000px;
+    justify-content: center;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.photo-card {
+    margin-bottom: 1em;
+    font-size: 1vw;
+}
+.photo-card img {
+    max-width: 200px;
+    height: 200px;
+}
+
+
+
+
+
+
+
+
+
+

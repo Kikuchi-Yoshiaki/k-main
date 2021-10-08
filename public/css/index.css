@@ -1,0 +1,326 @@
+/***右側部分***/
+.right-contents {
+    justify-content: center;
+}
+
+/*--- 投稿ボタン ---*/
+.main-btn {
+    width: 150px;
+    position: relative;
+    top: 1em;
+    left: 1em;
+    padding: 0.5em 0.5em;
+    margin: 0.5em 0.5em;
+    text-decoration: none;
+    background: rgba(0,127,255,1);
+    color: #FFF;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1.2vw;
+    transition: 1s;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+}
+.main-btn:hover {
+    color: #000;
+    text-decoration: none;
+    background: rgb(232,247,6);
+    background: linear-gradient(11deg, rgba(232,247,6,1) 0%, rgba(11,223,144,1) 33%, rgba(0,127,255,1) 100%);
+}
+
+
+/*--- 概要説明 ---*/
+.explanation {
+    position: relative;
+    top: 5em;
+    margin-left:1em; 
+    padding: 0.5em 1em;
+    border: solid 3px rgba(0,127,255,1);
+    border-radius: 0 5px 5px 5px;
+    background-color: #FFF;
+    line-height: 1.5;
+    font-size: 1vw;
+}
+.exp-title {
+    position: absolute;
+    display: inline-block;
+    top: -27px;
+    left: -3px;
+    padding: 0 10px;
+    height: 25px;
+    line-height: 25px;
+    font-size: 17px;
+    background: rgba(0,127,255,1);
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 5px 5px 0 0;
+}
+
+/*--- Twitter欄 ---*/
+.twitter {
+    position: relative;
+    top: 8em;
+    margin-left:1em; 
+    padding: 0.5em 1em;
+    border: solid 3px rgba(0,127,255,1);
+    border-radius: 0 5px 5px 5px;
+    background-color: #FFF;
+}
+.twitter-title {
+    position: absolute;
+    display: inline-block;
+    top: -27px;
+    left: -3px;
+    padding: 0 30px;
+    height: 25px;
+    line-height: 25px;
+    font-size: 17px;
+    background: rgba(0,127,255,1);
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 5px 5px 0 0;
+}
+
+
+
+/***左側部分***/
+
+/*--- 最新記事見出し ---*/
+.headline-top {
+    position: relative;
+    padding-left: 25px;
+    margin: 2em 0 1em 0;
+    transition: 6s;
+    text-align: center;
+    padding-bottom: 16px;
+}
+.headline-top:before {
+    position: absolute;
+    content: '';
+    bottom: 0;
+    right: -20px;
+    width: 0;
+    height: 0;
+    border: none;
+    border-right: solid 30px transparent;
+    border-bottom: solid 30px rgba(119, 195, 223, 0.8);
+}
+.headline-top:after {
+    position: absolute;
+    content: '';
+    bottom: 0px;
+    right: 10px;
+    width: 100%;
+    border-bottom: solid 16px rgb(255,255,255);
+    border-image: linear-gradient(to right, rgba(255,255,255,0.5) 30%, rgba(119, 195, 223, 0.8) 100%);
+    border-image-slice: 1;
+}
+
+/*--- ニュース記事トップ ---*/
+.top-news {
+    padding: 0 !important;
+    margin:0 auto;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+}
+
+.card-body {
+    padding-top: 0;
+}
+
+.news-tag {
+    position: absolute;
+    top: 0.5em;
+    left: 0.5em;
+    padding: 0.5em 1em;
+    font-size: 1vw;
+    color: #FFF;
+    border-radius: 0px;
+    background: rgba(255,0,0,0.8);
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.card-img-top {
+    margin: 0;
+    height: 30rem;
+}
+
+.top-title {
+    margin: 0 auto 0.5em;
+    font-size: 2vw;
+    background: linear-gradient(transparent 70%, #a7d6ff 70%);
+    width: 95%;
+}
+.top-title:first-letter {
+    font-size: 3vw;
+}
+
+.top-news-date {
+    float: right;
+    font-size: 1vw;
+}
+
+.profile-img {
+    height: 4vw;
+    width: 4vw;
+    border-radius: 50%;
+}
+
+.top-news-profile {
+    font-size: 1.2vw;
+    padding: 0 0.2em 0.2em 0.5em;
+    border-bottom: rgba(119, 195, 223, 0.8) 3px dotted;
+}
+
+.top-text {
+    margin-top: 1em;
+    font-size: 1vw;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 8;
+    -webkit-box-orient: vertical;
+}
+
+
+/*--- ２〜４個目のニュース ---*/
+.next-news {
+    padding: 0 !important;
+    margin:1em 2px !important;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 5px !important;
+}
+
+.card-img-next {
+    margin: 0;
+    height: 20rem;
+    border-radius: 5px;
+}
+
+.next-title {
+    margin: 0 auto 0.5em;
+    font-size: 1vw;
+    background: linear-gradient(transparent 70%, #a7d6ff 70%);
+    width: 95%;
+}
+.next-title:first-letter {
+    font-size: 2vw;
+}
+
+.next-news-date {
+    float: right;
+    font-size: 0.7vw;
+}
+.profile-img {
+    height: 3vw;
+    width: 3vw;
+    border-radius: 50%;
+}
+
+.next-news-profile {
+    font-size: 0.8vw;
+    padding: 0 0.2em 0.2em 0.5em;
+    border-bottom: rgba(119, 195, 223, 0.8) 3px dotted;
+}
+
+.next-text {
+    margin-top: 1em;
+    font-size: 0.8vw;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+}
+
+
+/*--- 最新記事見出し ---*/
+.headline-view {
+    position: relative;
+    padding-left: 25px;
+    margin: 4em 0 1em 0;
+    transition: 6s;
+    text-align: center;
+    padding-bottom: 16px;
+}
+.headline-view:before {
+    position: absolute;
+    content: '';
+    bottom: 0;
+    right: -20px;
+    width: 0;
+    height: 0;
+    border: none;
+    border-right: solid 30px transparent;
+    border-bottom: solid 30px rgb(0, 255, 0, 0.8);
+}
+.headline-view:after {
+    position: absolute;
+    content: '';
+    bottom: 0px;
+    right: 10px;
+    width: 100%;
+    border-bottom: solid 16px rgb(255,255,255);
+    border-image: linear-gradient(to right, rgba(255,255,255,0.5) 30%, rgba(0, 255, 0, 0.8) 100%);
+    border-image-slice: 1;
+}
+
+
+
+/*--- トップページ風景画像欄 ---*/
+.view-container {
+    padding: 0.5em;
+    border-radius: 15px;
+    max-width: 1200px;
+    justify-content: center;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.view-container .card-title {
+    padding-top: 0.5em;
+}
+
+.photo-card {
+    background: rgba(0,0,0,0.7);
+    color: #FFF;
+    transition: 1s;
+}
+
+.photo-card:hover {
+    font-size: 1vw;
+    color: #000;
+    text-decoration: none;
+    background: rgba(11,223,144,0.6);
+}
+
+
+
+/*--- 風景一覧ページ ---*/
+.view-index {
+    padding: 1em 0.5em;
+    border-radius: 15px;
+    justify-content: center;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.view-list {
+    width: 300px;
+    height: 350px;
+    background: rgba(0,0,0,0.7);
+    color: #FFF;
+    font-size: 1.2vw;
+    transition: 1s;
+}
+.view-list img{
+    max-width: 300px;
+    max-height: 300px;
+}
+.view-list .card-title {
+    padding-top: 0.5em;
+}
+.view-list:hover {
+    font-size: 1.5vw;
+    color: #FFF;
+    text-decoration: none;
+    background: rgba(11,223,144,0.6);
+}
+

@@ -1,0 +1,127 @@
+/*--- トップバー ---*/
+.top-bar {
+    display: flex;
+    height: 100%;
+    background: rgba(232,247,6, 0.5);
+    background: linear-gradient(11deg, rgba(232,247,6,0.5) 0%, rgba(11,223,144,5) 25%, rgba(0,127,255,0.8) 100%);
+  }
+
+.fa-bars {
+    padding-top: 0.3em;
+    color: #F08000;
+}
+
+.profile-name {
+    color: #000;
+}
+.profile-name:hover {
+    color: #000;
+}
+
+.top-nav {
+    color: #000 ;
+    transition: 1s;
+    margin: 0 0.5em;
+}
+
+.top-nav:hover {
+    color:#000;
+    text-decoration: none;
+    background-color: rgba(255,255,255,1);
+    border-radius: 10px;
+  }
+
+.dropdown-item:hover {
+    background: rgb(232,247,6);
+    background: linear-gradient(11deg, rgba(232,247,6,1) 0%, rgba(11,223,144,1) 33%, rgba(0,127,255,1) 100%);
+    opacity: 0.7;
+}
+
+
+/*--- フォームトップバー ---*/
+.form-main-title {
+    font-size: 2.5vw;
+    color: #000;
+    padding-bottom: 0;
+}
+.form-main-title:hover {
+    text-decoration: none;
+    color: #000;
+}
+
+
+
+/*--- ロゴ部分 ---*/
+.title-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+    height: 100%;
+    background-image: url(/assets/images/bridge.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-color:rgba(255,255,255,0.4);
+    background-blend-mode:lighten;
+    color: #000;
+}
+.title-bar:hover {
+    text-decoration: none;
+    color: #000;
+}
+
+
+
+.main-logo {
+    text-align: center;
+    font-size: 6vw;
+}
+
+.sub-title {
+    text-align: center;
+    font-size: 3vw;
+}
+
+/*--- カテゴリー部分 ---*/
+.category {
+    background: rgb(232,247,6);
+    background: linear-gradient(11deg, rgba(232,247,6,0.5) 0%, rgba(11,223,144,0.5) 33%, rgba(0,127,255,0.8) 100%);
+}
+
+.category-list {
+    text-align: center;
+    font-size: 1.5vw;
+    transition: 1s;
+}
+.category-list span {
+    font-size: 2vw;
+}
+.category-list:hover {
+    color:#FFF;
+    text-decoration: none;
+    background-color: rgba(255,255,255,1);
+    border-radius: 30%;
+}
+
+.category-name {
+    color: black;
+}
+
+
+
+/*----フッター---*/
+.main-body {
+    padding-bottom: 10em;
+    padding-right: 3em;
+}
+
+footer {
+    height: 3em;
+    background: rgba(232,247,6, 1);
+    background: linear-gradient(11deg, rgba(232,247,6,1) 0%, rgba(11,223,144,5) 33%, rgba(0,127,255,1) 100%);
+}
+.copywriter {
+    padding-top: 0.6em;
+}
+
