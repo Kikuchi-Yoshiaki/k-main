@@ -20,8 +20,8 @@
                 <!-- メールアドレス -->
                 <div class="form-group mb-4">
                     <label class="form-label mr-1" id="contact-mail">メールアドレス</label>
-                    <span class="text-secondary small">※任意</span>
-                    <input type="text" class="form-control" name="email" for="contact-mail" placeholder="aaa@aaaaaaaaa" aria-describedby="form-text">
+                    <span class="text-danger small">※必須</span>
+                    <input type="text" class="form-control" name="email" for="contact-mail" placeholder="aaa@aaaaaaaaa" required="required" aria-describedby="form-text">
                 </div>
 
                 <!-- タイトル -->
@@ -42,7 +42,7 @@
                 <input type="submit" class="col-3 btn btn-block btn-outline-primary form-button" value="送信">
                 {{ csrf_field() }}
 
-                <a class="goto-top d-block mb-3" href="{{ url('/') }}">トップ画面に戻る</a>
+                <a class="goto-top d-block mb-3" href="{{ url('/') }}">トップページに戻る</a>
 
             </form>
         </div>

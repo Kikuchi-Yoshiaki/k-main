@@ -11,17 +11,6 @@
             {{-- 左側コンテンツ --}}
             <div class="col-lg-9 col-md-12">
                 
-                <!-- カテゴリーボックス -->
-                <!--<div class="form-group d-flex justify-content-center mt-4">
-                    <label class="form-label mr-3 mt-2 category-name">カテゴリー</label>
-                    <select class="form-control col-4 category-box" name="category" value="">
-                        <option>全てのカテゴリー</option>
-                        <option>気仙沼の遊ぶ</option>
-                        <option>気仙沼の食べる</option>
-                        <option>気仙沼の生活</option>
-                    </select>
-                </div>-->
-                
                 <!-- 記事上部 -->
                 <h2 class="detail-title">詳細記事のタイトル</h2>
                 <div class="detail-news-date">投稿日時：2021年10月7日</div>
@@ -78,40 +67,10 @@
                         <a href="{{ url('/user/post/article') }}" type="button" class="main-btn">記事・日記<br>を投稿する</a>
                     </div>
                 </div>
-                <a class="goto-top d-block text-center mt-5" href="{{ url('/') }}">トップ画面に戻る</a>
+                <a class="goto-top d-block text-center mt-5" href="{{ url('/') }}">トップページに戻る</a>
+            </div>
+
             
-
-
-            </div>
-
-
-
-
-            {{-- 右側コンテンツ --}}
-            <div class="col-lg-3 col-md-6 right-contents">
-                <!-- 概要説明欄 -->
-                <div class="explanation d-none d-lg-block">
-                    <span class="exp-title">概要解説</span>
-                    <p>ここに概要説明
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>〇〇〇管理人</p>
-                </div>
-
-                <!-- Twitter -->
-                <div class="twitter">
-                    <span class="twitter-title">Twitter</span>
-                    <a class="twitter-timeline" href="https://twitter.com/kikuyoshi5?   ref_src=twsrc%5Etfw" data-tweet-limit="5">Tweets by kikuyoshi5</a> <script async   src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                </div>
-
-            </div>
-
-        </div>
-    </div>
 @endsection
 
 @section('footer')

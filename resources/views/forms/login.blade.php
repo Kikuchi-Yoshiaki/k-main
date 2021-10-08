@@ -22,7 +22,7 @@
                 </div>
                 <button type="submit" class="btn btn-block btn-primary form-button" name="login">ログイン</button>
 
-                <a class="goto-top d-block mb-3" href="{{ url('/') }}">トップ画面に戻る</a>
+                <a class="goto-top d-block mb-3" href="{{ url('/') }}">トップページに戻る</a>
             </form>
         </div>
     </div>

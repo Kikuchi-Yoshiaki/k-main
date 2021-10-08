@@ -35,13 +35,14 @@
                     <label class="form-label mb-2 mr-1">プロフィール画像</label>
                     <span class="text-secondary small">※任意</span>
                     <input type="file" class="form-control-file" name="profile_image">
+                    <button type="button" class="mt-2" onclick="this.form.elements['profile_image'].value=''">画像取り消し</button>
                 </div>
 
                 <!-- 登録ボタン -->
                 <input type="submit" class="btn btn-block btn-primary form-button col-3" value="登録">
                 {{ csrf_field() }}
 
-                <a class="goto-top d-block mb-3" href="{{ url('/') }}">トップ画面に戻る</a>
+                <a class="goto-top d-block mb-3" href="{{ url('/') }}">トップページに戻る</a>
 
             </form>
         </div>

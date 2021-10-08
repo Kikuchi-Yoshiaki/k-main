@@ -25,7 +25,8 @@
                 <!-- プロフィール画像 -->
                 <div class="mb-2">
                     <label class="form-label mb-2 mr-1">プロフィール画像</label>
-                    <input type="file" class="form-control-file" name="profile-image">
+                    <input type="file" class="form-control-file" name="profile_image">
+                    <button type="button" class="mt-1" onclick="this.form.elements['profile_image'].value=''">画像取り消し</button>
                 </div>
                 <div class="form-check mb-4">
                     <label class="form-check-label">
@@ -35,7 +36,7 @@
 
                 <!-- 更新ボタン -->
                 <button type="submit" class="btn btn-block btn-primary form-button" name="login">更新する</button>
-                <a class="goto-top d-block my-5" href="{{ url('/') }}">トップ画面に戻る</a>
+                <a class="goto-top d-block my-5" href="{{ url('/') }}">トップページに戻る</a>
             </form>
         </div>
     </div>

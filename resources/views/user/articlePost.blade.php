@@ -25,9 +25,9 @@
                 
                 <!-- カテゴリーボックス -->
                 <div class="form-group">
-                    <label class="form-label" id="article-category">カテゴリー</label>
+                    <label class="form-label">カテゴリー</label>
                     <span class="text-danger small">※必須</span>
-                    <select class="form-control col-5" name="category" value="">
+                    <select class="form-control col-5" name="category">
                         <option>気仙沼の遊ぶ</option>
                         <option>気仙沼の食べる</option>
                         <option>気仙沼の生活</option>
@@ -36,23 +36,24 @@
 
                 <!-- 記事本文 -->
                 <div class="form-group">
-                    <label class="form-label" id="article-body">記事本文</label>
+                    <label class="form-label">記事本文</label>
                     <span class="text-danger small">※必須</span>
-                    <textarea rows="30" class="form-control" for="article-body" placeholder="〇〇文字以内で入力してください"></textarea>
+                    <textarea rows="30" class="form-control" name="body" placeholder="〇〇文字以内で入力してください" required="" autofocus=""></textarea>
                 </div>
                 
                 <!-- メイン画像 -->
                 <div class="mb-2">
                     <label class="form-label mb-2">メイン画像</label>
                     <span class="text-danger small">※必須</span>
-                    <input type="file" class="form-control-file" name="main-image">
+                    <input type="file" class="form-control-file" name="main_image">
+                    <button type="button" class="mt-2" onclick="this.form.elements['main_image'].value=''">画像取り消し</button>
                 </div>
 
                 <!-- イメージ解説文 -->
                 <div class="mb-2">
-                    <label class="form-label" id="image-text">画像解説</label>
+                    <label class="form-label">画像解説</label>
                     <span class="text-secondary small">※任意</span>
-                    <input type="text" class="form-control" for="image-text" placeholder="画像の下に文章を入れることができます" aria-describedby="" required="" autofocus="">
+                    <input type="text" class="form-control" name="image_text" placeholder="画像の下に文章を入れることができます" autofocus="">
                 </div>
 
                 <!-- サブ画像 -->
@@ -60,31 +61,35 @@
                     <div class="sub-image-body p-3">
                         <label class="form-label">サブ画像(最大４枚まで追加できます)</label>
                         <span class="text-secondary small">※任意</span>
-                        <input type="file" class="form-control-file mb-1" name="sub-image1">
-                        <input type="file" class="form-control-file mb-1" name="sub-image2">
-                        <input type="file" class="form-control-file mb-1" name="sub-image3">
-                        <input type="file" class="form-control-file mb-1" name="sub-image4">
+                        <input type="file" class="form-control-file" name="sub_image_1">
+                        <button type="button" class="mt-1 mb-3" onclick="this.form.elements['sub_image_1'].value=''">取り消し</button>
+                        <input type="file" class="form-control-file" name="sub_image_2">
+                        <button type="button" class="mt-1 mb-3" onclick="this.form.elements['sub_image_2'].value=''">取り消し</button>
+                        <input type="file" class="form-control-file" name="sub_image_3">
+                        <button type="button" class="mt-1 mb-3" onclick="this.form.elements['sub_image_3'].value=''">取り消し</button>
+                        <input type="file" class="form-control-file" name="sub_image_4">
+                        <button type="button" class="mt-1 mb-3" onclick="this.form.elements['sub_image_4'].value=''">取り消し</button>
                     </div>
                 </div>
 
                 <!-- リンクURL -->
                 <div class="mb-2">
-                    <label class="form-label" id="link-url">外部URL</label>
+                    <label class="form-label">外部URL</label>
                     <span class="text-secondary small">※任意</span>
-                    <input type="url" class="form-control" for="link-url" placeholder="リンク先URLがありましたらこちらに入力してください" aria-describedby="" required="" autofocus="">
+                    <input type="url" class="form-control" name="link_url" placeholder="リンク先URLがありましたらこちらに入力してください" autofocus="">
                 </div>
 
                 <!-- リンクURL -->
                 <div class="mb-4">
-                    <label class="form-label" id="link-text">URL説明文</label>
+                    <label class="form-label">URL説明文</label>
                     <span class="text-secondary small">※任意</span>
-                    <input type="text" class="form-control" for="link-text" placeholder="文章の最後にコメントをどうぞ" aria-describedby="" required="" autofocus="">
+                    <input type="text" class="form-control" name="link_text" placeholder="文章の最後にコメントをどうぞ" autofocus="">
                 </div>
 
                 <!-- プライバシーポリシー -->
                 <div class="form-check mb-4">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
+                    <input class="form-check-input" type="checkbox">
+                    <label class="form-check-label">
                         ※ プライバシーポリシーに同意します。
                     </label>
                 </div>
@@ -93,7 +98,7 @@
                 <input type="submit" class="btn btn-block btn-primary form-button mt-5 col-3" value="プレビュー画面へ">
                 {{ csrf_field() }}
 
-                <a class="goto-top d-block mb-3" href="{{ url('/') }}">トップ画面に戻る</a>
+                <a class="goto-top d-block mb-3" href="{{ url('/') }}">トップページに戻る</a>
 
             </form>
         </div>

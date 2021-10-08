@@ -97,39 +97,6 @@
             </div>
 
             
-
-                
-            {{-- 右側コンテンツ --}}
-            <div class="col-lg-3 right-contents col-md-6">
-                
-                <!-- 投稿ボタン -->
-                <div class="d-none d-lg-block post-btn">
-                    <a href="{{ url('/user/post/article') }}" type="button" class="main-btn d-inline-block">記事・日記<br>を投稿する</a>
-                    <a href="{{ url('/user/post/view') }}" type="button" class="main-btn d-inline-block">風景・写真<br>を投稿する</a>
-                </div>
-
-                <!-- 概要説明欄 -->
-                <div class="explanation d-none d-lg-block right-contents">
-                    <span class="exp-title">概要解説</span>
-                    <p>ここに概要説明
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>〇〇〇管理人</p>
-                </div>
-
-                <!-- Twitter -->
-                <div class="twitter">
-                    <span class="twitter-title">Twitter</span>
-                    <a class="twitter-timeline" href="https://twitter.com/kikuyoshi5?   ref_src=twsrc%5Etfw" data-tweet-limit="5">Tweets by kikuyoshi5</a> <script async   src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                </div>
-            </div>
-
-        </div>
-    </div>
 @endsection
 
 @section('footer')

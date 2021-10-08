@@ -20,7 +20,7 @@ class UserController extends Controller
             $users->profile_image = basename($path);
         } else {
             $users->profile_image = null;
-        
+        }
         
         unset($form['_token']);
         unset($form['profile_image']);
@@ -28,6 +28,6 @@ class UserController extends Controller
         $users->fill($form);
         $users->save();
 
-        return redirect('/forms/message');        
+        return redirect('/forms/message');
     }
 }

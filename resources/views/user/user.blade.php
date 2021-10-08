@@ -1,6 +1,6 @@
 @extends('layouts.mainLayout')
 
-@section('title', 'ユーザーマイページ')
+@section('title', 'ユーザーページ')
 
 @section('content')
 
@@ -35,7 +35,7 @@
                     <div class="card-text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</div>
                     <a class="card-link mt-3 mb-5" href="{{ url('/article/detail') }}">続きを確認</a>
                     <div class="btn-group-sm" role="group" aria-label="Basic example">
-                        <a class="btn btn-primary" href="{{ url('/user/post/article') }}">記事を編集</a>
+                        <a class="btn btn-primary" href="{{ url('/user/edit/article') }}">記事を編集</a>
                         <a class="btn btn-danger" href="#">記事を削除</a>
                     </div>
                 </div>
@@ -46,7 +46,7 @@
                     <div class="card-text">テキスト</div>
                     <a class="card-link mt-3 mb-5" href="{{ url('/article/detail') }}">続きを確認</a>
                     <div class="btn-group-sm" role="group" aria-label="Basic example">
-                        <a class="btn btn-primary" href="{{ url('/user/post/article') }}">記事を編集</a>
+                        <a class="btn btn-primary" href="{{ url('/user/edit/article') }}">記事を編集</a>
                         <a class="btn btn-danger" href="#">記事を削除</a>
                     </div>
                 </div>
@@ -57,7 +57,7 @@
                     <div class="card-text">テキスト</div>
                     <a class="card-link mt-3 mb-5" href="{{ url('/article/detail') }}">続きを確認</a>
                     <div class="btn-group-sm" role="group" aria-label="Basic example">
-                        <a class="btn btn-primary" href="{{ url('/user/post/article') }}">記事を編集</a>
+                        <a class="btn btn-primary" href="{{ url('/user/edit/article') }}">記事を編集</a>
                         <a class="btn btn-danger" href="#">記事を削除</a>
                     </div>
                 </div>
@@ -68,7 +68,7 @@
                     <div class="card-text">テキスト</div>
                     <a class="card-link mt-3 mb-5" href="{{ url('/article/detail') }}">続きを確認</a>
                     <div class="btn-group-sm" role="group" aria-label="Basic example">
-                        <a class="btn btn-primary" href="{{ url('/user/post/article') }}">記事を編集</a>
+                        <a class="btn btn-primary" href="{{ url('/user/edit/article') }}">記事を編集</a>
                         <a class="btn btn-danger" href="#">記事を削除</a>
                     </div>
                 </div>
@@ -153,48 +153,12 @@
                     <p class="caro-title">タイトル名</p>
                 </div>
             </div>
-
             <a class="main-btn btn d-block mx-auto mt-3 p-3" type="button" href="{{ url('article/view') }}
             ">風景一覧<br>を見る</a>
-
-
-            </div>
+        </div>
 
 
             
-
-                
-            {{-- 右側コンテンツ --}}
-            <div class="col-lg-3  col-md-6">
-                
-                <!-- 投稿ボタン -->
-                <div class="d-none d-lg-block post-btn">
-                    <a href="{{ url('/user/post/article') }}" type="button" class="main-btn d-inline-block">記事・日記<br>を投稿する</a>
-                    <a href="{{ url('/user/post/view') }}" type="button" class="main-btn d-inline-block">風景・写真<br>を投稿する</a>
-                </div>
-
-                <!-- 概要説明欄 -->
-                <div class="explanation d-none d-lg-block right-contents">
-                    <span class="exp-title">概要解説</span>
-                    <p>ここに概要説明
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>〇〇〇管理人</p>
-                </div>
-
-                <!-- Twitter -->
-                <div class="twitter">
-                    <span class="twitter-title">Twitter</span>
-                    <a class="twitter-timeline" href="https://twitter.com/kikuyoshi5?   ref_src=twsrc%5Etfw" data-tweet-limit="5">Tweets by kikuyoshi5</a> <script async   src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                </div>
-            </div>
-
-        </div>
-    </div>
 @endsection
 
 @section('footer')
