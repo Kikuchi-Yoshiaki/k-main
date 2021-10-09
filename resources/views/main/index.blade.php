@@ -16,15 +16,15 @@
                 <!-- トップ記事 -->
                 <div class="card col-lg-9 offset-lg-2 col-md-10 top-news">
                     <img class="card-img-top" src="/assets/images/iwate.jpeg">
-                    <div class="news-tag">遊ぶ・観光</div>
+                    <div class="news-tag">{{ $top->category }}</div>
                     <div class="card-body">
-                        <h4 class="card-title top-title">最新のトップタイトル</h4>
+                        <h4 class="card-title top-title">{{ $top->title }}</h4>
                         <div class="top-profile d-inline">
                             <img class="profile-img" src="/assets/images/profile.png">
                             <div class="top-news-profile d-inline">プロフィール名さん</div>
                         </div>
-                        <div class="top-news-date d-inline">投稿日時：2021年10月7日</div>
-                        <p class="card-text top-text">ここに投稿された記事が入る。カード本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文本文カード本文本文カード本文本文カード本文本文カード本文本文カード本文本文カード本文本文カード本文本文カード本文本文カード本文本文カード本文本文カード本文本文カード本文本文カード本文本文カード本文本文カード本文本文カード本文本文カード本文本文カード本文本文カード本文本文カード本文本文カード本文本文カード本文本文カード本文本文カード本文本文カード本文本文カード本文本文カード本文本文カード本文</p>
+                        <div class="top-news-date d-inline">投稿日:{{ $top->created_at->format('Y年m月d日') }}</div>
+                        <p class="card-text top-text">{{ $top->body }}</p>
                         <a class="float-right" href="{{ url('/article/detail') }}">続きを読む</a>
                     </div>
                 </div>

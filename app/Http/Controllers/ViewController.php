@@ -13,7 +13,7 @@ class ViewController extends Controller
         $views = new View;
         $form = $request->all();
         
-        $path = $request->file('view_image')->store('public/image');
+        $path = $request->file('view_image')->store('public/view');
         $views->view_image = basename($path);
         
         unset($form['_token']);

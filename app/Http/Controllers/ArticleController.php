@@ -13,6 +13,7 @@ class ArticleController extends Controller
         $articles = new Article;
         $form = $request->all();
         
+        
         if (isset($form['sub_image_1'])) {
             $path1 = $request->file('sub_image_1')->store('public/image');
             $articles->sub_image_1 = basename($path1);
@@ -53,4 +54,13 @@ class ArticleController extends Controller
         
         return redirect('forms/message');
     }
+    
+    
+    public function top()
+    {
+        $top = Article::all()->last();
+        
+        return view('main.index', ['top' => $top]);
+    }
+    
 }

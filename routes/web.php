@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 
 
-Route::get('/', 'NumaController@index');
+Route::get('/', 'NumaController@add');
 
 
 
@@ -46,3 +46,10 @@ Route::post('form/signup', 'UserController@create');
 Route::post('user/viewPost', 'ViewController@create');
 
 Route::post('user/articlePost', 'ArticleController@create');
+Route::get('/', 'ArticleController@top');
+
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

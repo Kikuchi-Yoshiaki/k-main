@@ -6,10 +6,13 @@ use Illuminate\Http\Request;
 
 class NumaController extends Controller
 {
-    public function index()
+    public function add()
     {
         return view('main.index');
     }
+    
+    
+    
 
 
 
