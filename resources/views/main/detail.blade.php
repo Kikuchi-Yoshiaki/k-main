@@ -12,14 +12,14 @@
             <div class="col-lg-9 col-md-12">
                 
                 <!-- 記事上部 -->
-                <h2 class="detail-title">詳細記事のタイトル</h2>
-                <div class="detail-news-date">投稿日時：2021年10月7日</div>
+                <h2 class="detail-title">{{ $show->title }}</h2>
+                <div class="detail-news-date">更新日時:{{ $show->updated_at->format('Y年m月d日') }}</div>
                 <div class="container">
                     <div class="row flex-wrap">
                         <div class="col-lg-12 main">
                             <img class="main-image col-lg-12" src="/assets/images/bridge.jpeg">
-                            <div class="col-lg-12 image-text">ここにイメージ解説文を入れる</div>
-                            <div class="news-tag">遊ぶ・観光</div>
+                            <div class="col-lg-12 image-text">{{ $show->image_text }}</div>
+                            <div class="news-tag">{{ $show->category }}</div>
                         </div>
                         <!-- サブイメージ -->
                         <div class="col-lg-3 col-md-3 col-sm-6 sub sub1">
@@ -50,11 +50,11 @@
                 <!-- 記事本文 -->
                 <div class="card">
                     <div class="card-body mt-4">
-                        <p class="card-text detail-text">本文テキスト本文テキスト本文テキスト本文テキスト本文テキスト本文テキスト本文テキスト本文テキスト本文テキスト本文テキスト本文テキスト本文テキスト本文テキスト本文テキスト本文テキスト本文テキスト本文テキスト本文テキスト本文テキスト本文テキスト本文テキスト本文テキスト本文テキスト本文テキスト本文テキスト本文テキスト本文テキスト本文テキスト本文テキスト本文テキスト本文テキスト本文テキスト本文テキスト本文テキスト本文テキスト本文テキスト本文テキスト本文テキスト本文テキスト本文テキスト本文テキスト</p>
+                        <p class="card-text detail-text">{{ $show->body }}</p>
                         
                         <div class="url-box col-12">
-                            <p>ここにメッセージを挿入できる</p>
-                            <a class="card-rink" target='_blank' href="#">aaaaaaaaaaa</a>
+                            <p>{{ $show->link_text }}</p>
+                            <a class="card-rink" target='_blank' href="{{ $show->link_url }}">{{ $show->link_url }}</a>
                         </div>
                         <div type="button" class="btn btn-outline-danger float-right mr-5">イイねボタン</div>
                     </div>

@@ -74,12 +74,33 @@
                     </div>
                 </div>
             </nav>
-                    
+ 
+ 
             <!-- ヘッダーのタイトル部分 -->
-            <a class="container-fluid title-bar" href="{{ url('/') }}">
-                <h1 class="main-logo">メインロゴ</h1>
-                <p class="sub-title">サブタイトル・サブテキスト</p>
-            </a>
+            <div id="carousel-example" class="carousel slide carousel-fade" data-ride="carousel" data-interval="8000" data-pause="false">
+	            <div class="carousel-inner">
+		            <div class="carousel-item active">
+			            <a class="container-fluid title-bar-1" href="{{ url('/') }}">
+                            <h1 class="main-logo">メインロゴ</h1>
+                            <p class="sub-title">サブタイトル・サブテキスト</p>
+                        </a>
+		            </div>
+		            <div class="carousel-item">
+			           <a class="container-fluid title-bar-2" href="{{ url('/') }}">
+                            <h1 class="main-logo">メインロゴ</h1>
+                            <p class="sub-title">サブタイトル・サブテキスト</p>
+                        </a>
+		            </div>
+		            <div class="carousel-item">
+			            <a class="container-fluid title-bar-3" href="{{ url('/') }}">
+                            <h1 class="main-logo">メインロゴ</h1>
+                            <p class="sub-title">サブタイトル・サブテキスト</p>
+                        </a>
+		            </div>
+	            </div>
+            </div>
+
+
 
             <!-- カテゴリー欄 -->
             <div class="container-fluid category">

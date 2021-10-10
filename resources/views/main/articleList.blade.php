@@ -23,112 +23,31 @@
             </div>
             
             <div class="d-flex flex-wrap article-index">
+                @foreach ($articles as $article)
                 <div class="card article-index-card mb-3">
                     <img class="card-img-top" src="/assets/images/hanabi.jpeg">
-                    <div class="news-tag">遊ぶ・観光</div>
-                    <p class="card-title">タイトル名</p>
-                    <div class="card-text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</div>
-                    <a class="card-link mt-3 mb-1" href="{{ url('/article/detail') }}">続きを見る</a>
+                    <div class="news-tag">{{ $article->category }}</div>
+                    <p class="card-title">{{ $article->title }}</p>
+                    <p class="mt-0">{{ $article->created_at->format('Y年m月d日') }}</p>
+                    <div class="card-text">{{ $article->body }}</div>
+                    <a class="card-link mt-3 mb-1" href="/article/detail/?id={{ $article->id }}">続きを見る</a>
                 </div>
-                <div class="card article-index-card">
-                    <img class="card-img-top" src="/assets/images/yama.jpeg">
-                    <div class="news-tag">遊ぶ・観光</div>
-                    <p class="card-title">タイトル名</p>
-                    <div class="card-text">テキスト</div>
-                    <a class="card-link mt-3 mb-1" href="{{ url('/article/detail') }}">続きを見る</a>
-                </div>
-                <div class="card article-index-card">
-                    <img class="card-img-top" src="/assets/images/cafe1.jpg">
-                    <div class="news-tag">遊ぶ・観光</div>
-                    <p class="card-title">タイトル名</p>
-                    <div class="card-text">テキスト</div>
-                    <a class="card-link mt-3 mb-1" href="{{ url('/article/detail') }}">続きを見る</a>
-                </div>
-                <div class="card article-index-card">
-                    <img class="card-img-top" src="/assets/images/iwate.jpeg">
-                    <div class="news-tag">遊ぶ・観光</div>
-                    <p class="card-title">タイトル名</p>
-                    <div class="card-text">テキスト</div>
-                    <a class="card-link mt-3 mb-1" href="{{ url('/article/detail') }}">続きを見る</a>
-                </div>
-                <div class="card article-index-card">
-                    <img class="card-img-top" src="/assets/images/hanabi.jpeg">
-                    <div class="news-tag">遊ぶ・観光</div>
-                    <p class="card-title">タイトル名</p>
-                    <div class="card-text">テキスト</div>
-                    <a class="card-link mt-3 mb-1" href="{{ url('/article/detail') }}">続きを見る</a>
-                </div>
-                <div class="card article-index-card">
-                    <img class="card-img-top" src="/assets/images/hanabi.jpeg">
-                    <div class="news-tag">遊ぶ・観光</div>
-                    <p class="card-title">タイトル名</p>
-                    <div class="card-text">テキスト</div>
-                    <a class="card-link mt-3 mb-5" href="{{ url('/article/detail') }}">続きを見る</a>
-                </div>
-                <div class="card article-index-card">
-                    <img class="card-img-top" src="/assets/images/hanabi.jpeg">
-                    <div class="news-tag">遊ぶ・観光</div>
-                    <p class="card-title">タイトル名</p>
-                    <div class="card-text">テキスト</div>
-                    <a class="card-link mt-3 mb-5" href="{{ url('/article/detail') }}">続きを見る</a>
-                </div>
-                <div class="card article-index-card">
-                    <img class="card-img-top" src="/assets/images/hanabi.jpeg">
-                    <div class="news-tag">遊ぶ・観光</div>
-                    <p class="card-title">タイトル名</p>
-                    <div class="card-text">テキスト</div>
-                    <a class="card-link mt-3 mb-5" href="{{ url('/article/detail') }}">続きを見る</a>
-                </div>
-                <div class="card article-index-card">
-                    <img class="card-img-top" src="/assets/images/hanabi.jpeg">
-                    <div class="news-tag">遊ぶ・観光</div>
-                    <p class="card-title">タイトル名</p>
-                    <div class="card-text">テキスト</div>
-                    <a class="card-link mt-3 mb-5" href="{{ url('/article/detail') }}">続きを見る</a>
-                </div>
-                <div class="card article-index-card">
-                    <img class="card-img-top" src="/assets/images/hanabi.jpeg">
-                    <div class="news-tag">遊ぶ・観光</div>
-                    <p class="card-title">タイトル名</p>
-                    <div class="card-text">テキスト</div>
-                    <a class="card-link mt-3 mb-5" href="{{ url('/article/detail') }}">続きを見る</a>
-                </div>
-                <div class="card article-index-card">
-                    <img class="card-img-top" src="/assets/images/hanabi.jpeg">
-                    <div class="news-tag">遊ぶ・観光</div>
-                    <p class="card-title">タイトル名</p>
-                    <div class="card-text">テキスト</div>
-                    <a class="card-link mt-3 mb-5" href="{{ url('/article/detail') }}">続きを見る</a>
-                </div>
+                @endforeach
             </div>
 
 
 
 
-            <!-- My写真一覧 -->
+            <!-- My写真ランダム表示 -->
             <h3 class="col-lg-9 col-md-9 md-ml-5 col-sm-5 headline-view">投稿中の風景</h3>
 
             <div class="d-flex flex-wrap view-box">
+                
                 <div class="card photo-card">
                     <img class="card-img-top" src="/assets/images/hanabi.jpeg">
-                    <p class="caro-title">タイトル名</p>
+                    <p class="caro-title">title</p>
                 </div>
-                <div class="card photo-card">
-                    <img class="card-img-top" src="/assets/images/hanabi.jpeg">
-                    <p class="caro-title">タイトル名</p>
-                </div>
-                <div class="card photo-card">
-                    <img class="card-img-top" src="/assets/images/hanabi.jpeg">
-                    <p class="caro-title">タイトル名</p>
-                </div>
-                <div class="card photo-card">
-                    <img class="card-img-top" src="/assets/images/hanabi.jpeg">
-                    <p class="caro-title">タイトル名</p>
-                </div>
-                <div class="card photo-card">
-                    <img class="card-img-top" src="/assets/images/hanabi.jpeg">
-                    <p class="caro-title">タイトル名</p>
-                </div>
+            
             </div>
 
             <a class="main-btn btn d-block mx-auto mt-3 p-3" type="button" href="{{ url('article/view') }}

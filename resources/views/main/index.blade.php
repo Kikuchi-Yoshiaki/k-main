@@ -14,6 +14,7 @@
                 <h3 class="col-lg-10 col-md-12 md-ml-5 headline-top">最新記事</h3>
             
                 <!-- トップ記事 -->
+                
                 <div class="card col-lg-9 offset-lg-2 col-md-10 top-news">
                     <img class="card-img-top" src="/assets/images/iwate.jpeg">
                     <div class="news-tag">{{ $top->category }}</div>
@@ -25,9 +26,10 @@
                         </div>
                         <div class="top-news-date d-inline">投稿日:{{ $top->created_at->format('Y年m月d日') }}</div>
                         <p class="card-text top-text">{{ $top->body }}</p>
-                        <a class="float-right" href="{{ url('/article/detail') }}">続きを読む</a>
+                        <a class="float-right" href="/article/detail/?id={{ $top->id }}">続きを読む</a>
                     </div>
                 </div>
+                
 
                 <!--記事の２列目 -->
                 <div class="card-group mt-1">
@@ -99,6 +101,7 @@
 
                 <!-- 風景写真一覧 -->
                 <div class="d-flex flex-wrap view-container">
+            
                     <div class="card photo-card">
                         <img class="card-img-top" src="/assets/images/hanabi.jpeg">
                         <p class="card-title">タイトル名</p>
@@ -107,6 +110,7 @@
                         <img class="card-img-top" src="/assets/images/iwate.jpeg">
                         <p class="card-title">タイトル名</p>
                     </div>
+                    
                     <div class="card photo-card">
                         <img class="card-img-top" src="/assets/images/profile.png">
                         <p class="card-title">タイトル名</p>

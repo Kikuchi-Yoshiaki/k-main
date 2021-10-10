@@ -45,8 +45,15 @@ Route::post('form/signup', 'UserController@create');
 
 Route::post('user/viewPost', 'ViewController@create');
 
+
+
 Route::post('user/articlePost', 'ArticleController@create');
 Route::get('/', 'ArticleController@top');
+Route::get('article/index', 'ArticleController@index');
+Route::get('article/view', 'ArticleController@random');
+Route::get('article/detail', 'ArticleController@show');
+
+
 
 
 

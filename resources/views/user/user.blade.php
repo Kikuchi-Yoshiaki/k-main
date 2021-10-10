@@ -12,23 +12,20 @@
             <div class="col-lg-9 col-md-12">
                 
             <!-- MyProfile -->
-            <div class="my-profile-box col-sm-8">
-                <div class="my-profile-name">{ プロフィール名 }."さん"</div>
-                <div class="my-profile-set">
-                    <div class="my-profile-img">プロフィール画像：
-                        <img src="/assets/images/profile.png" name="profile-image">
-                    </div>
-                    <div class="profile-mail mt-3 mb-5">"メールアドレス".：{ aaa@aaaaaaaaaaaa }</div>
-                    <!--<div class="profile-mail mt-3">"パスワード".：{ xxxxxxxxxxx }</div>-->
-                    <a class="post-btn" href="{{ url('/user/edit/profile') }}" type="button">プロフィールを変更する</a>
+            <div class="my-profile-box col-sm-9">
+                <h3 class="my-profile">User PAGE</h3>
+                <div class="my-profile-img">
+                    <img src="/assets/images/profile.png" name="profile-image">
+                    <span class="my-profile-name">{ プロフィール名 }さんのページ</span>
                 </div>
+                <a class="post-btn float-right mr-5" href="{{ url('/user/edit/profile') }}" type="button">プロフィールを変更する</a>
             </div>
 
             <!--My記事一覧 -->
-            <h3 class="col-lg-9 col-md-9 md-ml-5  col-sm-5 headline-top">投稿中の記事</h3>
+            <h3 class="col-lg-9 col-md-9 md-ml-5  col-sm-5 headline-top"> プロフィール名 }さんの記事一覧</h3>
             
             <div class="d-flex flex-wrap my-article-box">
-                <div class="card my-article-card mb-3">
+                <div class="card my-article-card">
                     <img class="card-img-top" src="/assets/images/hanabi.jpeg">
                     <div class="news-tag">遊ぶ・観光</div>
                     <p class="card-title">タイトル名</p>
@@ -101,7 +98,7 @@
 
 
             <!-- My写真一覧 -->
-            <h3 class="col-lg-9 col-md-9 md-ml-5 col-sm-5 headline-view">投稿中の風景</h3>
+            <h3 class="col-lg-9 col-md-9 md-ml-5 col-sm-5 headline-view"> プロフィール名 }さんの風景一覧</h3>
 
             <div class="d-flex flex-wrap view-box">
                 <div class="card photo-card">
@@ -162,5 +159,3 @@
 @endsection
 
 @section('footer')
-
-
