@@ -146,25 +146,67 @@
     background: linear-gradient(11deg, rgba(232,247,6,0.5) 0%, rgba(11,223,144,0.5) 33%, rgba(0,127,255,0.8) 100%);
 }
 
-.category-list {
+.category-name {
+    color: #000;
+}
+.category-name:hover {
+    color: #000;
+}
+
+.category-job {
     text-align: center;
     font-size: 1.5vw;
-    transition: 1s;
+    transition: 2s;
 }
-.category-list span {
+.category-job span {
     font-size: 2vw;
 }
-.category-list:hover {
-    color:#FFF;
+.category-job:hover {
     text-decoration: none;
-    background-color: rgba(255,255,255,1);
-    border-radius: 30%;
+    background-color: #F66;
 }
 
-.category-name {
-    color: black;
+.category-food {
+    text-align: center;
+    font-size: 1.5vw;
+    color: #000;
+    transition: 2s;
+}
+.category-food span {
+    font-size: 2vw;
+}
+.category-food:hover {
+    text-decoration: none;
+    background-color: #02E;
 }
 
+.category-life {
+    text-align: center;
+    font-size: 1.5vw;
+    color: #000;
+    transition: 2s;
+}
+.category-life span {
+    font-size: 2vw;
+}
+.category-life:hover {
+    text-decoration: none;
+    background-color: #FE1;
+}
+
+.category-view {
+    text-align: center;
+    font-size: 1.5vw;
+    color: #000;
+    transition: 2s;
+}
+.category-view span {
+    font-size: 2vw;
+}
+.category-view:hover {
+    text-decoration: none;
+    background-color: #8F1;
+}
 
 
 /***右側部分***/

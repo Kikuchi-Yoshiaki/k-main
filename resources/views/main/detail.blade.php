@@ -19,7 +19,19 @@
                         <div class="col-lg-12 main">
                             <img class="main-image col-lg-12" src="/assets/images/bridge.jpeg">
                             <div class="col-lg-12 image-text">{{ $show->image_text }}</div>
-                            <div class="news-tag">{{ $show->category }}</div>
+                            @if ($show->category == "気仙沼の遊ぶ")
+                            <div class="tags1">
+                                <span>{{ $show->category }}</span>
+                            </div>
+                            @elseif ($show->category == "気仙沼の食べる")
+                            <div class="tags2">
+                                <span>{{ $show->category }}</span>
+                            </div>
+                            @else
+                            <div class="tags3">
+                                <span>{{ $show->category }}</span>
+                            </div>
+                            @endif
                         </div>
                         <!-- サブイメージ -->
                         <div class="col-lg-3 col-md-3 col-sm-6 sub sub1">

@@ -42,8 +42,8 @@
                 </div>
                 
                 <!-- メイン画像 -->
-                <div class="mb-2">
-                    <label class="form-label mb-2">メイン画像</label>
+                <div class="mb-5">
+                    <label class="form-label mb-3">メイン画像</label>
                     <span class="text-danger small">※必須</span>
                     <input type="file" class="form-control-file" name="main_image">
                     <button type="button" class="mt-2" onclick="this.form.elements['main_image'].value=''">画像取り消し</button>

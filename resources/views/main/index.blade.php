@@ -14,86 +14,67 @@
                 <h3 class="col-lg-10 col-md-12 md-ml-5 headline-top">最新記事</h3>
             
                 <!-- トップ記事 -->
-                
-                <div class="card col-lg-9 offset-lg-2 col-md-10 top-news">
+                <div class="card col-lg-9 offset-lg-2 col-md-10 mb-4 top-news">
                     <img class="card-img-top" src="/assets/images/iwate.jpeg">
-                    <div class="news-tag">{{ $top->category }}</div>
+                    @if ($top->category == "気仙沼の遊ぶ")
+                    <div class="tags1">
+                        <span>{{ $top->category }}</span>
+                    </div>
+                    @elseif ($top->category == "気仙沼の食べる")
+                    <div class="tags2">
+                        <span>{{ $top->category }}</span>
+                    </div>
+                    @else
+                    <div class="tags3">
+                        <span>{{ $top->category }}</span>
+                    </div>
+                    @endif
                     <div class="card-body">
                         <h4 class="card-title top-title">{{ $top->title }}</h4>
                         <div class="top-profile d-inline">
                             <img class="profile-img" src="/assets/images/profile.png">
                             <div class="top-news-profile d-inline">プロフィール名さん</div>
                         </div>
-                        <div class="top-news-date d-inline">投稿日:{{ $top->created_at->format('Y年m月d日') }}</div>
+                        <div class="top-news-date d-inline">投稿日:{{ $top->created_at->format('y年m月d日') }}</div>
                         <p class="card-text top-text">{{ $top->body }}</p>
                         <a class="float-right" href="/article/detail/?id={{ $top->id }}">続きを読む</a>
                     </div>
                 </div>
-                
 
                 <!--記事の２列目 -->
-                <div class="card-group mt-1">
-                    <div class="card col-lg-6 offset-lg-1 mx-3 col-md-12 next-news">
+                <div class="d-flex flex-wrap justify-content-around mb-5">
+                    @foreach ($posts as $post)
+                    <div class="card col-lg-5 col-md-10 next-news">
                         <img class="card-img-next" src="/assets/images/iwate.jpeg">
-                        <div class="news-tag">遊ぶ・観光</div>
+                        @if ($post->category == "気仙沼の遊ぶ")
+                        <div class="tags1">
+                            <span>{{ $post->category }}</span>
+                        </div>
+                        @elseif ($post->category == "気仙沼の食べる")
+                        <div class="tags2">
+                            <span>{{ $post->category }}</span>
+                        </div>
+                        @else
+                        <div class="tags3">
+                            <span>{{ $post->category }}</span>
+                        </div>
+                        @endif
                         <div class="card-body">
-                            <h4 class="card-title next-title">２つ目のニュース</h4>
+                            <h4 class="card-title next-title">{{ $post->title }}</h4>
                             <div class="top-profile d-inline">
                                 <img class="profile-img" src="/assets/images/profile.png">
                                 <div class="next-news-profile d-inline">プロフィール名さん</div>
                             </div>
-                            <div class="next-news-date d-inline">投稿日時：2021年10月7日</div>
-                            <p class="card-text next-text">ここに投稿された記事が入る。カード本文カード本文カー ド本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カー   ド本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カー ド本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カー   ド本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カー ド本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カー   ド本文本文カード本文本文カード本文本文カード本文本文カード本文本文カード本文本文カード本文 本文カード本文本文カード本文本文カード本文本文カード本文本文カード本文本文カード本文本文カ   ード本文本文カード本文本文カード本文本文カード本文本文カード本文本文カード本文本文カード本 文本文カード本文本文カード本文本文カード本文本文カード本文本文カード本文本文カード本文本文   カード本文本文カード本文本文カード本文</p>
-                            <a class="float-right" href="#">続きを読む</a>
+                            <div class="next-news-date d-inline">投稿日:{{ $top->created_at->format('y年m月d日') }}</div>
+                            <p class="card-text next-text">{{ $post->body }}</p>
+                            <a class="float-right" href="/article/detail/?id={{ $post->id }}">続きを読む</a>
                         </div>
                     </div>
-                    <div class="card col-lg-6 offset-lg-1 mx-3 col-md-12 next-news">
-                        <img class="card-img-next" src="/assets/images/iwate.jpeg">
-                        <div class="news-tag">遊ぶ・観光</div>
-                        <div class="card-body">
-                            <h4 class="card-title next-title">３つ目のニュース</h4>
-                            <div class="top-profile d-inline">
-                                <img class="profile-img" src="/assets/images/profile.png">
-                                <div class="next-news-profile d-inline">プロフィール名さん</div>
-                            </div>
-                            <div class="next-news-date d-inline">投稿日時：2021年10月7日</div>
-                            <p class="card-text next-text">ここに投稿された記事が入る。カード本文カード本文カー ド本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カー   ド本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カー ド本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カー   ド本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カー ド本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カー   ド本文本文カード本文本文カード本文本文カード本文本文カード本文本文カード本文本文カード本文 本文カード本文本文カード本文本文カード本文本文カード本文本文カード本文本文カード本文本文カ   ード本文本文カード本文本文カード本文本文カード本文本文カード本文本文カード本文本文カード本 文本文カード本文本文カード本文本文カード本文本文カード本文本文カード本文本文カード本文本文   カード本文本文カード本文本文カード本文</p>
-                            <a class="float-right" href="#">続きを読む</a>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
-
-                <!--記事の３列目 -->
-                <div class="card-group mt-1">
-                    <div class="card col-lg-6 offset-lg-1 mx-3 col-md-12 next-news">
-                        <img class="card-img-next" src="/assets/images/iwate.jpeg">
-                        <div class="news-tag">遊ぶ・観光</div>
-                        <div class="card-body">
-                            <h4 class="card-title next-title">４つ目のニュース</h4>
-                            <div class="top-profile d-inline">
-                                <img class="profile-img" src="/assets/images/profile.png">
-                                <div class="next-news-profile d-inline">プロフィール名さん</div>
-                            </div>
-                            <div class="next-news-date d-inline">投稿日時：2021年10月7日</div>
-                            <p class="card-text next-text">ここに投稿された記事が入る。カード本文カード本文カー ド本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カー   ド本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カー ド本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カー   ド本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カー ド本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カー   ド本文本文カード本文本文カード本文本文カード本文本文カード本文本文カード本文本文カード本文 本文カード本文本文カード本文本文カード本文本文カード本文本文カード本文本文カード本文本文カ   ード本文本文カード本文本文カード本文本文カード本文本文カード本文本文カード本文本文カード本 文本文カード本文本文カード本文本文カード本文本文カード本文本文カード本文本文カード本文本文   カード本文本文カード本文本文カード本文</p>
-                            <a class="float-right" href="#">続きを読む</a>
-                        </div>
-                    </div>
-                    <div class="card col-lg-6 offset-lg-1 mx-3 col-md-12 next-news">
-                        <img class="card-img-next" src="/assets/images/iwate.jpeg">
-                        <div class="news-tag">遊ぶ・観光</div>
-                        <div class="card-body">
-                            <h4 class="card-title next-title">５つ目のニュース</h4>
-                            <div class="top-profile d-inline">
-                                <img class="profile-img" src="/assets/images/profile.png">
-                                <div class="next-news-profile d-inline">プロフィール名さん</div>
-                            </div>
-                            <div class="next-news-date d-inline">投稿日時：2021年10月7日</div>
-                            <p class="card-text next-text">ここに投稿された記事が入る。カード本文カード本文カー ド本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カー   ド本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カー ド本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カー   ド本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カー ド本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カード本文カー   ド本文本文カード本文本文カード本文本文カード本文本文カード本文本文カード本文本文カード本文 本文カード本文本文カード本文本文カード本文本文カード本文本文カード本文本文カード本文本文カ   ード本文本文カード本文本文カード本文本文カード本文本文カード本文本文カード本文本文カード本 文本文カード本文本文カード本文本文カード本文本文カード本文本文カード本文本文カード本文本文   カード本文本文カード本文本文カード本文</p>
-                            <a class="float-right" href="#">続きを読む</a>
-                        </div>
-                    </div>
-                </div>
+                
+                
+                
                 <a class="main-btn btn d-block mx-auto mt-3 more d-none" type="button" href="{{ url('article/index') }}">もっと見る</a>
 
                 <!-- 風景写真見出し -->
@@ -106,47 +87,7 @@
                         <img class="card-img-top" src="/assets/images/hanabi.jpeg">
                         <p class="card-title">タイトル名</p>
                     </div>
-                    <div class="card photo-card">
-                        <img class="card-img-top" src="/assets/images/iwate.jpeg">
-                        <p class="card-title">タイトル名</p>
-                    </div>
                     
-                    <div class="card photo-card">
-                        <img class="card-img-top" src="/assets/images/profile.png">
-                        <p class="card-title">タイトル名</p>
-                    </div>
-                    <div class="card photo-card">
-                        <img class="card-img-top" src="/assets/images/hanabi.jpeg">
-                        <p class="card-title">タイトル名</p>
-                    </div>
-                    <div class="card photo-card">
-                        <img class="card-img-top" src="/assets/images/hanabi.jpeg">
-                        <p class="card-title">タイトル名</p>
-                    </div>
-                    <div class="card photo-card">
-                        <img class="card-img-top" src="/assets/images/profile.png">
-                        <p class="card-title">タイトル名</p>
-                    </div>
-                    <div class="card photo-card">
-                        <img class="card-img-top" src="/assets/images/hanabi.jpeg">
-                        <p class="card-title">タイトル名</p>
-                    </div>
-                    <div class="card photo-card">
-                        <img class="card-img-top" src="/assets/images/hanabi.jpeg">
-                        <p class="card-title">タイトル名</p>
-                    </div>
-                    <div class="card photo-card">
-                        <img class="card-img-top" src="/assets/images/iwate.jpeg">
-                        <p class="card-title">タイトル名</p>
-                    </div>
-                    <div class="card photo-card">
-                        <img class="card-img-top" src="/assets/images/hanabi.jpeg">
-                        <p class="card-title">タイトル名</p>
-                    </div>
-                    <div class="card photo-card">
-                        <img class="card-img-top" src="/assets/images/bridge.jpeg">
-                        <p class="card-title">タイトル名</p>
-                    </div>
                 </div>
                 <a class="main-btn btn d-block mx-auto mt-3 more d-none" type="button" href="{{ url('article/view') }}">もっと見る</a>
             </div>

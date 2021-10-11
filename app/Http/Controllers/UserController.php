@@ -10,6 +10,7 @@ use App\User;
 class UserController extends Controller
 {
 
+    //ユーザー情報を登録してメッセージページに移動する
     public function create(Request $request)
     {
         $users = new User;
@@ -28,6 +29,10 @@ class UserController extends Controller
         $users->fill($form);
         $users->save();
 
-        return redirect('/forms/message');
+        return redirect('/forms/message')
+            ->with('title', 'ありがとうございます！')
+            ->with('message', 'ユーザー登録が完了しました。記事や画像の投稿ができます。')
+            ->with('message2', '投稿内容はユーザーページから閲覧・編集・削除ができます。');;
+            
     }
 }

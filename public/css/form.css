@@ -44,7 +44,7 @@
 
 /*--- メッセージボード ---*/
 .message-box {
-    height: 35rem;
+    margin: 5rem auto 15em;
 }
 
 .form-text {

@@ -8,6 +8,8 @@ use App\View;
 
 class ViewController extends Controller
 {
+    
+    //風景画像を投稿してメッセージページに移動
     public function create(Request $request)
     {
         $views = new View;
@@ -21,7 +23,9 @@ class ViewController extends Controller
         
         $views->fill($form)->save();
         
-        return redirect('forms/message');
+        return redirect('forms/message')
+            ->with('title', '画像が投稿されました！')
+            ->with('message', '投稿作品はユーザーページから編集・削除することができます。');
     }
     
     

@@ -6,28 +6,45 @@
     
     <div class="container form-container">
         <div class="wrapper">
-            <form type="POST" name="login-form" class="form-box">
-                <h3 class="form-title mt-3">ログイン画面</h3>
+            <form method="POST" action="{{ route('login') }}" name="login-form" class="form-box">
+                @csrf
+                <h3 class="form-title mt-3">{{ __('message.Login') }}</h3>
+                
                 <div class="mb-4 mt-4">
-                    <label class="form-label" id="lodin-mail">メールアドレス</label>
-                    <input type="email" class="form-control" for="login-mail" placeholder="メールアドレス" aria-describedby="form-text" required="" autofocus="">
+                    <label class="form-label" for="email">{{ __('message.E-Mail Address') }}</label>
+                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="メールアドレス">
                 </div>
+                @error('email')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+                
                 <div class="mb-4">
-                    <label class="form-label" id="lodin-password">パスワード</label>
-                    <input type="password" class="form-control" for="login-password" placeholder="パスワード" aria-describedby="form-text" required="" autofocus="">
+                    <label for="password" class="form-label">{{ __('message.Password') }}</label>
+                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autofocus autocomplete="current-password" placeholder="パスワード">
                 </div>
-                <div class="mb-5 form-check">
-                    <input class="form-check-input" type="checkbox" id="checkbox1">
-                    <label class="form-check-label" for="checkbox1">パスワードを記憶する</label>
+                @error('password')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+                
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="checkbox1" name="remenber" id="remenber" {{old('remenber') ? 'checked' : '' }}>
+                    <label class="form-check-label" for="checkbox1">{{ __('message.Remember Me') }}</label>
                 </div>
-                <button type="submit" class="btn btn-block btn-primary form-button" name="login">ログイン</button>
+                @if (Route::has('password.request'))
+                    <a class="btn btn-link mb-4" href="{{ route('password.request') }}">
+                        {{ __('message.Forgot Your Password?') }}    
+                    </a>
+                @endif
+               
+                <button type="submit" class="btn btn-block btn-primary form-button" name="login">{{ __('message.Login') }}</button>
 
+                
                 <a class="goto-top d-block mb-3" href="{{ url('/') }}">トップページに戻る</a>
             </form>
         </div>
     </div>
-
-    
-            
-
 @endsection

@@ -19,7 +19,7 @@
                         <div class="col-lg-12 main">
                             <img class="main-image col-lg-12" src="/assets/images/bridge.jpeg">
                             <div class="col-lg-12 image-text">ここにイメージ解説文を入れる</div>
-                            <div class="news-tag">遊ぶ・観光</div>
+                            <div class="news-tag">IF分で色分け</div>
                         </div>
                         <!-- サブイメージ -->
                         <div class="col-lg-3 col-md-3 col-sm-6 sub sub1">

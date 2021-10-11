@@ -23,12 +23,12 @@
 }
 
 .article-index-card {
-    width: 250px;
+    width: 350px;
     height: 600px;
 }
 .article-index-card img{
-    max-width: 250px;
-    max-height: 250px;
+    max-width: 350px;
+    max-height: 400px;
 }
 .article-index-card .card-title {
     font-size: 1vw;

@@ -22,11 +22,23 @@
                 </select>
             </div>
             
-            <div class="d-flex flex-wrap article-index">
+            <div class="d-flex flex-wrap justify-content-around mb-5">
                 @foreach ($articles as $article)
                 <div class="card article-index-card mb-3">
                     <img class="card-img-top" src="/assets/images/hanabi.jpeg">
-                    <div class="news-tag">{{ $article->category }}</div>
+                    @if ($article->category == "気仙沼の遊ぶ")
+                    <div class="tags1">
+                        <span>{{ $article->category }}</span>
+                    </div>
+                    @elseif ($article->category == "気仙沼の食べる")
+                    <div class="tags2">
+                        <span>{{ $article->category }}</span>
+                    </div>
+                    @else
+                    <div class="tags3">
+                        <span>{{ $article->category }}</span>
+                    </div>
+                    @endif
                     <p class="card-title">{{ $article->title }}</p>
                     <p class="mt-0">{{ $article->created_at->format('Y年m月d日') }}</p>
                     <div class="card-text">{{ $article->body }}</div>

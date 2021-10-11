@@ -8,6 +8,8 @@ use App\Article;
 
 class ArticleController extends Controller
 {
+ 
+    //記事を投稿してメッセージページに移動
     public function create(Request $request)
     {
         $articles = new Article;
@@ -52,18 +54,23 @@ class ArticleController extends Controller
         $articles->fill($form);
         $articles->save();
         
-        return redirect('forms/message');
+        return redirect('forms/message')
+            ->with('title', '記事が投稿されました！')
+            ->with('message', '投稿作品はユーザーページから編集・削除することができます。');
     }
     
     
-    public function top(Request $request)
+    //トップメニューで５記事を表示（トップ→$top ２〜５→$posts)
+    public function topix(Request $request)
     {
-        $top = Article::all()->last();
+        $posts = Article::orderBy('updated_at', 'DESC')->take(5)->get();
+        $top = $posts->shift();
         
-        return view('main.index', ['top' => $top]);
+        return view('main.index', ['top' => $top, 'posts' => $posts]);
     }
     
     
+    //記事一覧ページの記事表示
     public function index(Request $request)
     {
         $articles = Article::all()->sortByDesc('updated_at');
@@ -71,6 +78,7 @@ class ArticleController extends Controller
     }
     
     
+    //風景一覧で記事をランダムに２個表示
     public function random(Request $request)
     {
         $articles = Article::all()->random(2);
@@ -78,6 +86,7 @@ class ArticleController extends Controller
     }
     
     
+    //記事詳細で詳細を表示させる
     public function show(Request $request)
     {
         $show = Article::find($request->id);

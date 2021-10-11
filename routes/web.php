@@ -48,7 +48,7 @@ Route::post('user/viewPost', 'ViewController@create');
 
 
 Route::post('user/articlePost', 'ArticleController@create');
-Route::get('/', 'ArticleController@top');
+Route::get('/', 'ArticleController@topix');
 Route::get('article/index', 'ArticleController@index');
 Route::get('article/view', 'ArticleController@random');
 Route::get('article/detail', 'ArticleController@show');

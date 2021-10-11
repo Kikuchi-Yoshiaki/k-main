@@ -23,11 +23,6 @@
                     <input type="file" class="form-control-file" name="view_image">
                     <button type="button" class="mt-2" onclick="this.form.elements['view_image'].value=''">画像取り消し</button>
                 </div>
-                <div class="form-check mb-4">
-                    <label class="form-check-label">
-                        <input type="checkbox" class="form-check-input" value="true">画像の削除はあとで実装
-                    </label>
-                </div>    
 
                 <!-- タイトル -->
                 <div class="mb-5 mt-3">
