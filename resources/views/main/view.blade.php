@@ -15,15 +15,14 @@
                 <h3 class="col-lg-9 col-md-9 md-ml-5 col-sm-5 headline-view">投稿中の風景</h3>
 
                 <div class="d-flex flex-wrap view-index">
-                    
-                    <a class="card view-list" href="/assets/images/hanabi.jpeg" target="_blank">
-                        <img class="card-img-top" src="/assets/images/hanabi.jpeg">
-                        <p class="card-title">view_title</p>
+                    @foreach ($views as $view)
+                    <a class="card view-list" href="{{ asset('storage/view/'.$view['view_image'] ) }}" target="_blank">
+                        <img class="card-img-top" src="{{ asset('storage/view/'.$view['view_image'] ) }}">
+                        <p class="card-title">{{ $view->title }}</p>
                     </a>
-                    
+                    @endforeach
                 </div>
 
-            
 
                 <!-- 記事一覧ランダム -->
                 <h3 class="col-lg-9 col-md-9 md-ml-5  col-sm-5 headline-top">記事・日記TOPIX</h3>

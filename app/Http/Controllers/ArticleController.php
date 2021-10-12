@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Article;
+use App\View;
 
 class ArticleController extends Controller
 {
@@ -60,30 +61,20 @@ class ArticleController extends Controller
     }
     
     
-    //トップメニューで５記事を表示（トップ→$top ２〜５→$posts)
-    public function topix(Request $request)
-    {
-        $posts = Article::orderBy('updated_at', 'DESC')->take(5)->get();
-        $top = $posts->shift();
-        
-        return view('main.index', ['top' => $top, 'posts' => $posts]);
-    }
-    
     
     //記事一覧ページの記事表示
+    //風景画像をランダムで5枚表示
     public function index(Request $request)
     {
         $articles = Article::all()->sortByDesc('updated_at');
-        return view('main.articleList', ['articles' => $articles]);
+        
+        $views = View::all()->random(5);
+        
+        return view('main.articleList', ['articles' => $articles, 'views' => $views]);
     }
     
     
-    //風景一覧で記事をランダムに２個表示
-    public function random(Request $request)
-    {
-        $articles = Article::all()->random(2);
-        return view('main.view', ['articles' => $articles]);
-    }
+    
     
     
     //記事詳細で詳細を表示させる
@@ -93,5 +84,4 @@ class ArticleController extends Controller
         
         return view('main.detail', ['show' => $show]);
     }
-    
 }

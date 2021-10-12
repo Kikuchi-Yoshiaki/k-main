@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\View;
+use App\Article;
+//Image Magic
+//use Intervention\Image\Facades\Image;
 
 class ViewController extends Controller
 {
@@ -14,6 +17,11 @@ class ViewController extends Controller
     {
         $views = new View;
         $form = $request->all();
+        
+        /*$image = Image::make($request->file('view_image'))->encode('jpg');
+        //$path = $request->file('view_image')->store('public/view')->encode('jpg', 80);
+        $path = $image->store('public/view');
+        $views->view_image = basename($path);*/
         
         $path = $request->file('view_image')->store('public/view');
         $views->view_image = basename($path);
@@ -30,6 +38,13 @@ class ViewController extends Controller
     
     
     
-
+    public function index(Request $request)
+    {
+        $views = View::all()->sortByDesc('updated_at');
+        
+        $articles = Article::all()->random(2);
+        
+        return view('main.view', ['views' => $views, 'articles' => $articles]);
+    }
 
 }

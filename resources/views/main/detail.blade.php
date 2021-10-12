@@ -17,7 +17,7 @@
                 <div class="container">
                     <div class="row flex-wrap">
                         <div class="col-lg-12 main">
-                            <img class="main-image col-lg-12" src="/assets/images/bridge.jpeg">
+                            <img class="main-image col-lg-12" src="{{ asset('storage/article/'.$show['main_image'] ) }}">
                             <div class="col-lg-12 image-text">{{ $show->image_text }}</div>
                             @if ($show->category == "気仙沼の遊ぶ")
                             <div class="tags1">
@@ -34,18 +34,34 @@
                             @endif
                         </div>
                         <!-- サブイメージ -->
+                        @if (isset($show->sub_image_1))
                         <div class="col-lg-3 col-md-3 col-sm-6 sub sub1">
-                            <img class="sub-image col-lg-12" src="/assets/images/iwate.jpeg">
+                            <img class="sub-image col-lg-12" src="{{ asset('storage/article/'.$show['sub_image_1'] ) }}">
                         </div>
+                        @else
+                        <div></div>
+                        @endif
+                        @if (isset($show->sub_image_2))
                         <div class="col-lg-3 col-md-3 col-sm-6 sub sub2">
-                            <img class="sub-image col-lg-12" src="/assets/images/hanabi.jpeg">
+                            <img class="sub-image col-lg-12" src="{{ asset('storage/article/'.$show['sub_image_2'] ) }}">
                         </div>
+                        @else
+                        <div></div>
+                        @endif
+                        @if (isset($show->sub_image_3))
                         <div class="col-lg-3 col-md-3 col-sm-6 sub sub3">
-                            <img class="sub-image col-lg-12" src="/assets/images/profile.png">
+                            <img class="sub-image col-lg-12" src="{{ asset('storage/article/'.$show['sub_image_3'] ) }}">
                         </div>
+                        @else
+                        <div></div>
+                        @endif
+                        @if (isset($show->sub_image_4))
                         <div class="col-lg-3 col-md-3 col-sm-6 sub sub4">
-                            <img class="sub-image col-lg-12" src="/assets/images/iwate.jpeg">
+                            <img class="sub-image col-lg-12" src="{{ asset('storage/article/'.$show['sub_image_4'] ) }}">
                         </div>
+                        @else
+                        <div></div>
+                        @endif
                     </div>
                 </div>
 

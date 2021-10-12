@@ -25,7 +25,7 @@
             <div class="d-flex flex-wrap justify-content-around mb-5">
                 @foreach ($articles as $article)
                 <div class="card article-index-card mb-3">
-                    <img class="card-img-top" src="/assets/images/hanabi.jpeg">
+                    <img class="card-img-top" src="{{ asset('storage/article/'.$article['main_image'] ) }}">
                     @if ($article->category == "気仙沼の遊ぶ")
                     <div class="tags1">
                         <span>{{ $article->category }}</span>
@@ -54,12 +54,12 @@
             <h3 class="col-lg-9 col-md-9 md-ml-5 col-sm-5 headline-view">投稿中の風景</h3>
 
             <div class="d-flex flex-wrap view-box">
-                
+                @foreach ($views as $view)
                 <div class="card photo-card">
-                    <img class="card-img-top" src="/assets/images/hanabi.jpeg">
-                    <p class="caro-title">title</p>
+                    <img class="card-img-top" src="{{ asset('storage/view/'.$view['view_image'] ) }}">
+                    <p class="caro-title">{{ $view->title }}</p>
                 </div>
-            
+                @endforeach
             </div>
 
             <a class="main-btn btn d-block mx-auto mt-3 p-3" type="button" href="{{ url('article/view') }}

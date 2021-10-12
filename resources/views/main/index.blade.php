@@ -15,7 +15,7 @@
             
                 <!-- トップ記事 -->
                 <div class="card col-lg-9 offset-lg-2 col-md-10 mb-4 top-news">
-                    <img class="card-img-top" src="/assets/images/iwate.jpeg">
+                    <img class="card-img-top" src="{{ asset('storage/article/'.$top['main_image'] ) }}">
                     @if ($top->category == "気仙沼の遊ぶ")
                     <div class="tags1">
                         <span>{{ $top->category }}</span>
@@ -45,7 +45,7 @@
                 <div class="d-flex flex-wrap justify-content-around mb-5">
                     @foreach ($posts as $post)
                     <div class="card col-lg-5 col-md-10 next-news">
-                        <img class="card-img-next" src="/assets/images/iwate.jpeg">
+                        <img class="card-img-next" src="{{ asset('storage/article/'.$post['main_image'] ) }}">
                         @if ($post->category == "気仙沼の遊ぶ")
                         <div class="tags1">
                             <span>{{ $post->category }}</span>
@@ -74,24 +74,23 @@
                 </div>
                 
                 
-                
                 <a class="main-btn btn d-block mx-auto mt-3 more d-none" type="button" href="{{ url('article/index') }}">もっと見る</a>
 
                 <!-- 風景写真見出し -->
                 <h3 class="col-lg-9 col-md-9 md-ml-5 col-sm-5 headline-view">気仙沼の風景画像</h3>
 
                 <!-- 風景写真一覧 -->
-                <div class="d-flex flex-wrap view-container">
-            
+                <div class="d-flex flex-wrap justify-content-around">
+                    @foreach ($views as $view)
                     <div class="card photo-card">
-                        <img class="card-img-top" src="/assets/images/hanabi.jpeg">
-                        <p class="card-title">タイトル名</p>
+                        <img class="card-img-top" src="{{ asset('storage/view/'.$view['view_image'] ) }}">
+                        <p class="card-title">{{ $view->title }}</p>
                     </div>
-                    
+                    @endforeach
                 </div>
                 <a class="main-btn btn d-block mx-auto mt-3 more d-none" type="button" href="{{ url('article/view') }}">もっと見る</a>
             </div>
-
+            
         
 @endsection
 

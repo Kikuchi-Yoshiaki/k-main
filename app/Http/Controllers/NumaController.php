@@ -3,6 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\User;
+use App\Article;
+use App\View;
+
 
 class NumaController extends Controller
 {
@@ -12,7 +17,18 @@ class NumaController extends Controller
     }
     
     
-    
+    //トップメニューで５記事を表示（トップ→$top ２〜５→$posts)
+    //風景写真を最新で12枚表示
+    public function topix(Request $request)
+    {
+        $posts = Article::orderBy('updated_at', 'DESC')->take(5)->get();
+        $top = $posts->shift();
+        
+        $views = View::orderBy('updated_at', 'DESC')->take(12)->get();
+        
+        
+        return view('main.index', ['top' => $top, 'posts' => $posts, 'views' => $views]);
+    }
 
 
 

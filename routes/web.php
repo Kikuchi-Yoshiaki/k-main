@@ -17,6 +17,9 @@ Route::get('/', function () {
 
 
 Route::get('/', 'NumaController@add');
+Route::get('/', 'NumaController@topix');
+
+
 
 
 
@@ -43,18 +46,16 @@ Route::post('form/contact', 'ContactController@create');
 
 Route::post('form/signup', 'UserController@create');
 
-Route::post('user/viewPost', 'ViewController@create');
-
 
 
 Route::post('user/articlePost', 'ArticleController@create');
-Route::get('/', 'ArticleController@topix');
 Route::get('article/index', 'ArticleController@index');
 Route::get('article/view', 'ArticleController@random');
 Route::get('article/detail', 'ArticleController@show');
 
 
-
+Route::post('user/viewPost', 'ViewController@create');
+Route::get('article/view', 'ViewController@index');
 
 
 Auth::routes();
