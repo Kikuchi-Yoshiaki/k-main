@@ -7,27 +7,28 @@
     <div class="container form-container">
         <div class="wrapper">
             <form action="{{ action('UserController@create') }}" method="POST" name="signup-form" class="form-box" enctype="multipart/form-data">
-                <h3 class="form-title mb-4 mt-3">新規登録</h3>
+            <form action="{{ route('register') }}" method="POST" name="signup-form" class="form-box" enctype="multipart/form-data">
+                <h3 class="form-title mb-4 mt-3">{{ __('message.Register') }}</h3>
                 
                 <!-- ユーザー名 -->
                 <div class="mb-4">
-                    <label class="form-label mr-1">ユーザー名</label>
+                    <label class="form-label mr-1">{{ __('message.Name') }}</label>
                         <span class="text-danger small">※必須</span>
-                    <input type="text" class="form-control" name="name" placeholder="ユーザー名" required="" autofocus="">
+                    <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('neme') }}" required="" autofocus="">
                 </div>
                 
                 <!-- メールアドレス -->
                 <div class="mb-4">
-                    <label class="form-label mr-1">メールアドレス</label>
+                    <label class="form-label mr-1">{{ __('message.E-Mail Address') }}</label>
                     <span class="text-danger small">※必須</span>
-                    <input type="email" class="form-control" name="email" placeholder="aaa@aaaaaaaaa" required="" autofocus="">
+                    <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required="" autofocus="">
                 </div>
 
                 <!-- パスワード -->
                 <div class="mb-4">
-                    <label class="form-label mr-1">パスワード</label>
+                    <label class="form-label mr-1">{{ __('message.Password') }}</label>
                     <span class="text-danger small">※必須</span>
-                    <input type="password" class="form-control" name="password" placeholder="パスワード" required="" autofocus="">
+                    <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="パスワード" required autofocus="">
                 </div>
                 
                 <!-- プロフィール画像 -->
@@ -39,7 +40,7 @@
                 </div>
 
                 <!-- 登録ボタン -->
-                <input type="submit" class="btn btn-block btn-primary form-button col-3" value="登録">
+                <input type="submit" class="btn btn-block btn-primary form-button col-3" value="{{ __('message.Register') }}">
                 {{ csrf_field() }}
 
                 <a class="goto-top d-block mb-3" href="{{ url('/') }}">トップページに戻る</a>

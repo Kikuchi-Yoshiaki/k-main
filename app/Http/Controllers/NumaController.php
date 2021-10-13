@@ -41,10 +41,7 @@ class NumaController extends Controller
     {
         return view('forms.signup');
     }
-    public function change()
-    {
-        return view('user.profileEdit');
-    }
+    
     public function message()
     {
         return view('forms.message');
@@ -81,7 +78,7 @@ class NumaController extends Controller
     {
         return view('main.view');
     }
-
+    
 
 
 }

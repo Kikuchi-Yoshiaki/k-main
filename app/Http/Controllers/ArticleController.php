@@ -74,9 +74,6 @@ class ArticleController extends Controller
     }
     
     
-    
-    
-    
     //記事詳細で詳細を表示させる
     public function show(Request $request)
     {
@@ -84,4 +81,72 @@ class ArticleController extends Controller
         
         return view('main.detail', ['show' => $show]);
     }
+    
+    
+    //記事編集画面に記事情報を取得する
+    public function edit(Request $request)
+    {
+        $article = Article::find($request->id);
+        
+        return view('user.articleEdit', ['form' => $article]);
+    }
+    
+    
+    //記事を更新
+    public function update(Request $request)
+    {
+        $article = Article::find($request->id);
+        $form = $request->all();
+        
+        if(isset($form['sub_image_1'])) {
+            $path = $request->file('sub_image_1')->store('public/article');
+            $article->sub_image_1 = basename($path);
+        } else {
+            $article->sub_image_1 = null;
+        }
+        if(isset($form['sub_image_2'])) {
+            $path = $request->file('sub_image_2')->store('public/article');
+            $article->sub_image_2 = basename($path);
+        } else {
+            $article->sub_image_2 = null;
+        }
+        if(isset($form['sub_image_3'])) {
+            $path = $request->file('sub_image_3')->store('public/article');
+            $article->sub_image_3 = basename($path);
+        } else {
+            $article->sub_image_3 = null;
+        }
+        if(isset($form['sub_image_4'])) {
+            $path = $request->file('sub_image_4')->store('public/article');
+            $article->sub_image_4 = basename($path);
+        } else {
+            $article->sub_image_4 = null;
+        }
+        /*if(isset($form['image_text'])) {
+            $article->image_text = $form['image_text'];
+        } else {
+            $article->image_text = null;
+        }*/
+        
+        
+        
+        
+        
+        $path = $request->file('main_image')->store('public/article');
+        $article->main_image = basename($path);
+        
+        unset($form['_token']);
+        unset($form['main_image']);
+        unset($form['sub_image_1']);
+        unset($form['sub_image_2']);
+        unset($form['sub_image_3']);
+        unset($form['sub_image_4']);
+        
+        $article->fill($form)->save();
+        
+        return redirect('forms/message')
+            ->with('title', '更新完了！')
+            ->with('message', '記事がが更新されました。');;
+    }
+    
 }

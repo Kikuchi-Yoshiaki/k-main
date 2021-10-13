@@ -1,6 +1,6 @@
 @extends('layouts.mainLayout')
 
-@section('title', '記事詳細ページ')
+@section('title', $show->title )
 
 @section('content')
 
@@ -13,12 +13,15 @@
                 
                 <!-- 記事上部 -->
                 <h2 class="detail-title">{{ $show->title }}</h2>
-                <div class="detail-news-date">更新日時:{{ $show->updated_at->format('Y年m月d日') }}</div>
                 <div class="container">
                     <div class="row flex-wrap">
                         <div class="col-lg-12 main">
                             <img class="main-image col-lg-12" src="{{ asset('storage/article/'.$show['main_image'] ) }}">
+                            @if ($show->image_text)
                             <div class="col-lg-12 image-text">{{ $show->image_text }}</div>
+                            @else
+                            <span></span>
+                            @endif
                             @if ($show->category == "気仙沼の遊ぶ")
                             <div class="tags1">
                                 <span>{{ $show->category }}</span>
@@ -64,10 +67,10 @@
                         @endif
                     </div>
                 </div>
-
+                
                 <!-- 記事プロフィール -->
                 <div class="d-flex justify-content-between m-4">
-                    <div class="top-profile">
+                    <div class="top-profile mt-3">
                         <img class="detail-profile-image" src="/assets/images/profile.png">
                         <div class="detail-profile-name d-inline">プロフィール名さん</div>
                     </div>
@@ -80,10 +83,15 @@
                     <div class="card-body mt-4">
                         <p class="card-text detail-text">{{ $show->body }}</p>
                         
+                        @if ($show->link_text || $show->link_url)
                         <div class="url-box col-12">
-                            <p>{{ $show->link_text }}</p>
+                            <p class="mb-3">{{ $show->link_text }}</p>
                             <a class="card-rink" target='_blank' href="{{ $show->link_url }}">{{ $show->link_url }}</a>
                         </div>
+                        @else
+                        <div></div>
+                        @endif
+                        <div class="next-news-date d-block float-left mt-1"><i class="far fa-calendar-alt ml-3"></i>{{ $show->created_at->format('Y年m月d日') }}</div>
                         <div type="button" class="btn btn-outline-danger float-right mr-5">イイねボタン</div>
                     </div>
                 </div>

@@ -35,7 +35,7 @@
                             <img class="profile-img" src="/assets/images/profile.png">
                             <div class="top-news-profile d-inline">プロフィール名さん</div>
                         </div>
-                        <div class="top-news-date d-inline">投稿日:{{ $top->created_at->format('y年m月d日') }}</div>
+                        <div class="top-news-date d-inline mr-3"><i class="far fa-calendar-alt mr-2"></i>{{ $top->created_at->format('Y年m月d日') }}</div>
                         <p class="card-text top-text">{{ $top->body }}</p>
                         <a class="float-right" href="/article/detail/?id={{ $top->id }}">続きを読む</a>
                     </div>
@@ -65,7 +65,7 @@
                                 <img class="profile-img" src="/assets/images/profile.png">
                                 <div class="next-news-profile d-inline">プロフィール名さん</div>
                             </div>
-                            <div class="next-news-date d-inline">投稿日:{{ $top->created_at->format('y年m月d日') }}</div>
+                            <div class="next-news-date d-inline"><i class="far fa-calendar-alt mr-2"></i>{{ $top->created_at->format('Y年m月d日') }}</div>
                             <p class="card-text next-text">{{ $post->body }}</p>
                             <a class="float-right" href="/article/detail/?id={{ $post->id }}">続きを読む</a>
                         </div>
@@ -82,10 +82,14 @@
                 <!-- 風景写真一覧 -->
                 <div class="d-flex flex-wrap justify-content-around">
                     @foreach ($views as $view)
-                    <div class="card photo-card">
+                    <a class="card view-list mb-1 text-center" href="{{ asset('storage/view/'.$view['view_image'] ) }}" target="_blank">
                         <img class="card-img-top" src="{{ asset('storage/view/'.$view['view_image'] ) }}">
-                        <p class="card-title">{{ $view->title }}</p>
-                    </div>
+                        @if (isset($view->title))
+                        <p class="card-title">{{ Str::limit($view->title,20) }}</p>
+                        @else
+                        <span></span>
+                        @endif
+                    </a>
                     @endforeach
                 </div>
                 <a class="main-btn btn d-block mx-auto mt-3 more d-none" type="button" href="{{ url('article/view') }}">もっと見る</a>

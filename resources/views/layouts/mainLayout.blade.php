@@ -105,16 +105,16 @@
             <!-- カテゴリー欄 -->
             <div class="container-fluid category">
                 <div class="row category-menu">
-                    <div class="category-job col-sm-6 col-md-3">
+                    <div class="category-tags col-sm-6 col-md-3">
                         <a class="nav-link category-name k-job" href="{{ url('article/index') }}">気仙沼の<span> 遊ぶ</span></a>
                     </div>
-                    <div class="category-food col-sm-6 col-md-3">
+                    <div class="category-tags col-sm-6 col-md-3">
                         <a class="nav-link category-name k-food" href="{{ url('article/index') }}">気仙沼の<span> 食べる<span></span></a>
                     </div>
-                    <div class="category-life col-sm-6 col-md-3">
+                    <div class="category-tags col-sm-6 col-md-3">
                         <a class="nav-link category-name k-life" href="{{ url('article/index') }}">気仙沼の<span> 生活</span></a>
                     </div>
-                    <div class="category-view col-sm-6 col-md-3">
+                    <div class="category-tags col-sm-6 col-md-3">
                         <a class="nav-link category-name" href="{{ url('article/view') }}">気仙沼の<span> 風景</span></a>
                     </div>
                 </div>

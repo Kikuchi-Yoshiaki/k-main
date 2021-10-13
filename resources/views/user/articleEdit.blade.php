@@ -6,21 +6,21 @@
     
     <div class="container form-container">
         <div class="wrapper">
-            <form method="POST" name="article-form" class="user-box">
+            <form action="{{ action('ArticleController@update') }}" method="POST" class="user-box" enctype="multipart/form-data">
                 <h3 class="form-title mb-4 mt-3">記事・日記を編集する</h3>
                 
                 <!-- タイトル -->
                 <div class="mb-4">
-                    <label class="form-label" id="article-title">タイトル</label>
+                    <label class="form-label">タイトル</label>
                     <span class="text-danger small">※必須</span>
-                    <input type="text" class="form-control" for="article-title" placeholder="タイトル名" aria-describedby="" required="" autofocus="">
+                    <input type="text" class="form-control" name="title" placeholder="タイトル名" aria-describedby="" required="" autofocus="" value="{{ $form->title }}">
                 </div>
                 
                 <!-- カテゴリーボックス -->
                 <div class="form-group">
-                    <label class="form-label" id="article-category">カテゴリー</label>
+                    <label class="form-label">カテゴリー</label>
                     <span class="text-danger small">※必須</span>
-                    <select class="form-control col-5" name="category" value="">
+                    <select class="form-control col-5" name="category">
                         <option>気仙沼の遊ぶ</option>
                         <option>気仙沼の食べる</option>
                         <option>気仙沼の生活</option>
@@ -29,9 +29,9 @@
 
                 <!-- 記事本文 -->
                 <div class="form-group">
-                    <label class="form-label" id="article-body">記事本文</label>
+                    <label class="form-label">記事本文</label>
                     <span class="text-danger small">※必須</span>
-                    <textarea rows="30" class="form-control" for="article-body" placeholder="〇〇文字以内で入力してください"></textarea>
+                    <textarea rows="30" class="form-control" name="body" placeholder="〇〇文字以内で入力してください">{{ $form->body }}"</textarea>
                 </div>
                 
                 <!-- メイン画像 -->
@@ -44,9 +44,9 @@
 
                 <!-- イメージ解説文 -->
                 <div class="mb-2">
-                    <label class="form-label" id="image-text">画像解説</label>
+                    <label class="form-label">画像解説</label>
                     <span class="text-secondary small">※任意</span>
-                    <input type="text" class="form-control" for="image-text" placeholder="画像の下に文章を入れることができます" aria-describedby="" required="" autofocus="">
+                    <input type="text" class="form-control" name="image_text" placeholder="画像の下に文章を入れることができます" aria-describedby="" autofocus="" value="{{ $form->image_text }}">
                 </div>
 
                 <!-- サブ画像 -->
@@ -69,14 +69,14 @@
                 <div class="mb-2">
                     <label class="form-label" id="link-url">外部URL</label>
                     <span class="text-secondary small">※任意</span>
-                    <input type="url" class="form-control" for="link-url" placeholder="リンク先URLがありましたらこちらに入力してください" aria-describedby="" required="" autofocus="">
+                    <input type="url" class="form-control" for="link-url" placeholder="リンク先URLがありましたらこちらに入力してください" aria-describedby="" autofocus="" value="{{ $form->link_url }}">
                 </div>
 
-                <!-- リンクURL -->
+                <!-- ラストメッセージ -->
                 <div class="mb-4">
                     <label class="form-label" id="link-text">URL説明文</label>
                     <span class="text-secondary small">※任意</span>
-                    <input type="text" class="form-control" for="link-text" placeholder="URLの下に文章を入れることができます" aria-describedby="" required="" autofocus="">
+                    <input type="text" class="form-control" for="link-text" placeholder="URLの下に文章を入れることができます" aria-describedby="" autofocus="" value="{{ $form->link_text }}">
                 </div>
 
                 <!-- プライバシーポリシー -->
@@ -88,8 +88,11 @@
                 </div>
 
                 <!-- 登録ボタン -->
-                <button type="submit" class="btn btn-block btn-primary form-button" name="login">確認画面へ</button>
-
+                <input type="hidden" name="id" value="{{ $form->id }}">
+                {{ csrf_field() }}
+                <input type="submit" class="btn btn-block btn-primary form-button mt-5 col-3" value="プレビュー画面へ">
+                
+                
                 <a class="goto-top d-block mb-3" href="{{ url('/') }}">トップページに戻る</a>
 
             </form>

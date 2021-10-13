@@ -28,15 +28,13 @@ Route::get('forms/login', 'NumaController@login');
 Route::get('forms/signup', 'NumaController@signup');
 Route::get('forms/message', 'NumaController@message');
 Route::get('user', 'NumaController@user');
-Route::get('user/edit/profile', 'NumaController@change');
-Route::get('user/edit/article', 'NumaController@articleEdit');
 Route::get('user/post/view', 'NumaController@viewPost');
 Route::get('user/post/article', 'NumaController@articlePost');
 Route::get('article/preview', 'NumaController@preview');
 Route::get('article/detail', 'NumaController@detail');
 Route::get('article/index', 'NumaController@articleList');
 Route::get('article/view', 'NumaController@viewList');
-
+Route::get('user/edit/article', 'NumaController@articleEdit');
 
 
 
@@ -45,6 +43,10 @@ Route::post('form/contact', 'ContactController@create');
 
 
 Route::post('form/signup', 'UserController@create');
+Route::get('user', 'UserController@userIndex');
+Route::get('user/edit/profile', 'UserController@edit');
+Route::post('user/edit/profile', 'UserController@update');
+
 
 
 
@@ -52,6 +54,8 @@ Route::post('user/articlePost', 'ArticleController@create');
 Route::get('article/index', 'ArticleController@index');
 Route::get('article/view', 'ArticleController@random');
 Route::get('article/detail', 'ArticleController@show');
+Route::get('user/edit/article', 'ArticleController@edit');
+Route::post('user/edit/article', 'ArticleController@update');
 
 
 Route::post('user/viewPost', 'ViewController@create');

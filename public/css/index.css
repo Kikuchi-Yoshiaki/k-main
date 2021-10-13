@@ -147,6 +147,7 @@
     height: 4vw;
     width: 4vw;
     border-radius: 50%;
+    border: solid 3px rgba(119, 195, 223, 0.5);
 }
 
 .top-news-profile {
@@ -193,7 +194,7 @@
 
 .next-news-date {
     float: right;
-    font-size: 0.7vw;
+    font-size: 1vw;
 }
 .profile-img {
     height: 3vw;
@@ -202,14 +203,14 @@
 }
 
 .next-news-profile {
-    font-size: 0.8vw;
+    font-size: 1vw;
     padding: 0 0.2em 0.2em 0.5em;
     border-bottom: rgba(119, 195, 223, 0.8) 3px dotted;
 }
 
 .next-text {
     margin-top: 1em;
-    font-size: 0.8vw;
+    font-size: 1vw;
     display: -webkit-box;
     overflow: hidden;
     -webkit-line-clamp: 5;
@@ -283,30 +284,27 @@
 .view-index {
     padding: 1em 0.5em;
     border-radius: 15px;
-    justify-content: space-around;
-    margin: 0 auto;
     text-align: center;
+    margin-left: 2em;
 }
 
 .view-list {
-    width: 300px;
-    height: 350px;
+    max-width: 300px;
+    height: 100%;
     background: rgba(0,0,0,0.7);
     color: #FFF;
     font-size: 1.2vw;
     transition: 1s;
 }
 .view-list img{
-    max-width: 300px;
+    width: 100%;
     max-height: 300px;
 }
-.view-list .card-title {
-    padding-top: 0.5em;
-}
+
 .view-list:hover {
-    font-size: 1.5vw;
     color: #FFF;
     text-decoration: none;
     background: rgba(11,223,144,0.6);
 }
+
 

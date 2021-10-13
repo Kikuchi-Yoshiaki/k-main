@@ -18,6 +18,7 @@
     color: #000;
 }
 
+
 .top-nav {
     color: #000 ;
     transition: 1s;
@@ -153,60 +154,24 @@
     color: #000;
 }
 
-.category-job {
+.category-tags {
     text-align: center;
     font-size: 1.5vw;
     transition: 2s;
 }
-.category-job span {
+.category-tags span {
     font-size: 2vw;
 }
-.category-job:hover {
+.category-tags:hover {
     text-decoration: none;
-    background-color: #F66;
+    color: #F66 !important;
+    background-color: #FFF;
 }
 
-.category-food {
-    text-align: center;
-    font-size: 1.5vw;
-    color: #000;
-    transition: 2s;
-}
-.category-food span {
-    font-size: 2vw;
-}
-.category-food:hover {
-    text-decoration: none;
-    background-color: #02E;
-}
 
-.category-life {
-    text-align: center;
-    font-size: 1.5vw;
-    color: #000;
-    transition: 2s;
-}
-.category-life span {
-    font-size: 2vw;
-}
-.category-life:hover {
-    text-decoration: none;
-    background-color: #FE1;
-}
 
-.category-view {
-    text-align: center;
-    font-size: 1.5vw;
-    color: #000;
-    transition: 2s;
-}
-.category-view span {
-    font-size: 2vw;
-}
-.category-view:hover {
-    text-decoration: none;
-    background-color: #8F1;
-}
+
+
 
 
 /***右側部分***/

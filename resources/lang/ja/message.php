@@ -6,5 +6,8 @@
         'Password' => 'パスワード',
         'Remember Me' => 'ログイン情報を記憶する',
         'Forgot Your Password?' => 'パスワードをお忘れですか？',
+        'Register' => '新規登録',
+        'Name' => '名前',
+        
         
         ];
