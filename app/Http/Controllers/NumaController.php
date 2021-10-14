@@ -62,10 +62,10 @@ class NumaController extends Controller
     {
         return view('main.detail');
     }
-    public function preview()
+    /*public function preview()
     {
         return view('user.articlePreview');
-    }
+    }*/
     public function user()
     {
         return view('user.user');
@@ -78,7 +78,10 @@ class NumaController extends Controller
     {
         return view('main.view');
     }
-    
+    public function privacy()
+    {
+        return view('forms.privacyPolicy');
+    }
 
 
 }

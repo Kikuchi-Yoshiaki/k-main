@@ -39,7 +39,6 @@
                                 <a class="nav-link dropdown-toggle top-nav profile-name" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">プロフィール名</a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                     <a class="dropdown-item" href="{{ url('user') }}">マイページへ</a>
-                                    <a class="dropdown-item" href="{{ url('user/edit/profile') }}">プロフィールを変更</a>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="#">ログアウト</a>
                                 </div>

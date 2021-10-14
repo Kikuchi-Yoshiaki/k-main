@@ -146,6 +146,17 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'title' => 'タイトル',
+        'body' => '本文',
+        'main_image' => 'メイン画像',
+        'name' => 'お名前',
+        'email' => 'メールアドレス',
+        'password' => 'パスワード',
+        'view_image' => '画像',
+        
+        
+        
+        ],
 
 ];

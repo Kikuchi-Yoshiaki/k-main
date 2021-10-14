@@ -41,7 +41,6 @@
                                 <a class="nav-link dropdown-toggle top-nav profile-name" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">プロフィール名</a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                     <a class="dropdown-item" href="{{ url('user') }}">マイページへ</a>
-                                    <a class="dropdown-item" href="{{ url('user/edit/profile') }}">プロフィールを変更</a>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="#">ログアウト</a>
                                 </div>
@@ -106,13 +105,13 @@
             <div class="container-fluid category">
                 <div class="row category-menu">
                     <div class="category-tags col-sm-6 col-md-3">
-                        <a class="nav-link category-name k-job" href="{{ url('article/index') }}">気仙沼の<span> 遊ぶ</span></a>
+                        <a class="nav-link category-name k-job" href="{{ url('article/index?category=enjoy') }}">気仙沼の<span> 遊ぶ</span></a>
                     </div>
                     <div class="category-tags col-sm-6 col-md-3">
-                        <a class="nav-link category-name k-food" href="{{ url('article/index') }}">気仙沼の<span> 食べる<span></span></a>
+                        <a class="nav-link category-name k-food" href="{{ url('article/index?category=food') }}">気仙沼の<span> 食べる<span></span></a>
                     </div>
                     <div class="category-tags col-sm-6 col-md-3">
-                        <a class="nav-link category-name k-life" href="{{ url('article/index') }}">気仙沼の<span> 生活</span></a>
+                        <a class="nav-link category-name k-life" href="{{ url('article/index?category=life') }}">気仙沼の<span> 生活</span></a>
                     </div>
                     <div class="category-tags col-sm-6 col-md-3">
                         <a class="nav-link category-name" href="{{ url('article/view') }}">気仙沼の<span> 風景</span></a>

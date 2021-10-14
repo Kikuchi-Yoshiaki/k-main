@@ -3,11 +3,21 @@
 @section('title', '風景写真投稿ページ')
 
 @section('content')
+
     
     <div class="container form-container">
         <div class="wrapper">
             <form action="{{ action('ViewController@create') }}" method="POST" name="view-post" class="user-box" enctype="multipart/form-data">
                 <h3 class="form-title mb-4 mt-3">風景・画像を投稿する</h3>
+                
+                <!-- エラーチェック -->
+                @if (count($errors) > 0)
+                <ul class="alert alert-warning" role="alert">
+                    @foreach ($errors->all() as $e)
+                    <li class="ml-3">{{ $e }}</li>
+                    @endforeach
+                </ul>
+                @endif
                 
                 <!-- リレーション終わったら消す -->
                 <div class="mb-5 mt-3">

@@ -13,6 +13,8 @@ class UserController extends Controller
     //ユーザー情報を登録してメッセージページに移動する
     public function create(Request $request)
     {
+        $this->validate($request, User::$rules);
+        
         $users = new User;
         $form = $request->all();
         
@@ -58,6 +60,8 @@ class UserController extends Controller
     //プロフィール更新
     public function update(Request $request)
     {
+        $this->validate($request, User::$rules);
+        
         $user = User::find($request->id);
         $form = $request->all();
         

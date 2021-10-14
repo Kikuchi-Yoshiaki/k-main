@@ -30,11 +30,11 @@ Route::get('forms/message', 'NumaController@message');
 Route::get('user', 'NumaController@user');
 Route::get('user/post/view', 'NumaController@viewPost');
 Route::get('user/post/article', 'NumaController@articlePost');
-Route::get('article/preview', 'NumaController@preview');
 Route::get('article/detail', 'NumaController@detail');
 Route::get('article/index', 'NumaController@articleList');
 Route::get('article/view', 'NumaController@viewList');
 Route::get('user/edit/article', 'NumaController@articleEdit');
+Route::get('privacy-policy', 'NumaController@privacy');
 
 
 
@@ -56,6 +56,7 @@ Route::get('article/view', 'ArticleController@random');
 Route::get('article/detail', 'ArticleController@show');
 Route::get('user/edit/article', 'ArticleController@edit');
 Route::post('user/edit/article', 'ArticleController@update');
+Route::get('article/preview', 'ArticleController@preview');
 
 
 Route::post('user/viewPost', 'ViewController@create');

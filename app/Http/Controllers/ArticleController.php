@@ -10,9 +10,11 @@ use App\View;
 class ArticleController extends Controller
 {
  
-    //記事を投稿してメッセージページに移動
+    //記事を投稿してプレビュー画面に移動
     public function create(Request $request)
     {
+        $this->validate($request, Article::$rules);
+        
         $articles = new Article;
         $form = $request->all();
         
@@ -55,10 +57,20 @@ class ArticleController extends Controller
         $articles->fill($form);
         $articles->save();
         
-        return redirect('forms/message')
-            ->with('title', '記事が投稿されました！')
-            ->with('message', '投稿作品はユーザーページから編集・削除することができます。');
+        return redirect('article/preview?id=' . $articles->id)
+            ->with('title', '記事が投稿されました！');
+        
+        //return redirect('article/preview?id=' . $articles->id);
+           
     }
+    
+    public function preview(Request $request)
+    {
+        $preview = Article::find($request->id);
+        
+        return view('user.articlePreview', ['preview' => $preview]);
+    }
+    
     
     
     
@@ -66,7 +78,18 @@ class ArticleController extends Controller
     //風景画像をランダムで5枚表示
     public function index(Request $request)
     {
+        
+        if ($request->category == 'enjoy')
+        {
+        $articles = Article::where('category','気仙沼の遊ぶ')->latest()->get();
+        } elseif ($request->category == 'food') {
+        $articles = Article::where('category','気仙沼の食べる')->latest()->get();
+        } elseif ($request->category == 'life') {
+        $articles = Article::where('category','気仙沼の生活')->latest()->get();
+        } else {
         $articles = Article::all()->sortByDesc('updated_at');
+        }
+        
         
         $views = View::all()->random(5);
         
@@ -95,6 +118,8 @@ class ArticleController extends Controller
     //記事を更新
     public function update(Request $request)
     {
+        $this->validate($request, Article::$rules);
+        
         $article = Article::find($request->id);
         $form = $request->all();
         
@@ -127,9 +152,6 @@ class ArticleController extends Controller
         } else {
             $article->image_text = null;
         }*/
-        
-        
-        
         
         
         $path = $request->file('main_image')->store('public/article');

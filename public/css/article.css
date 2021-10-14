@@ -49,7 +49,16 @@
 }
 
 
+.all-category {
+    background: #FFF;
+    width: 20em;
+    border: 1px solid #000;
+}
 
+.all-category span{
+    font-size: 1.5vw;
+    color: #000;
+}
 
 
 
@@ -155,10 +164,27 @@
 .post-box {
     text-align: center;
     padding: 1em 1em 2em;
-    margin: 1em auto;
-    font-weight: bold;
     color: #000;
-    background: #FFF;
-    border: solid 3px rgba(0,127,255,1);
-    border-radius: 10px;
 }
+
+
+/*--- プレビュー画面 ---*/
+.preview-top {
+  position: relative;
+  padding: 0.6em;
+  background: #a7d6ff;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.preview-top:after {
+  position: absolute;
+  content: '';
+  top: 100%;
+  left: 30px;
+  border: 15px solid transparent;
+  border-top: 15px solid #a7d6ff;
+  width: 0;
+  height: 0;
+}
+

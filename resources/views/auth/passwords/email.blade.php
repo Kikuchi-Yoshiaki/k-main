@@ -1,4 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.formLayout')
+
+@section('title', 'パスワードリセット')
 
 @section('content')
 <div class="container">

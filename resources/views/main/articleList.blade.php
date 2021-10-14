@@ -12,14 +12,8 @@
             <div class="col-lg-9 col-md-12">
 
             <!-- カテゴリーボックス -->
-            <div class="form-group d-flex justify-content-center mt-5">
-                <label class="form-label mr-3 mt-2" id="article-category">カテゴリー</label>
-                <select class="form-control col-5" name="category">
-                    <option>全てのジャンル</option>
-                    <option>気仙沼の遊ぶ</option>
-                    <option>気仙沼の食べる</option>
-                    <option>気仙沼の生活</option>
-                </select>
+            <div class="form-group d-flex justify-content-center mt-3 mb-4 p-3">
+                <a href="{{ url('article/index') }}" class="main-btn btn d-block mx-auto mt-3 all-category"><span>全てのカテゴリーをみる</span></a>
             </div>
             
             <div class="d-flex flex-wrap justify-content-around mb-5">

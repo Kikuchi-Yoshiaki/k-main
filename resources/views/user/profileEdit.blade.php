@@ -9,16 +9,24 @@
             <form action="{{ action('UserController@update') }}" method="POST" class="user-box" enctype="multipart/form-data">
                 <h3 class="form-title mt-3">プロフィール編集</h3>
                 
+                @if (count($errors) > 0)
+                <ul class="alert alert-warning" role="alert">
+                    @foreach ($errors->all() as $e)
+                    <li class="ml-3">{{ $e }}</li>
+                    @endforeach
+                </ul>
+                @endif
+                
                 <!-- プロフィールネーム -->
                 <div class="mb-4">
                     <label class="form-label mr-1">ユーザー名</label>
-                    <input type="text" class="form-control" name="name" placeholder="ユーザー名" aria-describedby="form-text" required="" autofocus="" value="{{ $form->name }}">
+                    <input type="text" class="form-control" name="name" aria-describedby="form-text" autofocus="" value="{{ $form->name }}">
                 </div>
                 
                 <!-- メールアドレス -->
                 <div class="mb-4">
                     <label class="form-label mr-1">メールアドレス</label>
-                    <input type="email" class="form-control" name="email" placeholder="aaa@aaaaaaaaa" aria-describedby="form-text" required="" autofocus="" value="{{ $form->email }}">
+                    <input type="email" class="form-control" name="email" aria-describedby="form-text" autofocus="" value="{{ $form->email }}">
                 </div>
                 
                 <!-- プロフィール画像 -->
@@ -28,7 +36,7 @@
                     <button type="button" class="mt-1" onclick="this.form.elements['profile_image'].value=''">画像取り消し</button>
                 </div>
                 
-                
+                <input type="hidden" name="password" value="{{ $form->password }}">
 
                 <!-- 更新ボタン -->
                 <input type="hidden" name="id" value="{{ $form->id }}">
