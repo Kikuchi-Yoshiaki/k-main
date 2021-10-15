@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Article;
 use App\View;
+use Illuminate\Support\Facades\Storage;
 
 class ArticleController extends Controller
 {
@@ -115,6 +116,15 @@ class ArticleController extends Controller
     }
     
     
+    //削除確認画面に移動して表示
+    public function deleteEdit(Request $request)
+    {
+        $article = Article::find($request->id);
+        
+        return view('user.articleDelete', ['article' => $article]);
+    }
+    
+    
     //記事を更新
     public function update(Request $request)
     {
@@ -147,11 +157,17 @@ class ArticleController extends Controller
         } else {
             $article->sub_image_4 = null;
         }
-        /*if(isset($form['image_text'])) {
-            $article->image_text = $form['image_text'];
-        } else {
-            $article->image_text = null;
-        }*/
+        
+        $delMain = $article->main_image;
+        Storage::delete('public/article/'.$delMain);
+        $delSub1 = $article->sub_image_1;
+        Storage::delete('public/article/'.$delSub1);
+        $delSub2 = $article->sub_image_2;
+        Storage::delete('public/article/'.$delSub2);
+        $delSub3 = $article->sub_image_3;
+        Storage::delete('public/article/'.$delSub3);
+        $delSub4 = $article->sub_image_4;
+        Storage::delete('public/article/'.$delSub4);
         
         
         $path = $request->file('main_image')->store('public/article');
@@ -169,6 +185,28 @@ class ArticleController extends Controller
         return redirect('forms/message')
             ->with('title', '更新完了！')
             ->with('message', '記事がが更新されました。');;
+    }
+    
+    
+    //風景画像を削除する
+    public function delete(Request $request)
+    {
+        $delete = Article::find($request->id);
+        $delMain = $delete->main_image;
+        Storage::delete('public/article/'.$delMain);
+        $delSub1 = $delete->sub_image_1;
+        Storage::delete('public/article/'.$delSub1);
+        $delSub2 = $delete->sub_image_2;
+        Storage::delete('public/article/'.$delSub2);
+        $delSub3 = $delete->sub_image_3;
+        Storage::delete('public/article/'.$delSub3);
+        $delSub4 = $delete->sub_image_4;
+        Storage::delete('public/article/'.$delSub4);
+        $delete->delete();
+        
+        return redirect('/forms/message')
+            ->with('title', '削除完了')
+            ->with('message', '投稿された記事を削除しました。');
     }
     
 }

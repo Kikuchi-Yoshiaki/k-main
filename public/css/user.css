@@ -93,6 +93,9 @@
 
 
 
+
+
+
 /*--- 風景画像欄 ---*/
 .view-box {
     background: #f1f1f1;
@@ -110,6 +113,10 @@
 .photo-card img {
     max-width: 200px;
     height: 200px;
+}
+
+.user-view-title {
+    margin: 0 !important;
 }
 
 

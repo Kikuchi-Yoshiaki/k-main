@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\User;
+use App\Article;
+use App\View;
+use Illuminate\Support\Facades\Storage;
 
 
 class UserController extends Controller
@@ -42,9 +45,11 @@ class UserController extends Controller
     //ユーザー情報を表示
     public function userIndex(Request $request)
     {
-        $user = User::find($request->id); 
+        $user = User::find($request->id);
+        $articles = Article::all()->sortByDesc('updated_at');
+        $views = View::all()->sortByDesc('updated_at');
      
-        return view('user.user', ['user' => $user]);
+        return view('user.user', ['user' => $user, 'articles' => $articles, 'views' => $views]);
     }
     
     
@@ -81,5 +86,25 @@ class UserController extends Controller
             ->with('title', '更新完了！')
             ->with('message', 'ユーザー情報が更新されました。');
     }
+    
+    
+    //風景画像を削除する
+    public function delete(Request $request)
+    {
+        $delete = View::find($request->id);
+        $delView = $delete->view_image;
+        Storage::delete('public/view/'.$delView);
+        $delete->delete();
+        
+        
+        return redirect('/forms/message')
+            ->with('title', '削除完了')
+            ->with('message','投稿画像を削除しました。');
+        //return redirect('/user?id=' . $->id);
+    }
+    
+    
+    
+    
     
 }

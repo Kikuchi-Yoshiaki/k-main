@@ -85,7 +85,7 @@
                     <a class="card view-list mb-1 text-center" href="{{ asset('storage/view/'.$view['view_image'] ) }}" target="_blank">
                         <img class="card-img-top" src="{{ asset('storage/view/'.$view['view_image'] ) }}">
                         @if (isset($view->title))
-                        <p class="card-title">{{ Str::limit($view->title,20) }}</p>
+                        <p class="card-title user-view-title">{{ Str::limit($view->title,20) }}</p>
                         @else
                         <span></span>
                         @endif

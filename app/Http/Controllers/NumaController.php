@@ -82,6 +82,7 @@ class NumaController extends Controller
     {
         return view('forms.privacyPolicy');
     }
+    
 
 
 }

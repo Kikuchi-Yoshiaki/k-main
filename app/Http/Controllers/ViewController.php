@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\View;
 use App\Article;
+use Illuminate\Support\Facades\Storage;
 //Image Magic
 //use Intervention\Image\Facades\Image;
 
@@ -48,5 +49,6 @@ class ViewController extends Controller
         
         return view('main.view', ['views' => $views, 'articles' => $articles]);
     }
+
 
 }

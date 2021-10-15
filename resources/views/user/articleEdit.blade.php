@@ -87,6 +87,7 @@
                     <span class="text-secondary small">※任意</span>
                     <input type="text" class="form-control" for="link-text" placeholder="URLの下に文章を入れることができます" aria-describedby="" autofocus="" value="{{ $form->link_text }}">
                 </div>
+                
 
                 <!-- プライバシーポリシー -->
                 <div class="form-check mb-4">
@@ -100,7 +101,6 @@
                 <input type="hidden" name="id" value="{{ $form->id }}">
                 {{ csrf_field() }}
                 <input type="submit" class="btn btn-block btn-primary form-button mt-5 col-3" value="更新する">
-                
                 
                 <a class="goto-top d-block mb-3" href="{{ url('/') }}">トップページに戻る</a>
 
