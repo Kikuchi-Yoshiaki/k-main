@@ -59,7 +59,7 @@
                                 <a class="nav-link top-nav" href="{{ url('/forms/login') }}">ログイン</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link top-nav" href="{{ url('/forms/signup') }}">新規登録</a>
+                                <a class="nav-link top-nav" href="{{ url('/register') }}">新規登録</a>
                             </li>
                             <!-- 画面サイズで表示される部分 -->
                             <div class="dropdown-divider"></div>

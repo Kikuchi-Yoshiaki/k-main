@@ -14,7 +14,7 @@ class UserController extends Controller
 {
 
     //ユーザー情報を登録してメッセージページに移動する
-    public function create(Request $request)
+    /*public function create(Request $request)
     {
         $this->validate($request, User::$rules);
         
@@ -38,7 +38,7 @@ class UserController extends Controller
             ->with('title', 'ありがとうございます！')
             ->with('message', 'ユーザー登録が完了しました。記事や画像の投稿ができます。')
             ->with('message2', '投稿内容はユーザーページから閲覧・編集・削除ができます。');
-    }
+    }*/
     
     
     

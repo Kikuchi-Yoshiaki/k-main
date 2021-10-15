@@ -16,6 +16,7 @@
         'Article body' => '記事本文',
         'Main image' => 'メイン画像',
         'Sub image' => 'サブ画像',
+        'Logout' => 'ログアウト',
         
         
         ];

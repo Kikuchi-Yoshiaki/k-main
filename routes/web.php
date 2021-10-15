@@ -25,7 +25,7 @@ Route::get('/', 'NumaController@topix');
 
 //ビュー場面移動処理
 Route::get('forms/login', 'NumaController@login');
-Route::get('forms/signup', 'NumaController@signup');
+Route::get('register', 'NumaController@signup');
 Route::get('forms/message', 'NumaController@message');
 Route::get('user', 'NumaController@user');
 Route::get('user/post/view', 'NumaController@viewPost');
@@ -43,7 +43,7 @@ Route::get('forms/contact', 'ContactController@add');
 Route::post('form/contact', 'ContactController@create');
 
 
-Route::post('form/signup', 'UserController@create');
+//Route::post('form/signup', 'UserController@create');
 Route::get('user', 'UserController@userIndex');
 Route::get('user/edit/profile', 'UserController@edit');
 Route::post('user/edit/profile', 'UserController@update');
