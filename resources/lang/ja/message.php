@@ -17,6 +17,7 @@
         'Main image' => 'メイン画像',
         'Sub image' => 'サブ画像',
         'Logout' => 'ログアウト',
+        'Confirm Password' => 'パスワード再入力',
         
         
         ];

@@ -23,30 +23,29 @@
     </head>
 
     <body>
+        {{-- アプリ全体 --}}
         <div id="app">
-            <!-- ヘッダー全体 -->
+        
+            {{-- ヘッダー --}}
             <nav class="navbar navbar-expand-md top-bar">
                 <div class="container">
+                
+                    <!-- 左上タイトル -->
                     <a class="navbar-brand form-main-title" href="{{ url('/') }}">メインロゴ</a>
-                    <!-- ハンバーガー -->
+                    
+                    <!-- ハンバーガーメニュー -->
                     <button class="navbar-toggler button-outline" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
                     </button>
+                    
                     <!-- 右側のメニュー -->
                     <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                         <ul class="navbar-nav">
+                            
+                            <!-- 作品投稿・お問い合わせドロップダウン -->
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle top-nav profile-name" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">プロフィール名</a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <a class="dropdown-item" href="{{ url('user') }}">マイページへ</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">ログアウト</a>
-                                </div>
-                            </li>
-                          <!-- ドロップダウン -->
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle top-nav" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              投稿する
+                                <a class="nav-link dropdown-toggle top-nav" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    投稿する
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                     <a class="dropdown-item" href="{{ url('/user/post/article') }}">記事・日記を投稿</a>
@@ -55,28 +54,56 @@
                                 <a class="dropdown-item" href="/forms/contact">お問い合わせ</a>
                                 </div>
                             </li>
+                            
+                            <!-- ログイン・ログアウト切り替え -->
+                            @guest
                             <li class="nav-item">
-                                <a class="nav-link top-nav" href="{{ url('/forms/login') }}">ログイン</a>
+                                <a class="nav-link top-nav" href="{{ url('/forms/login') }}">{{ __('message.Login') }}</a>
                             </li>
+                            @else
                             <li class="nav-item">
-                                <a class="nav-link top-nav" href="{{ url('/register') }}">新規登録</a>
+                                <a class="nav-link top-nav" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                            document.getElementById('logout-form').submit();">
+                                        {{ __('message.Logout') }}
+                                </a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
                             </li>
-                            <!-- 画面サイズで表示される部分 -->
+                            @endguest
+                            
+                            <!-- 非ログイン時は新規登録・ログイン時はユーザー名を表示 -->
+                            @guest
+                            <li class="nav-item">
+                                <a class="nav-link top-nav" href="{{ url('/register') }}">{{ __('message.Register') }}</a>
+                            </li>
+                            @else
+                            <li>
+                                <a class="nav-link top-nav" id="navbarDropdownMenuLink" href="/user?id={{ Auth::user()->id }}" role="button"  aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name }}さんのページに移動</a>
+                            </li>
+                            @endguest
+                            
+                            <!-- ハンバーガーメニューでのみ表示される部分 -->
                             <div class="dropdown-divider"></div>
                             <li class="d-block d-md-none">
-                                <div class="exp-title">概要解説</div>
+                                <div>概要説明</div>
                                 <p>　この〇〇〇では気仙沼の観光や風景・グルメ・生活など情報を自由に投稿して共有できるWebサイトです。<br>　今、気仙沼市は大島大橋やかなえ大橋の開通、おかえりモネの放送などで盛り上がっておりますが、まだまだ知らない魅力が数多くあります。<br>　気仙沼や周辺地域の魅力を自由に発信してみませんか？<br><br>〇〇〇管理人</p>
                             </li>  
                         </ul>
                     </div>
                 </div>
             </nav>
-
         </div>
+        
+        
+        {{-- メインコンテンツ --}}
         <main>
             @yield('content')
         </main>
 
+
+        {{-- フッター --}}
         <footer class="container-fluid">
             @yield('footer')
             <div class="text-center text-white copywriter">©️ 2021 Y-Kikuchi</div>

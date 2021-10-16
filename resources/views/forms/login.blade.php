@@ -12,23 +12,27 @@
                 
                 <div class="mb-4 mt-4">
                     <label class="form-label" for="email">{{ __('message.E-Mail Address') }}</label>
-                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="メールアドレス">
+                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" autocomplete="email" autofocus>
+                
+                    <!-- アドレスエラーメッセージ -->
+                    @error('email')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                 </div>
-                @error('email')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
                 
                 <div class="mb-4">
                     <label for="password" class="form-label">{{ __('message.Password') }}</label>
-                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autofocus autocomplete="current-password" placeholder="パスワード">
+                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" autofocus autocomplete="current-password">
+                
+                    <!-- パスワードエラーメッセージ -->
+                    @error('password')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                 </div>
-                @error('password')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
                 
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" id="checkbox1" name="remenber" id="remenber" {{old('remenber') ? 'checked' : '' }}>

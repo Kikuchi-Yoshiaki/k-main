@@ -10,19 +10,18 @@
                 <h3 class="form-title mb-4 mt-3">{{ __('message.Register') }}</h3>
                     @csrf
                 
-                @if (count($errors) > 0)
-                <ul class="alert alert-warning" role="alert">
-                    @foreach ($errors->all() as $e)
-                    <li class="ml-3">{{ $e }}</li>
-                    @endforeach
-                </ul>
-                @endif
-                
-                <!-- ユーザー名 -->
+                <!-- アカウント名 -->
                 <div class="mb-4">
                     <label class="form-label mr-1">{{ __('message.Name') }}・ニックネーム</label>
                         <span class="text-danger small">※必須</span>
                     <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('neme') }}" autofocus="">
+                
+                    <!-- アカウント名エラー -->
+                    @error('name')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
                 </div>
                 
                 <!-- メールアドレス -->
@@ -30,20 +29,34 @@
                     <label class="form-label mr-1">{{ __('message.E-Mail Address') }}</label>
                     <span class="text-danger small">※必須</span>
                     <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" autofocus="">
+                    
+                    <!-- アドレスユニークアラート -->
+                    @error('email')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                 </div>
 
                 <!-- パスワード -->
                 <div class="mb-4">
                     <label class="form-label mr-1">{{ __('message.Password') }}</label>
-                    <span class="text-danger small">※必須</span>
-                    <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="パスワード" autofocus="">
+                    <span class="text-danger small">※必須（◯文字以上）</span>
+                    <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" autofocus="">
+                
+                    <!-- パスワードエラー表示 -->
+                    @error('password')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                 </div>
                 
-                <!-- パスワード再確認 -->
+                <!-- パスワード再入力 -->
                 <div class="mb-4">
                     <label class="form-label mr-1">{{ __('message.Confirm Password') }}</label>
                     <span class="text-danger small">※必須</span>
-                    <input type="password" class="form-control" name="password_confirmation"  required autocomplete="new-password>
+                    <input type="password" class="form-control mb-4" name="password_confirmation" autocomplete="new-password">
                 </div>
                 
                 <!-- プロフィール画像 -->
