@@ -20,4 +20,5 @@
         'Confirm Password' => 'パスワード再入力',
         
         
+        
         ];

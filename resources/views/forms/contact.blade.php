@@ -9,41 +9,60 @@
             <form action="{{ action('ContactController@create') }}" method="POST" name="contact-form" class="form-box">
                 <h3 class="form-title mb-4 mt-3">お問い合わせ</h3>
                 
-                <!-- エラーチェック -->
-                @if (count($errors) > 0)
-                <ul class="alert alert-warning" role="alert">
-                    @foreach ($errors->all() as $e)
-                    <li class="ml-3">{{ $e }}</li>
-                    @endforeach
-                </ul>
-                @endif
-                
                 <!-- お名前 -->
                 <div class="form-group mb-4">
                     <label class="form-label mr-1">{{ __('message.Name') }}</label>
                     <span class="text-danger small">※必須</span>
-                    <input type="text" class="form-control" name="name" aria-describedby="form-text">
+                    <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" autocomplete="name" autofocus>
+                
+                    <!-- 名前エラーメッセージ -->
+                    @error('name')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>お名前を入力してください。</strong>
+                        </span>
+                    @enderror
                 </div>
                 
                 <!-- メールアドレス -->
                 <div class="form-group mb-4">
                     <label class="form-label mr-1">{{ __('message.E-Mail Address') }}</label>
                     <span class="text-danger small">※必須</span>
-                    <input type="text" class="form-control" name="email" aria-describedby="form-text">
+                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" autocomplete="email" autofocus>
+                
+                    <!-- メールエラーメッセージ -->
+                    @error('email')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                 </div>
 
                 <!-- タイトル -->
                 <div class="form-group mb-4">
                     <label class="form-label mr-1">{{ __('message.contact title') }}</label>
                     <span class="text-danger small">※必須</span>
-                    <input type="text" class="form-control" name="title" aria-describedby="form-text">
+                    <input id="title" type="text" class="form-control @error('title') is-invalid @enderror" name="title" value="{{ old('title') }}" autocomplete="title" autofocus>
+                
+                    <!-- タイトルエラーメッセージ -->
+                    @error('title')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>お問い合わせタイトルを入力してください。</strong>
+                        </span>
+                    @enderror
                 </div>
 
                 <!-- 問い合わせ内容 -->
                 <div class="form-group">
                     <label class="form-label mr-1">{{ __('message.contact body') }}</label>
                     <span class="text-danger small">※必須</span>
-                    <textarea rows="10" type="text" class="form-control" name="body" placeholder="お問い合わせ内容をこちらへ"></textarea>
+                    <textarea id="body" rows="10" type="text" class="form-control @error('body') is-invalid @enderror" name="body" value="{{ old('body') }}" placeholder="お問い合わせ内容をこちらへ" autocomplete="body" autofocus></textarea>
+                
+                    <!-- 本文エラーメッセージ -->
+                    @error('body')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>お問い合わせ内容を入力してください。</strong>
+                        </span>
+                    @enderror
                 </div>
 
                 <!-- 登録ボタン -->

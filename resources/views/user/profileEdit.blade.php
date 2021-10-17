@@ -9,24 +9,31 @@
             <form action="{{ action('UserController@update') }}" method="POST" class="user-box" enctype="multipart/form-data">
                 <h3 class="form-title mt-3">プロフィール編集</h3>
                 
-                @if (count($errors) > 0)
-                <ul class="alert alert-warning" role="alert">
-                    @foreach ($errors->all() as $e)
-                    <li class="ml-3">{{ $e }}</li>
-                    @endforeach
-                </ul>
-                @endif
-                
                 <!-- プロフィールネーム -->
                 <div class="mb-4">
                     <label class="form-label mr-1">ユーザー名</label>
-                    <input type="text" class="form-control" name="name" aria-describedby="form-text" autofocus="" value="{{ $form->name }}">
+                    <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" aria-describedby="form-text" autofocus="" value="{{ $form->name }}">
+                    
+                    <!-- ユーザー名エラー表示 -->
+                    @error('name')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                 </div>
+                
                 
                 <!-- メールアドレス -->
                 <div class="mb-4">
                     <label class="form-label mr-1">メールアドレス</label>
-                    <input type="email" class="form-control" name="email" aria-describedby="form-text" autofocus="" value="{{ $form->email }}">
+                    <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" aria-describedby="form-text" autofocus="" value="{{ $form->email }}">
+                
+                    <!-- メールエラー表示 -->
+                    @error('email')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                 </div>
                 
                 <!-- プロフィール画像 -->
@@ -41,7 +48,9 @@
                 <!-- 更新ボタン -->
                 <input type="hidden" name="id" value="{{ $form->id }}">
                 {{ csrf_field() }}
-                <input type="submit" class="btn btn-block btn-primary form-button mt-5 col-3" value="更新する">
+                <div class="input-box">
+                    <input type="submit" class="btn-flat-vertical-border mt-5 col-3" value="更新する">
+                </div>
                 <a class="goto-top d-block my-5" href="{{ url('/') }}">トップページに戻る</a>
             </form>
         </div>

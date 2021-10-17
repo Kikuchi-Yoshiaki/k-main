@@ -62,6 +62,27 @@
 }
 
 
+/*---利用規約---*/
+.btn-flat-vertical-border {
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  border-left: solid 10px rgba(0,127,255,1);
+  border-right: solid 10px rgba(0,127,255,1);
+  color: rgba(0,127,255,1);
+  background: #e1f3ff;
+  transition: .4s;
+  padding: 16px;
+  border-radius: 5px;
+}
 
+.btn-flat-vertical-border:hover {
+  background: rgba(0,127,255,1);
+  color: #FFF;
+}
 
-
+.input-box {
+  text-align: center;
+}

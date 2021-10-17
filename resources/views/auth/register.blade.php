@@ -30,7 +30,7 @@
                     <span class="text-danger small">※必須</span>
                     <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" autofocus="">
                     
-                    <!-- アドレスユニークアラート -->
+                    <!-- メールエラー表示 -->
                     @error('email')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>

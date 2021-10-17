@@ -4,24 +4,30 @@
 
 @section('content')
 
-    <!-- 全体の枠 -->
     <div class="container-fluid">
         <div class="row justify-content-center">
 
             {{-- 左側コンテンツ --}}
             <div class="col-lg-9 col-md-12">
                 
-                <!-- 記事上部 -->
+                <!-- 記事タイトル -->
                 <h2 class="detail-title">{{ $show->title }}</h2>
+                
+                {{-- 画像のコンテナ --}}
                 <div class="container">
                     <div class="row flex-wrap">
                         <div class="col-lg-12 main">
+                            <!-- メイン画像 -->
                             <img class="main-image col-lg-12" src="{{ asset('storage/article/'.$show['main_image'] ) }}">
+                            
+                            <!-- 画像に説明文があれば表示 -->
                             @if ($show->image_text)
                             <div class="col-lg-12 image-text">{{ $show->image_text }}</div>
                             @else
                             <span></span>
                             @endif
+                            
+                            <!-- カテゴリー分け -->
                             @if ($show->category == "気仙沼の遊ぶ")
                             <div class="tags1">
                                 <span>{{ $show->category }}</span>
@@ -36,7 +42,8 @@
                             </div>
                             @endif
                         </div>
-                        <!-- サブイメージ -->
+                        
+                        <!-- サブ画像があれば表示 -->
                         @if (isset($show->sub_image_1))
                         <div class="col-lg-3 col-md-3 col-sm-6 sub sub1">
                             <img class="sub-image col-lg-12" src="{{ asset('storage/article/'.$show['sub_image_1'] ) }}">
@@ -68,7 +75,7 @@
                     </div>
                 </div>
                 
-                <!-- 記事プロフィール -->
+                {{-- 投稿者プロフィール --}}
                 <div class="d-flex justify-content-between m-4">
                     <div class="top-profile mt-3">
                         <img class="detail-profile-image" src="/assets/images/profile.png">
@@ -78,11 +85,13 @@
                     </div>
                 </div>
 
-                <!-- 記事本文 -->
+                {{-- 記事本体 --}}
                 <div class="card">
                     <div class="card-body mt-4">
+                        <!-- 記事本文 -->
                         <p class="card-text detail-text">{{ $show->body }}</p>
                         
+                        <!-- URLかテキストがあれば表示 -->
                         @if ($show->link_text || $show->link_url)
                         <div class="url-box col-12">
                             <p class="mb-3">{{ $show->link_text }}</p>
@@ -91,12 +100,14 @@
                         @else
                         <div></div>
                         @endif
+                        
+                        <!-- イイねボタン -->
                         <div class="next-news-date d-block float-left mt-1"><i class="far fa-calendar-alt ml-3"></i>{{ $show->created_at->format('Y年m月d日') }}</div>
                         <div type="button" class="btn btn-outline-danger float-right mr-5">イイねボタン</div>
                     </div>
                 </div>
 
-                <!-- 下側部分 -->
+                <!-- 記事投稿へ移動 -->
                 <div class="col-lg-6 offset-lg-3 post-box">
                     <div class="">あなたも記事を投稿してみませんか？</div>
                     <div class="d-none d-lg-block post-btn">
@@ -105,10 +116,7 @@
                 </div>
                 <a class="goto-top d-block text-center mt-5" href="{{ url('/') }}">トップページに戻る</a>
             </div>
-
             
 @endsection
 
 @section('footer')
-
-

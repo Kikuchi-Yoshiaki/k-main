@@ -157,7 +157,7 @@ return [
         'email' => 'メールアドレス',
         'password' => 'パスワード',
         'view_image' => '画像',
-        
+        'contact_name' => 'お名前',
         
         
         ],

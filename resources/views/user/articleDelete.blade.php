@@ -1,6 +1,6 @@
 @extends('layouts.formLayout')
 
-@section('title', '記事の削除')
+@section('title', '風景画像の削除')
 
 @section('content')
     

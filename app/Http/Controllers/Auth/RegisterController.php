@@ -61,14 +61,15 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\User
      */
-    protected function create(array $data)
+    public function create(array $data)
     {
+        
         if (request()->hasFile('profile_image'))
         {
             $image = request()->file('profile_image')->hashName();
             request()->file('profile_image')->store('public/profile');
         } else {
-            $image = null;
+            $image['profile_image'] = null;
         }
         
         return User::create([
@@ -78,4 +79,6 @@ class RegisterController extends Controller
             'profile_image' => $image,
         ]);
     }
+    
+   
 }

@@ -69,6 +69,7 @@ Route::get('article/view', 'ViewController@index');
 
 
 
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
