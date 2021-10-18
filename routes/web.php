@@ -39,6 +39,7 @@ Route::get('privacy-policy', 'NumaController@privacy');
 
 
 
+
 Route::get('forms/contact', 'ContactController@add');
 Route::post('form/contact', 'ContactController@create');
 
@@ -49,7 +50,7 @@ Route::get('user/edit/profile', 'UserController@edit');
 Route::post('user/edit/profile', 'UserController@update');
 Route::post('user', 'UserController@delete');
 
-
+Route::get('test', 'UserController@index');
 
 
 Route::post('user/articlePost', 'ArticleController@create');

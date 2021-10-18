@@ -1,37 +1,39 @@
-/*--- トップバー ---*/
+/*** 背景色 ***/
+body {
+    background: url(/assets/images/b054.jpg);
+}
+
+
+/*** 上部バー ***/
+
+/*--- トップバー幅と背景色 ---*/
 .top-bar {
     display: flex;
-    height: 100%;
+    padding: 0;
+    max-height: 100%;
     background: rgba(232,247,6, 0.5);
     background: linear-gradient(11deg, rgba(232,247,6,0.5) 0%, rgba(11,223,144,5) 25%, rgba(0,127,255,0.8) 100%);
 }
 
+/*--- ハンバーガーメニュー ---*/
 .fa-bars {
     padding-top: 0.3em;
-    color: #F08000;
-}
-
-.profile-name {
-    color: #000;
-}
-.profile-name:hover {
     color: #000;
 }
 
-
+/*--- トップメニューカテゴリー ---*/
 .top-nav {
-    color: #000 ;
-    transition: 1s;
-    margin: 0 0.5em;
+    color: #000;
+    margin: 0 0 0.5em 1em;
+    padding-bottom: 0;
+}
+.top-nav:hover {
+    color: #000;
+    text-decoration: none;
+    border-bottom: 1px solid #FFF;
 }
 
-.top-nav:hover {
-    color:#000;
-    text-decoration: none;
-    background-color: rgba(255,255,255,1);
-    border-radius: 10px;
-  }
-
+/*--- ドロップダウンホバー ---*/
 .dropdown-item:hover {
     background: rgb(232,247,6);
     background: linear-gradient(11deg, rgba(232,247,6,1) 0%, rgba(11,223,144,1) 33%, rgba(0,127,255,1) 100%);
@@ -39,40 +41,9 @@
 }
 
 
-/*--- フォームトップバー ---*/
-.form-main-title {
-    font-size: 2.5vw;
-    color: #000;
-    padding-bottom: 0;
-}
-.form-main-title:hover {
-    text-decoration: none;
-    color: #000;
-}
+/*** ロゴ・背景画面 ***/
 
-
-
-/*--- ロゴ部分 ---*/
-.title-bar {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 50px 0;
-    height: 100%;
-    background-image: url(/assets/images/bridge.jpeg);
-    background-size: cover;
-    background-position: center;
-    background-color:rgba(255,255,255,0.5);
-    background-blend-mode:lighten;
-    color: #000;
-}
-.title-bar:hover {
-    text-decoration: none;
-    color: #000;
-}
-
-/* cal */
+/*--- カルーセル１ ---*/
 .title-bar-1 {
     display: flex;
     flex-direction: column;
@@ -80,9 +51,9 @@
     align-items: center;
     padding: 50px 0;
     height: 100%;
-    background-image: url(/assets/images/bridge.jpeg);
+    background-image: url(/assets/images/2222.JPG);
     background-size: cover;
-    background-position: center;
+    background-position: bottom ;
     background-color:rgba(255,255,255,0.3);
     background-blend-mode:lighten;
     color: #000;
@@ -90,6 +61,8 @@
 .title-bar-1:hover {
     text-decoration: none;
     color: #000;
+
+/*--- カルーセル2 ---*/
 }
 .title-bar-2 {
     display: flex;
@@ -109,6 +82,8 @@
     text-decoration: none;
     color: #000;
 }
+
+/*--- カルーセル3 ---*/
 .title-bar-3 {
     display: flex;
     flex-direction: column;
@@ -128,53 +103,82 @@
     color: #000;
 }
 
-
-
-
+/*--- メインロゴ ---*/
 .main-logo {
     text-align: center;
     font-size: 6vw;
 }
 
+/*--- サブタイトル ---*/
 .sub-title {
     text-align: center;
     font-size: 3vw;
 }
 
-/*--- カテゴリー部分 ---*/
+
+/*** カテゴリーボタン ***/
+/*--- カテゴリー大枠 ---*/
 .category {
     background: rgb(232,247,6);
-    background: linear-gradient(11deg, rgba(232,247,6,0.5) 0%, rgba(11,223,144,0.5) 33%, rgba(0,127,255,0.8) 100%);
+    background: linear-gradient(11deg, rgb(232,247,6) 0%, rgb(11,223,144) 33%, rgb(0,127,255) 100%);
 }
 
+/*--- カテゴリー各項目 ---*/
 .category-name {
     color: #000;
+    border-right: 1px solid #FFF;
+    border-bottom: 1px solid #FFF;
+    padding: 0;
+    transition: 3s;
+    position: relative;
 }
-.category-name:hover {
-    color: #000;
+.k-job {
+    border-left: 1px solid #FFF;
+}
+/*--- カテゴリー装飾 ---*/
+.category-name:hover:before {
+    transform: scale(1);
+}
+.category-name:before {
+    content: "";
+	position: absolute;
+	left: 0;
+	bottom: 0px;
+	width: 100%;
+	height: 0.8vw;
+	transform: scale(0, 1);
+	transform-origin: left;
+	transition: 2s;
+	opacity: 0.8;
+}
+/*--- カテゴリー別アンダーライン ---*/
+.k-job:before {
+    background: #F66;
+}
+.k-food:before {
+    background: #02E;
+}
+.k-life:before {
+    background: #FE1;
+}
+.k-view:before {
+    background: #6F6;
 }
 
+/*--- カテゴリーフォントサイズ ---*/
 .category-tags {
     text-align: center;
-    font-size: 1.5vw;
+    font-size: 1vw;
     transition: 2s;
+    padding: 0;
 }
 .category-tags span {
-    font-size: 2vw;
-}
-.category-tags:hover {
-    text-decoration: none;
-    color: #F66 !important;
-    background-color: #FFF;
+    font-size: 2.5vw;
 }
 
 
 
-
-
-
-
-/***右側部分***/
+/*** 右側部分 ***/
 .right-contents {
     justify-content: center;
 }
@@ -257,9 +261,7 @@
 }
 
 
-
-
-/*----フッター---*/
+/*** フッター ***/
 .main-body {
     padding-bottom: 10em;
     padding-right: 3em;

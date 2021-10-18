@@ -9,13 +9,6 @@
             <form action="{{ action('ArticleController@create') }}" method="POST" name="article-post" class="user-box" enctype="multipart/form-data">
                 <h3 class="form-title mb-4 mt-3">記事・日記を投稿する</h3>
                 
-                <!-- リレーション終わったら消す -->
-                <div class="mb-5 mt-3">
-                    <label class="form-label mr-1">user_id(リレーションしたら消す)</label>
-                    <span class="text-primary small">※必須</span>
-                    <input type="text" class="form-control" name="user_id" autofocus="">
-                </div>
-                
                 <!-- タイトル -->
                 <div class="mb-4">
                     <label class="form-label">{{ __('message.title') }}</label>
@@ -106,7 +99,10 @@
                     <span class="text-secondary small">※任意</span>
                     <input type="text" class="form-control" name="link_text" placeholder="文章の最後にコメントをどうぞ" autofocus="">
                 </div>
-
+                
+                <!-- ユーザーIDを登録 -->
+                <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
+                
                 <!-- 登録ボタン -->
                 <div class="input-box">
                     <input type="submit" class="btn-flat-vertical-border my-5 col-5" value="利用規約に同意して投稿する">

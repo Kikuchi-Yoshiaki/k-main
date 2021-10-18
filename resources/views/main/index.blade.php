@@ -37,7 +37,7 @@
                             <div class="top-news-profile d-inline">プロフィール名さん</div>
                         </div>
                         <!-- 投稿日時 -->
-                        <div class="top-news-date d-inline mr-3"><i class="far fa-calendar-alt mr-2"></i>{{ $top->created_at->format('Y年m月d日') }}</div>
+                        <div class="top-news-date d-inline mr-3"><i class="far fa-clock mr-2"></i>{{ $top->created_at->format('Y年m月d日') }}</div>
                         <!-- 記事本文 -->
                         <p class="card-text top-text">{{ $top->body }}</p>
                         <a class="float-right" href="/article/detail/?id={{ $top->id }}">続きを読む</a>
@@ -73,7 +73,7 @@
                                 <div class="next-news-profile d-inline">プロフィール名さん</div>
                             </div>
                             <!-- 投稿日時 -->
-                            <div class="next-news-date d-inline"><i class="far fa-calendar-alt mr-2"></i>{{ $top->created_at->format('Y年m月d日') }}</div>
+                            <div class="next-news-date d-inline"><i class="far fa-clock mr-2"></i>{{ $top->created_at->format('Y年m月d日') }}</div>
                             <!-- 記事本文 -->
                             <p class="card-text next-text">{{ $post->body }}</p>
                             <a class="float-right" href="/article/detail/?id={{ $post->id }}">続きを読む</a>
@@ -89,7 +89,7 @@
                 <h3 class="col-lg-9 col-md-9 md-ml-5 col-sm-5 headline-view">気仙沼の風景画像</h3>
 
                 <!-- 風景写真一覧 -->
-                <div class="d-flex flex-wrap justify-content-around">
+                <div class="d-flex flex-wrap justify-content-center view-index">
                     @foreach ($views as $view)
                     <a class="card view-list mb-1 text-center" href="{{ asset('storage/view/'.$view['view_image'] ) }}" target="_blank">
                         <img class="card-img-top" src="{{ asset('storage/view/'.$view['view_image'] ) }}">

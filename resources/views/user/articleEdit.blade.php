@@ -9,14 +9,6 @@
             <form action="{{ action('ArticleController@update') }}" method="POST" class="user-box" enctype="multipart/form-data">
                 <h3 class="form-title mb-4 mt-3">記事・日記を編集する</h3>
                 
-                {{-- リレーション終わったら消す --}}
-                <div class="mb-5 mt-3">
-                    <label class="form-label mr-1">user_id(リレーションしたら消す)</label>
-                    <span class="text-primary small">※必須</span>
-                    <input type="number" class="form-control" name="user_id" aria-describedby="" autofocus="" value="{{ $form->user_id }}">
-                </div>
-                
-                
                 <!-- タイトル -->
                 <div class="mb-4">
                     <label class="form-label">{{ __('message.title') }}</label>
@@ -108,6 +100,8 @@
                     <input type="text" class="form-control" for="link-text" placeholder="URLの下に文章を入れることができます" aria-describedby="" autofocus="" value="{{ $form->link_text }}">
                 </div>
                 
+                <!-- ユーザーIDを登録 -->
+                <input type="hidden" name="user_id" value="{{ Auth::user()->id }}"> 
 
                 <!-- 登録ボタン -->
                 <div class="input-box">

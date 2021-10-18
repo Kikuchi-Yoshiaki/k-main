@@ -18,7 +18,7 @@ class ArticleController extends Controller
         
         $articles = new Article;
         $form = $request->all();
-        
+       
         
         if (isset($form['sub_image_1'])) {
             $path1 = $request->file('sub_image_1')->store('public/article');
@@ -95,7 +95,7 @@ class ArticleController extends Controller
         }
         
         
-        $views = View::all()->random(5);
+        $views = View::all()->random(6);
         
         return view('main.articleList', ['articles' => $articles, 'views' => $views]);
     }

@@ -9,10 +9,15 @@ class Article extends Model
     protected $guarded = ['id'];
     
     public static $rules = [
-        //'user_id' => 'required',
+        'user_id' => 'required',
         'title' => 'required',
         'body' => 'required',
         'main_image' => 'required',
         'category' => 'required',
         ];
+        
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
 }

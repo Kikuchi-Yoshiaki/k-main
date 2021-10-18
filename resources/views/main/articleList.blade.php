@@ -44,7 +44,7 @@
                                 <div class="next-news-profile d-inline">プロフィール名さん</div>
                             </div>
                             <!-- 投稿日時 -->
-                            <div class="next-news-date d-inline"><i class="far fa-calendar-alt mr-2"></i>{{ $article->created_at->format('Y年m月d日') }}</div>
+                            <div class="next-news-date d-inline"><i class="far fa-clock mr-2"></i>{{ $article->created_at->format('Y年m月d日') }}</div>
                             <!-- 投稿記事 -->
                             <p class="card-text next-text">{{ $article->body }}</p>
                             <a class="float-right" href="/article/detail/?id={{ $article->id }}">続きを読む</a>

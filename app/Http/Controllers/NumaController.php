@@ -24,6 +24,8 @@ class NumaController extends Controller
         $posts = Article::orderBy('updated_at', 'DESC')->take(5)->get();
         $top = $posts->shift();
         
+        
+        
         $views = View::orderBy('updated_at', 'DESC')->take(12)->get();
         
         
@@ -79,6 +81,7 @@ class NumaController extends Controller
     {
         return view('forms.privacyPolicy');
     }
+    
     
 
 

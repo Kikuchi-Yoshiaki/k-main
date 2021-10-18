@@ -46,12 +46,18 @@ class UserController extends Controller
     public function userIndex(Request $request)
     {
         $user = User::find($request->id);
-        $articles = Article::all()->sortByDesc('updated_at');
+        $articles = Article::where('user_id', $user->id)->get()->sortByDesc('updated_at');
         $views = View::all()->sortByDesc('updated_at');
-     
         return view('user.user', ['user' => $user, 'articles' => $articles, 'views' => $views]);
     }
     
+    public function index(Request $request)
+    {
+        $user = User::find($request->id);
+        $articles = Article::where('user_id', $user->id)->get()->sortByDesc('updated_at');
+        
+        return view('test', ['user' => $user, 'articles' => $articles,]);
+    }
     
     //ユーザー情報を取得する
     public function edit(Request $request)
@@ -102,8 +108,6 @@ class UserController extends Controller
             ->with('message','投稿画像を削除しました。');
         //return redirect('/user?id=' . $->id);
     }
-    
-    
     
     
     

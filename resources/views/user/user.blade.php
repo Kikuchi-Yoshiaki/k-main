@@ -56,9 +56,7 @@
                             <p class="card-text next-text">{{ $article->body }}</p>
                             <a class="float-right" href="/article/detail/?id={{ $article->id }}">続きを読む</a>
                         </div>
-                        {{-- ユーザーID確認テスト --}}
-                        <div class="next-news-date d-inline ml-3 mb-3">User_id:{{ $article->user_id }}</div>
-                        <div class="next-news-date d-inline ml-3 mb-3"><i class="fas fa-sync-alt mr-2"></i>{{ $article->updated_at->format('Y年m月d日') }}</div>
+                        <div class="next-news-date d-inline ml-3 mb-3"><i class="far fa-clock mr-2"></i>{{ $article->updated_at->format('Y年m月d日') }}</div>
                         <div class="btn-group-sm d-flex justify-content-around mb-2" role="group" aria-label="Basic example">
                             <!-- 記事編集画面に移動 -->
                             <a class="btn btn-primary" href="/user/edit/article?id={{ $article->id }}">記事を編集</a>
@@ -76,7 +74,7 @@
             {{-- My写真見出し --}}
             <h3 class="col-lg-9 col-md-9 md-ml-5 col-sm-5 headline-view">{{ $user->name }}さんの風景一覧</h3>
             
-            <div class="d-flex flex-wrap justify-content-around">
+            <div class="d-flex flex-wrap justify-content-center view-index">
                 @foreach ($views as $view)
                 <a class="card view-list mb-1 text-center" href="{{ asset('storage/view/'.$view['view_image']) }}" target="_blank">
                     <img class="card-img-top" src="{{ asset('storage/view/'.$view['view_image'] ) }}">

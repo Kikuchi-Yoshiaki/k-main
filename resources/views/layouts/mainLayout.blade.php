@@ -41,18 +41,16 @@
                     <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                         <ul class="navbar-nav">
 
-                            <!-- 作品投稿・お問い合わせドロップダウン -->
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle top-nav" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    投稿する
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <a class="dropdown-item" href="{{ url('/user/post/article') }}">記事・日記を投稿</a>
-                                    <a class="dropdown-item" href="{{ url('/user/post/view') }}">風景・写真を投稿</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="/forms/contact">お問い合わせ</a>
-                                </div>
+                            <!-- 非ログイン時は新規登録・ログイン時はユーザー名を表示 -->
+                            @guest    
+                            <li class="nav-item">
+                                <a class="nav-link top-nav" href="{{ url('/register') }}">{{ __('message.Register') }}</a>
                             </li>
+                            @else
+                            <li>
+                                <a class="nav-link top-nav" id="navbarDropdownMenuLink" href="/user?id={{ Auth::user()->id }}" role="button"  aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name }}さんのページに移動</a>
+                            </li>
+                            @endguest
                             
                             <!-- ログイン・ログアウト切り替え -->
                             @guest
@@ -70,17 +68,20 @@
                                 </form>
                             </li>
                             @endguest
+                             
+                            <!-- 作品投稿・お問い合わせドロップダウン -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle top-nav" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    投稿する
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="{{ url('/user/post/article') }}">記事・日記を投稿</a>
+                                    <a class="dropdown-item" href="{{ url('/user/post/view') }}">風景・写真を投稿</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="/forms/contact">お問い合わせ</a>
+                                </div>
+                            </li>
                             
-                            <!-- 非ログイン時は新規登録・ログイン時はユーザー名を表示 -->
-                            @guest    
-                            <li class="nav-item">
-                                <a class="nav-link top-nav" href="{{ url('/register') }}">{{ __('message.Register') }}</a>
-                            </li>
-                            @else
-                            <li>
-                                <a class="nav-link top-nav" id="navbarDropdownMenuLink" href="/user?id={{ Auth::user()->id }}" role="button"  aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name }}さんのページに移動</a>
-                            </li>
-                            @endguest
                             
                             <!-- ハンバーガーメニューでのみ表示される部分 -->
                             <div class="dropdown-divider"></div>
@@ -132,7 +133,7 @@
                         <a class="nav-link category-name k-life" href="{{ url('article/index?category=life') }}">気仙沼の<span> 生活</span></a>
                     </div>
                     <div class="category-tags col-sm-6 col-md-3">
-                        <a class="nav-link category-name" href="{{ url('article/view') }}">気仙沼の<span> 風景</span></a>
+                        <a class="nav-link category-name k-view" href="{{ url('article/view') }}">気仙沼の<span> 風景</span></a>
                     </div>
                 </div>
             </div>
@@ -175,7 +176,11 @@
         {{-- フッター --}}
         <footer class="container-fluid">
             @yield('footer')
-            <div class="text-center text-white copywriter">©️ 2021 Y-Kikuchi</div>
+            <div class="row">
+            <div class="text-white copywriter">©️ 2021 Y-Kikuchi</div>
+            <a href="" class="text-white copywriter">お問い合わせ</a>
+            <a href="" class="text-white copywriter">利用規約</a>
+            </div>
         </footer>            
     </body>
 </html>

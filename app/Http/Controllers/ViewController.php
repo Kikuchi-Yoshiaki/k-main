@@ -49,9 +49,6 @@ class ViewController extends Controller
         
         return view('main.view', ['views' => $views, 'articles' => $articles]);
     }
-
-    
-    
     
     
 }

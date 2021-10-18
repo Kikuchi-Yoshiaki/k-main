@@ -45,4 +45,9 @@ class User extends Authenticatable
         'email' => 'required',
         'password' => 'required',
         ];
+        
+    public function articles()
+    {
+        return $this->hasMany('App\Article');
+    }
 }

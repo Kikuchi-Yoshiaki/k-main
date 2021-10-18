@@ -3,6 +3,7 @@
 }
 
 .form-box {
+    background: #FFF;
     max-width: 600px;
     padding: 30px 70px;
     margin: 0 auto;
@@ -13,6 +14,7 @@
 }
 
 .user-box {
+    background: #FFF;
     max-width: 800px;
     padding: 30px 70px;
     margin: 0 auto;

@@ -102,7 +102,7 @@
                         @endif
                         
                         <!-- イイねボタン -->
-                        <div class="next-news-date d-block float-left mt-1"><i class="far fa-calendar-alt ml-3"></i>{{ $show->created_at->format('Y年m月d日') }}</div>
+                        <div class="next-news-date d-block float-left mt-1"><i class="far fa-clock mr-2"></i>{{ $show->created_at->format('Y年m月d日') }}</div>
                         <div type="button" class="btn btn-outline-danger float-right mr-5">イイねボタン</div>
                     </div>
                 </div>
