@@ -69,9 +69,8 @@ class ArticleController extends Controller
     public function preview(Request $request)
     {
         $preview = Article::find($request->id);
-        $user = User::where('id', $preview->user_id)->get()->last();
         
-        return view('user.articlePreview', ['preview' => $preview, 'user' => $user])
+        return view('user.articlePreview', ['preview' => $preview])
             ->with('title', '記事が投稿されました！');
     }
     
@@ -108,9 +107,8 @@ class ArticleController extends Controller
     public function show(Request $request)
     {
         $show = Article::find($request->id);
-        $user = User::where('id', $show->user_id)->get()->last();
         
-        return view('main.detail', ['show' => $show, 'user' => $user]);
+        return view('main.detail', ['show' => $show]);
     }
     
     

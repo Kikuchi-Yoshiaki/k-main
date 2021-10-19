@@ -73,12 +73,12 @@
                 <!-- 記事プロフィール -->
                 <div class="d-flex justify-content-between m-4">
                     <div class="top-profile">
-                        @if (isset($user->profile_image))
-                        <img class="detail-profile-image" src="{{ asset('storage/profile/'.$user['profile_image']) }}">
+                        @if (isset($preview->user->profile_image))
+                        <img class="detail-profile-image" src="{{ asset('storage/profile/'.$preview->user['profile_image']) }}">
                         @else
                         <img src="/assets/images/noimage.png" name="no-profile-image" class="detail-profile-image">
                         @endif
-                        <div class="detail-profile-name d-inline">{{ $user->name }}さん</div>
+                        <div class="detail-profile-name d-inline">{{ $preview->user->name }}さん</div>
                     </div>
                         <div type="button" class="btn btn-outline-success">ここのイイね<br>は形のみ
                     </div>

@@ -40,8 +40,12 @@
                             <h4 class="card-title next-title">{{ $article->title }}</h4>
                             <!-- 投稿者名 -->
                             <div class="top-profile d-inline">
-                                <img class="profile-img" src="/assets/images/profile.png">
-                                <div class="next-news-profile d-inline">プロフィール名さん</div>
+                                @if (isset($article->user->profile_image))
+                                <img class="detail-profile-image" src="{{ asset('storage/profile/'.$article->user['profile_image'] ) }}">
+                                @else
+                                <img src="/assets/images/noimage.png" name="no-profile-image" class="detail-profile-image">
+                                @endif
+                                <div class="next-news-profile d-inline">{{ $article->user->name }}</div>
                             </div>
                             <!-- 投稿日時 -->
                             <div class="next-news-date d-inline"><i class="far fa-clock mr-2"></i>{{ $article->created_at->format('Y年m月d日') }}</div>

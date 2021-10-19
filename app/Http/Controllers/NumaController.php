@@ -31,18 +31,20 @@ class NumaController extends Controller
     }
 
 
-    public function index(Request $request)
+    public function index(Article $article)
     {
-        //$posts = Article::orderBy('updated_at', 'DESC')->take(5)->get();
-        $posts = Article::all()->last();
+        //$articles = Article::orderBy('updated_at', 'DESC')->take(5)->get();
+        //$posts = Article::all();
         
-        $user_id = $posts->user_id;
-        $users = User::where('id', $user_id)->get()->last();
+        $articles = Article::with('user')->get();
+        return view('test', ['articles' => $articles]);
+        //$users = User::where('id', 21)->get()->last();
+        
         
         //$user_id = $posts->user_id;
         //$user = User::where('id', $user_id)->get()->last();
         
-        return view('test', ['posts' => $posts, 'users' => $users]);
+        //return view('test', ['posts' => $posts, 'users' => $users]);
     }
 
 

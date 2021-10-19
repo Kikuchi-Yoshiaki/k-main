@@ -6,11 +6,14 @@
 
 
 
+@foreach($articles as $article)
+<p>{{ $article->title }}</p>
+<p>{{ $article->user->name }}</p>
+@endforeach
 
-<p>{{ $posts->title }}</p>
 
 
-<p>{{ $users->name }}</p>
+
 
 
 
