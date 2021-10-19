@@ -6,8 +6,13 @@
 
 
 
-@foreach ($articles as $article)
-<p>{{ $article->title }}</p>
-@endforeach
+
+<p>{{ $posts->title }}</p>
+
+
+<p>{{ $users->name }}</p>
+
+
+
 
 @endsection

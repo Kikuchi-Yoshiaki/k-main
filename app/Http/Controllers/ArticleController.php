@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Article;
 use App\View;
+use App\User;
 use Illuminate\Support\Facades\Storage;
 
 class ArticleController extends Controller
@@ -68,8 +69,10 @@ class ArticleController extends Controller
     public function preview(Request $request)
     {
         $preview = Article::find($request->id);
+        $user = User::where('id', $preview->user_id)->get()->last();
         
-        return view('user.articlePreview', ['preview' => $preview]);
+        return view('user.articlePreview', ['preview' => $preview, 'user' => $user])
+            ->with('title', '記事が投稿されました！');
     }
     
     
@@ -105,8 +108,9 @@ class ArticleController extends Controller
     public function show(Request $request)
     {
         $show = Article::find($request->id);
+        $user = User::where('id', $show->user_id)->get()->last();
         
-        return view('main.detail', ['show' => $show]);
+        return view('main.detail', ['show' => $show, 'user' => $user]);
     }
     
     

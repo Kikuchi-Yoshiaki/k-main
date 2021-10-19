@@ -83,8 +83,6 @@
                     @else
                     <span></span>
                     @endif
-                    {{-- ユーザーID確認テスト --}}
-                    <div class="next-news-date d-inline ml-3 mb-3">User_id:{{ $view->user_id }}</div>
                     <div class="btn-group-sm d-flex justify-content-around mb-2" role="group" aria-label="Basic example">
                     <!-- 写真を削除する -->
                     <form action="{{ action('UserController@delete', ['id' => $view->id]) }}" method="POST">

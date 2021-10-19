@@ -73,8 +73,12 @@
                 <!-- 記事プロフィール -->
                 <div class="d-flex justify-content-between m-4">
                     <div class="top-profile">
-                        <img class="detail-profile-image" src="/assets/images/profile.png">
-                        <div class="detail-profile-name d-inline">プロフィール名さん</div>
+                        @if (isset($user->profile_image))
+                        <img class="detail-profile-image" src="{{ asset('storage/profile/'.$user['profile_image']) }}">
+                        @else
+                        <img src="/assets/images/noimage.png" name="no-profile-image" class="detail-profile-image">
+                        @endif
+                        <div class="detail-profile-name d-inline">{{ $user->name }}さん</div>
                     </div>
                         <div type="button" class="btn btn-outline-success">ここのイイね<br>は形のみ
                     </div>
@@ -93,7 +97,7 @@
                         @else
                         <div></div>
                         @endif
-                        <div class="next-news-date d-block float-left mt-1"><i class="far fa-calendar-alt ml-3"></i>{{ $preview->created_at->format('Y年m月d日') }}</div>
+                        <div class="next-news-date d-block float-left mt-1"><i class="far fa-clock mr-2"></i>{{ $preview->created_at->format('Y年m月d日') }}</div>
                         <div type="button" class="btn btn-outline-danger float-right mr-5">イイねボタン</div>
                     </div>
                 </div>

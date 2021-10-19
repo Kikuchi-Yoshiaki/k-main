@@ -78,8 +78,12 @@
                 {{-- 投稿者プロフィール --}}
                 <div class="d-flex justify-content-between m-4">
                     <div class="top-profile mt-3">
-                        <img class="detail-profile-image" src="/assets/images/profile.png">
-                        <div class="detail-profile-name d-inline">プロフィール名さん</div>
+                        @if (isset($user->profile_image))
+                        <img class="detail-profile-image" src="{{ asset('storage/profile/'.$user['profile_image'] ) }}">
+                        @else
+                        <img src="/assets/images/noimage.png" name="no-profile-image" class="detail-profile-image">
+                        @endif
+                        <div class="detail-profile-name d-inline">{{ $user->name }}さん</div>
                     </div>
                         <div type="button" class="btn btn-outline-success">イイね数を<br>置く場所
                     </div>

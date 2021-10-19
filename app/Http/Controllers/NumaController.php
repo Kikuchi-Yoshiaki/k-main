@@ -24,13 +24,29 @@ class NumaController extends Controller
         $posts = Article::orderBy('updated_at', 'DESC')->take(5)->get();
         $top = $posts->shift();
         
-        
-        
         $views = View::orderBy('updated_at', 'DESC')->take(12)->get();
         
         
         return view('main.index', ['top' => $top, 'posts' => $posts, 'views' => $views]);
     }
+
+
+    public function index(Request $request)
+    {
+        //$posts = Article::orderBy('updated_at', 'DESC')->take(5)->get();
+        $posts = Article::all()->last();
+        
+        $user_id = $posts->user_id;
+        $users = User::where('id', $user_id)->get()->last();
+        
+        //$user_id = $posts->user_id;
+        //$user = User::where('id', $user_id)->get()->last();
+        
+        return view('test', ['posts' => $posts, 'users' => $users]);
+    }
+
+
+
 
 
 

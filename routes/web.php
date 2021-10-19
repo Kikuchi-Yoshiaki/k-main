@@ -19,7 +19,7 @@ Route::get('/', function () {
 Route::get('/', 'NumaController@add');
 Route::get('/', 'NumaController@topix');
 
-
+Route::get('test', 'NumaController@index');
 
 
 
@@ -50,7 +50,6 @@ Route::get('user/edit/profile', 'UserController@edit');
 Route::post('user/edit/profile', 'UserController@update');
 Route::post('user', 'UserController@delete');
 
-Route::get('test', 'UserController@index');
 
 
 Route::post('user/articlePost', 'ArticleController@create');
