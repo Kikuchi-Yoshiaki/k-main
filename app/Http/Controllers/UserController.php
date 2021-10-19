@@ -8,6 +8,7 @@ use App\User;
 use App\Article;
 use App\View;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
 
 
 class UserController extends Controller
@@ -55,10 +56,13 @@ class UserController extends Controller
     //ユーザー情報を取得する
     public function edit(Request $request)
     {
+        
+        //$user = Auth::id();
         $user = User::find($request->id);
-    
+        
         return view('user.profileEdit', ['form' => $user]);
     }
+    
     
     
     //プロフィール更新
@@ -66,7 +70,8 @@ class UserController extends Controller
     {
         $this->validate($request, User::$rules);
         
-        $user = User::find($request->id);
+        $user = Auth::user();
+        //$user = User::find($request->id);
         $form = $request->all();
         
         if (isset($form['profile_image'])) {

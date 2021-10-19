@@ -85,6 +85,8 @@ class NumaController extends Controller
     {
         return view('user.user');
     }
+    
+    
     public function articleList()
     {
         return view('main.articleList');

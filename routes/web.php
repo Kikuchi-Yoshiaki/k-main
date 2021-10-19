@@ -24,12 +24,12 @@ Route::get('test', 'NumaController@index');
 
 
 //ビュー場面移動処理
-Route::get('forms/login', 'NumaController@login');
+Route::get('login', 'NumaController@login');
 Route::get('register', 'NumaController@signup');
 Route::get('forms/message', 'NumaController@message');
 Route::get('user', 'NumaController@user');
-Route::get('user/post/view', 'NumaController@viewPost');
-Route::get('user/post/article', 'NumaController@articlePost');
+Route::get('user/post/view', 'NumaController@viewPost')->middleware('auth');
+Route::get('user/post/article', 'NumaController@articlePost')->middleware('auth');
 Route::get('article/detail', 'NumaController@detail');
 Route::get('article/index', 'NumaController@articleList');
 Route::get('article/view', 'NumaController@viewList');

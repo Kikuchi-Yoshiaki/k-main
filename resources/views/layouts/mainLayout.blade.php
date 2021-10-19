@@ -55,7 +55,7 @@
                             <!-- ログイン・ログアウト切り替え -->
                             @guest
                             <li class="nav-item">
-                                <a class="nav-link top-nav" href="{{ url('/forms/login') }}">{{ __('message.Login') }}</a>
+                                <a class="nav-link top-nav" href="{{ url('/login') }}">{{ __('message.Login') }}</a>
                             </li>
                             @else
                             <li class="nav-item">

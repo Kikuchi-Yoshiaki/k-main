@@ -28,7 +28,9 @@
                     <span class="my-profile-name">{{ $user->name }}さんのページ</span>
                 </div>
                 <!-- プロフィール編集画面へ移動 -->
+                @if(Auth::id() === $user->id)
                 <a class="post-btn float-right mr-5" href="/user/edit/profile?id={{ $user->id }}" type="button">プロフィールを変更する</a>
+                @endif            
             </div>
 
             {{--My記事見出し --}}
@@ -59,10 +61,12 @@
                         <div class="next-news-date d-inline ml-3 mb-3"><i class="far fa-clock mr-2"></i>{{ $article->updated_at->format('Y年m月d日') }}</div>
                         <div class="btn-group-sm d-flex justify-content-around mb-2" role="group" aria-label="Basic example">
                             <!-- 記事編集画面に移動 -->
+                            @if(Auth::id() === $user->id)
                             <a class="btn btn-primary" href="/user/edit/article?id={{ $article->id }}">記事を編集</a>
                             <!-- 記事削除画面に移動 -->
                             <a class="btn btn-danger" href="/user/delete/article?id={{ $article->id }}">記事を削除</a>
                                 {{ csrf_field() }}
+                            @endif
                         </div>
                     </div>
                     @endforeach
@@ -85,10 +89,12 @@
                     @endif
                     <div class="btn-group-sm d-flex justify-content-around mb-2" role="group" aria-label="Basic example">
                     <!-- 写真を削除する -->
+                    @if(Auth::id() === $user->id)
                     <form action="{{ action('UserController@delete', ['id' => $view->id]) }}" method="POST">
                         {{ csrf_field() }}
                         <input type="submit" value="削除" class="btn btn-danger btn-sm">
                     </form>
+                    @endif
                 </div>
                 </a>
                 @endforeach
