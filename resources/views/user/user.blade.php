@@ -80,7 +80,7 @@
             
             <div class="d-flex flex-wrap justify-content-center view-index">
                 @foreach ($views as $view)
-                <a class="card view-list mb-1 text-center" href="{{ asset('storage/view/'.$view['view_image']) }}" target="_blank">
+                <div class="card view-list mb-1 text-center" href="{{ asset('storage/view/'.$view['view_image']) }}" target="_blank">
                     <img class="card-img-top" src="{{ asset('storage/view/'.$view['view_image'] ) }}">
                     @if (isset($view->title))
                     <p class="card-title user-view-title">{{ Str::limit($view->title,20) }}</p>
@@ -90,13 +90,11 @@
                     <div class="btn-group-sm d-flex justify-content-around mb-2" role="group" aria-label="Basic example">
                     <!-- 写真を削除する -->
                     @if(Auth::id() === $user->id)
-                    <form action="{{ action('UserController@delete', ['id' => $view->id]) }}" method="POST">
+                    <a class="btn btn-danger" href="/user/delete/view?id={{ $view->id }}">削除</a>
                         {{ csrf_field() }}
-                        <input type="submit" value="削除" class="btn btn-danger btn-sm">
-                    </form>
                     @endif
                 </div>
-                </a>
+                </div>
                 @endforeach
             </div>
             <!-- 全体の記事一覧画面に移動 -->

@@ -88,24 +88,12 @@ class UserController extends Controller
         
         return redirect('forms/message')
             ->with('title', '更新完了！')
-            ->with('message', 'ユーザー情報が更新されました。');
+            ->with('message', 'ユーザー情報が更新されました。')
+            ->with('url', '/user?id=')
+            ->with('page', 'マイページに戻る');
     }
     
     
-    //風景画像を削除する
-    public function delete(Request $request)
-    {
-        $delete = View::find($request->id);
-        $delView = $delete->view_image;
-        Storage::delete('public/view/'.$delView);
-        $delete->delete();
-        
-        
-        return redirect('/forms/message')
-            ->with('title', '削除完了')
-            ->with('message','投稿画像を削除しました。');
-        //return redirect('/user?id=' . $->id);
-    }
     
     
 }

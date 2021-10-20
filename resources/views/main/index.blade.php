@@ -30,18 +30,18 @@
                     @endif
                     <!-- タイトル -->
                     <div class="card-body">
-                        <h4 class="card-title top-title">{{ $top->title }}</h4>
-                        <!-- 投稿者名 -->
-                        <div class="top-profile d-inline">
-                            @if (isset($top->user->profile_image))
-                            <img class="detail-profile-image" src="{{ asset('storage/profile/'.$top->user['profile_image'] ) }}">
-                            @else
-                            <img src="/assets/images/noimage.png" name="no-profile-image" class="detail-profile-image">
-                            @endif
-                            <div class="top-news-profile d-inline">{{ $top->user->name }}</div>
-                        </div>
                         <!-- 投稿日時 -->
                         <div class="top-news-date d-inline mr-3"><i class="far fa-clock mr-2"></i>{{ $top->created_at->format('Y年m月d日') }}</div>
+                        <h4 class="card-title top-title">{{ $top->title }}</h4>
+                        <!-- 投稿者名 -->
+                        <a class="top-profile d-inline" href="user?id={{ $top->user->id }}">
+                            @if (isset($top->user->profile_image))
+                            <img class="top-profile-img" src="{{ asset('storage/profile/'.$top->user['profile_image'] ) }}">
+                            @else
+                            <img src="/assets/images/noimage.png" name="no-profile-image" class="top-profile-img">
+                            @endif
+                            <div class="top-news-profile d-inline">{{ $top->user->name }}さん</div>
+                        </a>
                         <!-- 記事本文 -->
                         <p class="card-text top-text">{{ $top->body }}</p>
                         <a class="float-right" href="/article/detail/?id={{ $top->id }}">続きを読む</a>
@@ -69,19 +69,19 @@
                         </div>
                         @endif
                         <div class="card-body">
+                            <!-- 投稿日時 -->
+                            <div class="next-news-date d-inline"><i class="far fa-clock mr-2"></i>{{ $top->created_at->format('Y年m月d日') }}</div>
                             <!-- タイトル -->
                             <h4 class="card-title next-title">{{ $post->title }}</h4>
                             <!-- 投稿者名 -->
-                            <div class="top-profile d-inline">
+                            <a class="top-profile d-inline" href="user?id={{ $post->user->id }}">
                                 @if (isset($post->user->profile_image))
-                                <img class="detail-profile-image" src="{{ asset('storage/profile/'.$post->user['profile_image'] ) }}">
+                                <img class="next-profile-img" src="{{ asset('storage/profile/'.$post->user['profile_image'] ) }}">
                                 @else
-                                <img src="/assets/images/noimage.png" name="no-profile-image" class="detail-profile-image">
+                                <img src="/assets/images/noimage.png" name="no-profile-image" class="next-profile-img">
                                 @endif
-                                <div class="next-news-profile d-inline">{{ $post->user->name }}</div>
-                            </div>
-                            <!-- 投稿日時 -->
-                            <div class="next-news-date d-inline"><i class="far fa-clock mr-2"></i>{{ $top->created_at->format('Y年m月d日') }}</div>
+                                <div class="next-news-profile d-inline">{{ $post->user->name }}さん</div>
+                            </a>
                             <!-- 記事本文 -->
                             <p class="card-text next-text">{{ $post->body }}</p>
                             <a class="float-right" href="/article/detail/?id={{ $post->id }}">続きを読む</a>

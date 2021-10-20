@@ -1,9 +1,10 @@
 @extends('layouts.formLayout')
 
-@section('title', '風景画像の削除')
+@section('title', '記事の削除')
 
 @section('content')
     
+    @if(Auth::id() === $article->user->id)
     <div class="container form-container">
         <div class="wrapper">
             <div class="form-box user-box">
@@ -14,12 +15,13 @@
                 <p class="form-text mt-4">本文：{{ Str::limit($article->body,60) }}</p>
                 
                 <div class="btn-group-sm d-flex justify-content-around mb-2" role="group" aria-label="Basic example">
-                    <button class="btn btn-primary" href="/user?id={{ $article->id }}">ユーザーページ<br>に戻る</button>
+                    <a class="btn btn-primary" href="/user?id={{ $article->user->id }}">ユーザーページ<br>に戻る</a>
                     <form action="{{ action('ArticleController@delete', ['id' => $article->id]) }}" method="POST">
                         {{ csrf_field() }}
                         <input type="submit" value="削除する" class="btn btn-danger">
                     </form>
                 </div>
+                @endif
                 
                 <a class="goto-top d-block my-5" href="{{ url('/') }}">トップページに戻る</a>
             </div>

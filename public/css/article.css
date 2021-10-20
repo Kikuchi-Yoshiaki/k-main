@@ -68,7 +68,7 @@
 
 /*--- 詳細記事上部 ---*/
 .detail-title {
-    margin: 1em auto 0.5em;
+    margin: 0.2em auto 0.5em;
     font-size: 3vw;
     background: linear-gradient(transparent 70%, #a7d6ff 70%);
     width: 95%;
@@ -78,8 +78,7 @@
 }
 
 .detail-news-date {
-    text-align: right;
-    font-size: 1.2vw;
+    font-size: 1.5vw;
 }
 
 .category-name {
@@ -126,6 +125,8 @@
     max-width: 20vw;
 }
 
+
+
 .detail-profile-image {
     height: 80px;
     width: 80px;
@@ -134,8 +135,9 @@
 }
 
 .detail-profile-name {
-    font-size: 1.8vw;
-    padding: 0 0.2em 0.2em 0.5em;
+    font-size: 2.5vw;
+    padding: 0 0.2em 0.2em 0.1em;
+    color: #000;
     border-bottom: rgba(119, 195, 223, 0.8) 3px dotted;
 }
 

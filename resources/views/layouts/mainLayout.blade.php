@@ -176,10 +176,10 @@
         {{-- フッター --}}
         <footer class="container-fluid">
             @yield('footer')
-            <div class="row">
-            <div class="text-white copywriter">©️ 2021 Y-Kikuchi</div>
-            <a href="" class="text-white copywriter">お問い合わせ</a>
-            <a href="" class="text-white copywriter">利用規約</a>
+            <div class="d-flex justify-content-center">
+                <a href="" class="text-white copywriter mr-5">利用規約</a>
+                <div class="text-white copywriter px-5 c-border">©️ 2021 Y-Kikuchi</div>
+                <a href="/forms/contact" class="text-white copywriter ml-5">お問い合わせ</a>
             </div>
         </footer>            
     </body>

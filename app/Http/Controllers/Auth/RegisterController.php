@@ -72,12 +72,15 @@ class RegisterController extends Controller
             $image['profile_image'] = null;
         }
         
-        return User::create([
+        
+        $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'profile_image' => $image,
         ]);
+        
+        return $user;
     }
     
    

@@ -189,7 +189,9 @@ class ArticleController extends Controller
         
         return redirect('forms/message')
             ->with('title', '更新完了！')
-            ->with('message', '記事がが更新されました。');;
+            ->with('message', '記事がが更新されました。')
+            ->with('url', '/user?id=')
+            ->with('page', 'マイページに戻る');
     }
     
     
@@ -211,7 +213,9 @@ class ArticleController extends Controller
         
         return redirect('/forms/message')
             ->with('title', '削除完了')
-            ->with('message', '投稿された記事を削除しました。');
+            ->with('message', '投稿された記事を削除しました。')
+            ->with('url', '/user?id=')
+            ->with('page', 'マイページに戻る');
     }
     
 }

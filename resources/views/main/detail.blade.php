@@ -9,7 +9,7 @@
 
             {{-- 左側コンテンツ --}}
             <div class="col-lg-9 col-md-12">
-                
+                <div class="detail-news-date d-block mt-5"><i class="far fa-clock mr-2"></i>{{ $show->created_at->format('Y年m月d日') }}</div>
                 <!-- 記事タイトル -->
                 <h2 class="detail-title">{{ $show->title }}</h2>
                 
@@ -77,16 +77,15 @@
                 
                 {{-- 投稿者プロフィール --}}
                 <div class="d-flex justify-content-between m-4">
-                    <div class="top-profile mt-3">
+                    <a class="top-profile d-inline mt-3" href="user?id={{ $show->user->id }}">
                         @if (isset($show->user->profile_image))
                         <img class="detail-profile-image" src="{{ asset('storage/profile/'.$show->user['profile_image'] ) }}">
                         @else
                         <img src="/assets/images/noimage.png" name="no-profile-image" class="detail-profile-image">
                         @endif
                         <div class="detail-profile-name d-inline">{{ $show->user->name }}さん</div>
-                    </div>
-                        <div type="button" class="btn btn-outline-success">イイね数を<br>置く場所
-                    </div>
+                    </a>
+                        
                 </div>
 
                 {{-- 記事本体 --}}
@@ -104,10 +103,6 @@
                         @else
                         <div></div>
                         @endif
-                        
-                        <!-- イイねボタン -->
-                        <div class="next-news-date d-block float-left mt-1"><i class="far fa-clock mr-2"></i>{{ $show->created_at->format('Y年m月d日') }}</div>
-                        <div type="button" class="btn btn-outline-danger float-right mr-5">イイねボタン</div>
                     </div>
                 </div>
 

@@ -4,6 +4,7 @@
 
 @section('content')
     
+    @if(Auth::id() === $form->user->id)
     <div class="container form-container">
         <div class="wrapper">
             <form action="{{ action('ArticleController@update') }}" method="POST" class="user-box" enctype="multipart/form-data">
@@ -108,9 +109,9 @@
                     <input type="submit" class="btn-flat-vertical-border my-5 col-5" value="利用規約に同意して投稿する">
                     {{ csrf_field() }}
                 </div>
+                @endif
                 
                 <a class="goto-top d-block mb-3" href="{{ url('/') }}">トップページに戻る</a>
-
             </form>
         </div>
     </div>

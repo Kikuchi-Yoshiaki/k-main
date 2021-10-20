@@ -4,6 +4,7 @@
 
 @section('content')
     
+    @if(Auth::id() === $form->id)
     <div class="container form-container">
         <div class="wrapper">
             <form action="{{ action('UserController@update') }}" method="POST" class="user-box" enctype="multipart/form-data">
@@ -51,6 +52,8 @@
                 <div class="input-box">
                     <input type="submit" class="btn-flat-vertical-border mt-5 col-3" value="更新する">
                 </div>
+                @endif
+                
                 <a class="goto-top d-block my-5" href="{{ url('/') }}">トップページに戻る</a>
             </form>
         </div>

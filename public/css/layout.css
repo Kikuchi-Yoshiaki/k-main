@@ -139,6 +139,9 @@ body {
 .category-name:hover:before {
     transform: scale(1);
 }
+.category-name:hover {
+    color: #000;
+}
 .category-name:before {
     content: "";
 	position: absolute;

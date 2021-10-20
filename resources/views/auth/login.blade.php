@@ -46,6 +46,7 @@
                
                 <button type="submit" class="btn btn-block btn-primary form-button" name="login">{{ __('message.Login') }}</button>
 
+                <a class="goto-top d-block mb-3" href="{{ url('/register') }}">新規登録</a>
                 
                 <a class="goto-top d-block mb-3" href="{{ url('/') }}">トップページに戻る</a>
             </form>

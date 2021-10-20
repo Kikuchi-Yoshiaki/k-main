@@ -3,16 +3,17 @@
 @section('title', '記事一覧ページ')
 
 @section('content')
-
+    
+    @if(Auth::id() === $preview->user->id)
     <!-- 全体の枠 -->
     <div class="container-fluid">
         <div class="row justify-content-center">
 
             {{-- 左側コンテンツ --}}
+            
             <div class="col-lg-9 col-md-12">
-                
                 <h2 class="mt-5 preview-top col-5 offset-3">{{ session('title') }}</h3>
-
+                <div class="detail-news-date d-block"><i class="far fa-clock mr-2"></i>{{ $preview->created_at->format('Y年m月d日') }}</div>
                 <!-- 記事上部 -->
                 <h2 class="detail-title">{{ $preview->title }}</h2>
                 <div class="container">
@@ -72,16 +73,14 @@
 
                 <!-- 記事プロフィール -->
                 <div class="d-flex justify-content-between m-4">
-                    <div class="top-profile">
+                    <a class="top-profile d-inline mt-3" href="user?id={{ $preview->user->id }}">
                         @if (isset($preview->user->profile_image))
                         <img class="detail-profile-image" src="{{ asset('storage/profile/'.$preview->user['profile_image']) }}">
                         @else
                         <img src="/assets/images/noimage.png" name="no-profile-image" class="detail-profile-image">
                         @endif
                         <div class="detail-profile-name d-inline">{{ $preview->user->name }}さん</div>
-                    </div>
-                        <div type="button" class="btn btn-outline-success">ここのイイね<br>は形のみ
-                    </div>
+                    </a>
                 </div>
 
                 <!-- 記事本文 -->
@@ -97,8 +96,6 @@
                         @else
                         <div></div>
                         @endif
-                        <div class="next-news-date d-block float-left mt-1"><i class="far fa-clock mr-2"></i>{{ $preview->created_at->format('Y年m月d日') }}</div>
-                        <div type="button" class="btn btn-outline-danger float-right mr-5">イイねボタン</div>
                     </div>
                 </div>
 
@@ -107,6 +104,8 @@
                     <div class="d-none d-lg-block post-btn mb-5">
                         <a href="/user/edit/article/?id={{ $preview->id }}" type="button" class="main-btn">編集する</a>
                     </div>
+    @endif
+                    
                     <div class="d-none d-lg-block post-btn">
                         <a class="goto-top d-block mb-3" href="{{ url('/') }}">トップページに戻る</a>
                     </div>

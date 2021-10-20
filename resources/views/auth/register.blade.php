@@ -12,7 +12,7 @@
                 
                 <!-- アカウント名 -->
                 <div class="mb-4">
-                    <label class="form-label mr-1">{{ __('message.Name') }}・ニックネーム</label>
+                    <label class="form-label mr-1">アカウント名</label>
                         <span class="text-danger small">※必須</span>
                     <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('neme') }}" autofocus="">
                 

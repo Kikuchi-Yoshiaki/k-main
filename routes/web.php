@@ -48,7 +48,7 @@ Route::post('form/contact', 'ContactController@create');
 Route::get('user', 'UserController@userIndex');
 Route::get('user/edit/profile', 'UserController@edit');
 Route::post('user/edit/profile', 'UserController@update');
-Route::post('user', 'UserController@delete');
+
 
 
 
@@ -66,7 +66,8 @@ Route::post('user/delete/article', 'ArticleController@delete');
 
 Route::post('user/viewPost', 'ViewController@create');
 Route::get('article/view', 'ViewController@index');
-
+Route::get('user/delete/view', 'ViewController@deleteEdit');
+Route::post('user/delete/view', 'ViewController@delete');
 
 
 
