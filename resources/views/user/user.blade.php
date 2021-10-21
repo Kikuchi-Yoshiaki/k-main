@@ -85,7 +85,7 @@
                     @if (isset($view->title))
                     <p class="card-title user-view-title">{{ Str::limit($view->title,20) }}</p>
                     @else
-                    <span></span>
+                    <p></p>
                     @endif
                     <div class="btn-group-sm d-flex justify-content-around mb-2" role="group" aria-label="Basic example">
                     <!-- 写真を削除する -->

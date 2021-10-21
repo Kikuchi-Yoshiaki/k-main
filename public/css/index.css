@@ -307,10 +307,27 @@
     max-height: 300px;
 }
 
+.view-image {
+    max-width: 240px;
+    max-height: 240px;
+}
 .view-list:hover {
     color: #FFF;
     text-decoration: none;
     background: rgba(11,223,144,0.6);
+}
+
+.view-text {
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.2vw;
+    margin-bottom: 0;
+}
+.view-text:hover {
+    background-color: rgba(0, 0, 0, 1);
+    color: #FFF;
 }
 
 

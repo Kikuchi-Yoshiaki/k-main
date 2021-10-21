@@ -32,7 +32,7 @@
                     <div class="card-body">
                         <!-- 投稿日時 -->
                         <div class="top-news-date d-inline mr-3"><i class="far fa-clock mr-2"></i>{{ $top->created_at->format('Y年m月d日') }}</div>
-                        <h4 class="card-title top-title">{{ $top->title }}</h4>
+                        <h4 class="card-title top-title">{{ Str::limit($top->title,32) }}</h4>
                         <!-- 投稿者名 -->
                         <a class="top-profile d-inline" href="user?id={{ $top->user->id }}">
                             @if (isset($top->user->profile_image))
@@ -72,7 +72,7 @@
                             <!-- 投稿日時 -->
                             <div class="next-news-date d-inline"><i class="far fa-clock mr-2"></i>{{ $top->created_at->format('Y年m月d日') }}</div>
                             <!-- タイトル -->
-                            <h4 class="card-title next-title">{{ $post->title }}</h4>
+                            <h4 class="card-title next-title">{{ Str::limit($post->title,32) }}</h4>
                             <!-- 投稿者名 -->
                             <a class="top-profile d-inline" href="user?id={{ $post->user->id }}">
                                 @if (isset($post->user->profile_image))
@@ -99,11 +99,11 @@
                 <!-- 風景写真一覧 -->
                 <div class="d-flex flex-wrap justify-content-center view-index">
                     @foreach ($views as $view)
-                    <a class="card view-list mb-1 text-center" href="{{ asset('storage/view/'.$view['view_image'] ) }}" target="_blank">
+                    <a class="card view-image mb-1 text-center" href="{{ asset('storage/view/'.$view['view_image'] ) }}" target="_blank">
                         <img class="card-img-top" src="{{ asset('storage/view/'.$view['view_image'] ) }}">
-                        <!-- 画像にタイトルがあれば表示 -->
+                       
                         @if (isset($view->title))
-                        <p class="card-title user-view-title">{{ Str::limit($view->title,20) }}</p>
+                        <p class="view-text col-12">{{ Str::limit($view->title,20) }}</p>
                         @else
                         <span></span>
                         @endif

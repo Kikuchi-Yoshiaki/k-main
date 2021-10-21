@@ -85,7 +85,6 @@
                         @endif
                         <div class="detail-profile-name d-inline">{{ $show->user->name }}さん</div>
                     </a>
-                        
                 </div>
 
                 {{-- 記事本体 --}}
