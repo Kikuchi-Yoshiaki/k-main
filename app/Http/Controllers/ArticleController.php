@@ -84,16 +84,23 @@ class ArticleController extends Controller
         
         if ($request->category == 'enjoy')
         {
-            $articles = Article::where('category','気仙沼の遊ぶ')->latest()->get();
+            $articles = Article::where('category','気仙沼の遊ぶ')
+                ->latest()
+                ->paginate(4);
         } elseif ($request->category == 'food') 
         {
-            $articles = Article::where('category','気仙沼の食べる')->latest()->get();
+            $articles = Article::where('category','気仙沼の食べる')
+                ->latest()
+                ->paginate(4);
         } elseif ($request->category == 'life') 
         {
-            $articles = Article::where('category','気仙沼の生活')->latest()->get();
+            $articles = Article::where('category','気仙沼の生活')
+                ->latest()
+                ->paginate(4);
         } else 
         {
-            $articles = Article::all()->sortByDesc('updated_at');
+            $articles = Article::orderBy('updated_at', 'desc')
+                ->paginate(4);
         }
         
         

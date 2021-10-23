@@ -47,8 +47,12 @@ class UserController extends Controller
     public function userIndex(Request $request)
     {
         $user = User::find($request->id);
-        $articles = Article::where('user_id', $user->id)->get()->sortByDesc('updated_at');
-        $views = View::where('user_id', $user->id)->get()->sortByDesc('updated_at');
+        $articles = Article::where('user_id', $user->id)
+            ->get()
+            ->sortByDesc('updated_at');
+        $views = View::where('user_id', $user->id)
+            ->get()
+            ->sortByDesc('updated_at');
         return view('user.user', ['user' => $user, 'articles' => $articles, 'views' => $views]);
     }
     
