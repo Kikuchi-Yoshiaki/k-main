@@ -11,7 +11,9 @@
             <div class="col-lg-9 col-md-12">
 
                 {{-- 風景写真見出し --}}
-                <h3 class="col-lg-9 col-md-9 md-ml-5 col-sm-5 headline-view">投稿中の風景</h3>
+                <div class="mt-5 headline col-10 offset-1">
+                    <h3 class="headline-view">気仙沼の風景画像</h3>
+                </div>
                 <!-- 風景写真一覧 -->
                 <div class="d-flex flex-wrap justify-content-center view-index">
                     @foreach ($views as $view)
@@ -28,7 +30,9 @@
 
 
                 {{-- 記事２件をランダム表示 --}}
-                <h3 class="col-lg-9 col-md-9 md-ml-5  col-sm-5 headline-top">記事・日記TOPIX</h3>
+                <div class="mt-5 headline col-10 offset-1">
+                    <h3 class="headline-top">記事・日記TOPIX</h3>
+                </div>
                 <div class="d-flex flex-wrap justify-content-around mb-5">
                     @foreach ($articles as $article)
                     <!-- 記事のメイン画像 -->
@@ -50,14 +54,18 @@
                         @endif
                         <!-- タイトル -->
                         <div class="card-body">
-                            <h4 class="card-title next-title">{{ $article->title }}</h4>
-                            <!-- 投稿者名 -->
-                            <div class="top-profile d-inline">
-                                <img class="profile-img" src="/assets/images/profile.png">
-                                <div class="next-news-profile d-inline">プロフィール名さん</div>
-                            </div>
                             <!-- 投稿日時 -->
                             <div class="next-news-date d-inline"><i class="far fa-clock mr-2"></i>{{ $article->created_at->format('Y年m月d日') }}</div>
+                            <h4 class="card-title next-title">{{ $article->title }}</h4>
+                            <!-- 投稿者名 -->
+                            <a class="top-profile d-inline" href="user?id={{ $article->user->id }}">
+                                @if (isset($article->user->profile_image))
+                                <img class="next-profile-img" src="{{ asset('storage/profile/'.$article->user['profile_image'] ) }}">
+                                @else
+                                <img src="/assets/images/noimage.png" name="no-profile-image" class="next-profile-img">
+                                @endif
+                                <div class="next-news-profile d-inline">{{ $article->user->name }}さん</div>
+                            </a>
                             <!-- 記事本文 -->
                             <p class="card-text next-text">{{ $article->body }}</p>
                             <a class="float-right" href="/article/detail/?id={{ $article->id }}">続きを読む</a>

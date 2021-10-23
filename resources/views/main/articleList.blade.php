@@ -61,7 +61,9 @@
 
 
             {{-- My写真ランダム表示 --}}
-            <h3 class="col-lg-9 col-md-9 md-ml-5 col-sm-5 headline-view">投稿中の風景</h3>
+            <div class="mt-5 headline col-10 offset-1">
+                <h3 class="headline-view">風景画像TOPIX</h3>
+            </div>
             <!-- 風景写真本体 -->
             <div class="d-flex flex-wrap justify-content-center view-index">
                     @foreach ($views as $view)

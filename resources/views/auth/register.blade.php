@@ -41,7 +41,7 @@
                 <!-- パスワード -->
                 <div class="mb-4">
                     <label class="form-label mr-1">{{ __('message.Password') }}</label>
-                    <span class="text-danger small">※必須（◯文字以上）</span>
+                    <span class="text-danger small">※必須（8文字以上）</span>
                     <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" autofocus="">
                 
                     <!-- パスワードエラー表示 -->

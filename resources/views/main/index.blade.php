@@ -10,7 +10,9 @@
             {{-- 左側コンテンツ --}}
             <div class="col-lg-9 col-md-12 left-contents">
                 {{-- 最新記事見出し --}}
-                <h3 class="col-lg-10 col-md-12 md-ml-5 headline-top">最新記事</h3>
+                <div class="mt-5 headline col-10 offset-1">
+                    <h3 class="headline-top">気仙沼の最新の記事</h3>
+                </div>
                 <!-- 記事のメイン画像 -->
                 <div class="card col-lg-9 offset-lg-2 col-md-10 mb-4 top-news">
                     <img class="card-img-top" src="{{ asset('storage/article/'.$top['main_image'] ) }}">
@@ -94,7 +96,9 @@
                 <a class="main-btn btn d-block mx-auto mt-3 more d-none" type="button" href="{{ url('article/index') }}">もっと見る</a>
 
                 {{-- 風景写真見出し --}}
-                <h3 class="col-lg-9 col-md-9 md-ml-5 col-sm-5 headline-view">気仙沼の風景画像</h3>
+                <div class="mt-5 headline col-10 offset-1">
+                    <h3 class="headline-view">気仙沼の風景画像</h3>
+                </div>
 
                 <!-- 風景写真一覧 -->
                 <div class="d-flex flex-wrap justify-content-center view-index">
