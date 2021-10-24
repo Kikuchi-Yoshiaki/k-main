@@ -106,7 +106,7 @@
 
                 <!-- 登録ボタン -->
                 <div class="input-box">
-                    <input type="submit" class="btn-flat-vertical-border my-5 col-5" value="利用規約に同意して投稿する">
+                    <button type="submit" class="btn-flat-vertical-border my-5 p-2 col-5">プライバシーポリシー<br>に同意して投稿する</button>
                     {{ csrf_field() }}
                 </div>
                 @endif

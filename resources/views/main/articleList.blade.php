@@ -41,7 +41,7 @@
                             <div class="next-news-date d-inline"><i class="far fa-clock mr-2"></i>{{ $article->created_at->format('Y年m月d日') }}</div>
                             <h4 class="card-title next-title">{{ Str::limit($article->title,32) }}</h4>
                             <!-- 投稿者名 -->
-                            <a class="top-profile d-inline" href="user?id={{ $article->user->id }}">
+                            <a class="top-profile d-inline" href="/user?id={{ $article->user->id }}">
                                 @if (isset($article->user->profile_image))
                                 <img class="next-profile-img" src="{{ asset('storage/profile/'.$article->user['profile_image'] ) }}">
                                 @else

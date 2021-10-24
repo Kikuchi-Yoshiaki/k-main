@@ -170,6 +170,8 @@
                     <a class="twitter-timeline" href="https://twitter.com/kikuyoshi5?   ref_src=twsrc%5Etfw" data-tweet-limit="5">Tweets by kikuyoshi5</a> <script async   src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                 </div>
             </div>
+            
+            <div id="page_top"><a href="#"></a></div>
         </main>
 
 
@@ -177,7 +179,7 @@
         <footer class="container-fluid">
             @yield('footer')
             <div class="d-flex justify-content-center">
-                <a href="" class="text-white copywriter mr-5">利用規約</a>
+                <a href="/privacy-policy" class="text-white copywriter mr-5">プライバシーポリシー</a>
                 <div class="text-white copywriter px-5 c-border">©️ 2021 Y-Kikuchi</div>
                 <a href="/forms/contact" class="text-white copywriter ml-5">お問い合わせ</a>
             </div>
