@@ -47,9 +47,12 @@ class UserController extends Controller
     public function userIndex(Request $request)
     {
         $user = User::find($request->id);
+        //$articles = Article::where('user_id', $user->id)
+            //->get()
+            //->sortByDesc('updated_at');
         $articles = Article::where('user_id', $user->id)
-            ->get()
-            ->sortByDesc('updated_at');
+            ->orderByDesc('updated_at')
+            ->paginate(4);
         $views = View::where('user_id', $user->id)
             ->get()
             ->sortByDesc('updated_at');
@@ -77,10 +80,11 @@ class UserController extends Controller
         $user = Auth::user();
         //$user = User::find($request->id);
         $form = $request->all();
-        
+        //dd($data);
         if (isset($form['profile_image'])) {
             $path = $request->file('profile_image')->store('public/profile');
             $user->profile_image = basename($path);
+            //$user->profile_image = basename($path);
         } else {
             $user->profile_image = null;
         }

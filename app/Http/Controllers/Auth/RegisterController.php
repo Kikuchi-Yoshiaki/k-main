@@ -63,23 +63,21 @@ class RegisterController extends Controller
      */
     public function create(array $data)
     {
-        
-        if (request()->hasFile('profile_image'))
+        //dd($data);
+        if (isset($data['profile_image']))
         {
-            $image = request()->file('profile_image')->hashName();
-            request()->file('profile_image')->store('public/profile');
+            //$image = request()->file('profile_image')->hashName();
+            $profile_image_name = basename($data['profile_image']->store('public/profile'));
         } else {
-            $image['profile_image'] = null;
+            $profile_image_name = null;
         }
-        
         
         $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'profile_image' => $image,
+            'profile_image' => $profile_image_name,
         ]);
-        
         return $user;
     }
     
