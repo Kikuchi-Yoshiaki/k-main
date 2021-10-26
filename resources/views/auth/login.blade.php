@@ -34,15 +34,15 @@
                     @enderror
                 </div>
                 
-                <div class="form-check">
+                <div class="form-check mb-4">
                     <input class="form-check-input" type="checkbox" id="checkbox1" name="remenber" id="remenber" {{old('remenber') ? 'checked' : '' }}>
                     <label class="form-check-label" for="checkbox1">{{ __('message.Remember Me') }}</label>
                 </div>
-                @if (Route::has('password.request'))
+                {{--@if (Route::has('password.request'))
                     <a class="btn btn-link mb-4" href="{{ route('password.request') }}">
                         {{ __('message.Forgot Your Password?') }}    
                     </a>
-                @endif
+                @endif--}}
                
                 <button type="submit" class="btn btn-block btn-primary form-button" name="login">{{ __('message.Login') }}</button>
 

@@ -30,7 +30,6 @@
                 @endif            
             </div>
 
-            {{--My記事見出し --}}
             <div class="mt-5 headline col-8 offset-2">
                 <h3 class="headline-top">{{ $user->name }}さんの記事一覧</h3>
             </div>
@@ -70,19 +69,18 @@
                 </div>
                 @endforeach
             </div>
-            {{--ページネーション--}}
-            <div class="d-flex justify-content-center mt-5">{{ $articles->links() }}</div>
+           
 
             
             {{-- 開発途中 --}}
-            
+            @if(!isset($article->id))
             <div class="user-article-box col-8 text-center mb-5">
-                <h4 class="form-title mt-2">記事の投稿がまだありません</h4>
+                <h4 class="form-title mt-2">{{ $user->name }}さんはまだ<br>記事の投稿がありません</h4>
                 <div class="d-none d-lg-block post-btn my-4">
                     <a href="{{ url('/user/post/article') }}" type="button" class="main-btn d-inline-block">記事・日記<br>を投稿する</a>
                 </div>
             </div>
-            
+            @endif
             
             
             <!-- 全体の記事一覧画面に移動 -->
@@ -90,7 +88,7 @@
 
 
             {{-- My写真見出し --}}
-            <div class="mt-5 headline col-8 offset-2">
+            <div class="user-headline-view col-8 offset-2">
                 <h3 class="headline-view">{{ $user->name }}さんの風景一覧</h3>
             </div>
             
@@ -116,15 +114,14 @@
                 @endforeach
             </div>
             
-            {{-- 開発途中 --}}
-                
+            @if(!isset($view->id))    
             <div class="user-view-box col-8 text-center mb-5">
-                <h4 class="form-title mt-2">風景の投稿がまだありません</h4>
+                <h4 class="form-title mt-2">{{ $user->name }}さんはまだ<br>風景の投稿がありません</h4>
                 <div class="d-none d-lg-block post-btn my-4">
                     <a href="{{ url('/user/post/view') }}" type="button" class="main-btn d-inline-block">風景・写真<br>を投稿する</a>
                 </div>
             </div>
-            
+            @endif
             
             <!-- 全体の記事一覧画面に移動 -->
             <a class="main-btn btn d-block mx-auto mt-3 p-3" type="button" href="{{ url('article/view') }}">風景一覧<br>を見る</a>

@@ -27,6 +27,9 @@
                     </a>
                     @endforeach
                 </div>
+                
+                {{--ページネーション--}}
+                <div class="d-flex justify-content-center mt-5">{{ $views->links() }}</div>
 
 
                 {{-- 記事２件をランダム表示 --}}

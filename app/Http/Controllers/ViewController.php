@@ -45,7 +45,8 @@ class ViewController extends Controller
 
     public function index(Request $request)
     {
-        $views = View::all()->sortByDesc('updated_at');
+        $views = View::orderBy('updated_at', 'desc')
+            ->paginate(24);
         
         $articles = Article::all()->random(2);
         

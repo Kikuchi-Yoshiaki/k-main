@@ -38,8 +38,6 @@ Route::get('privacy-policy', 'NumaController@privacy');
 
 
 
-
-
 Route::get('forms/contact', 'ContactController@add');
 Route::post('form/contact', 'ContactController@create');
 
@@ -48,7 +46,6 @@ Route::post('form/contact', 'ContactController@create');
 Route::get('user', 'UserController@userIndex');
 Route::get('user/edit/profile', 'UserController@edit');
 Route::post('user/edit/profile', 'UserController@update');
-
 
 
 
@@ -74,3 +71,5 @@ Route::post('user/delete/view', 'ViewController@delete');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
