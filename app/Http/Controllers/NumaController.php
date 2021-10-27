@@ -26,7 +26,6 @@ class NumaController extends Controller
         
         $views = View::orderBy('updated_at', 'DESC')->take(12)->get();
         
-        
         return view('main.index', ['top' => $top, 'posts' => $posts, 'views' => $views]);
     }
 

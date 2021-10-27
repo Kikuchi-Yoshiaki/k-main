@@ -1,6 +1,9 @@
 /*** 背景色 ***/
 body {
-    background: url(/assets/images/b054.jpg);
+    /*background: url(/assets/images/b054.jpg);*/
+    /*background-color: #FDD;*/
+    /*background-color: #DCDCDC;*/
+    background-color: #FFF;
 }
 
 
@@ -11,8 +14,8 @@ body {
     display: flex;
     padding: 0;
     max-height: 100%;
-    background: rgba(232,247,6, 0.5);
-    background: linear-gradient(11deg, rgba(232,247,6,0.5) 0%, rgba(11,223,144,5) 25%, rgba(0,127,255,0.8) 100%);
+    background: rgb(232,247,6);
+    background: linear-gradient(11deg, rgb(232,247,6) 0%, rgb(11,223,144) 25%, rgb(0,127,255) 100%);
 }
 
 /*--- ハンバーガーメニュー ---*/

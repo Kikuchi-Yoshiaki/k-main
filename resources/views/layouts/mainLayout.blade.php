@@ -20,8 +20,12 @@
         <link href="{{ asset('css/article.css') }}" rel="stylesheet">
         <link href="{{ asset('css/user.css') }}" rel="stylesheet">
 
+        <!-- favicon -->
+        <link rel="shortcut icon" type="image/x-icon"  href="/assets/images/k-fav.png">
+
         <!-- Font Awesome -->
         <script src="https://kit.fontawesome.com/7807b4c945.js" crossorigin="anonymous"></script>
+        
     </head>
 
     <body>
@@ -36,6 +40,16 @@
                     <button class="navbar-toggler button-outline" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
                     </button>
+                    
+    {{-- 背景選択JavaScript --}}
+    <div class="d-flex flex-row">※ 背景確認用　
+        <a href="javascript:changeBG('/assets/images/b054.jpg')"> <img src="/assets/images/b054.jpg" width="32" height="32"></a>
+        <a href="javascript:changeBG('/assets/images/b016.jpg')"> <img src="/assets/images/b016.jpg" width="32" height="32"></a>
+        <a href="javascript:changeBG('/assets/images/b0001.png')"> <img src="/assets/images/b0001.png" width="32" height="32"></a>
+        <a href="javascript:changeBG('/assets/images/b080.jpg')"> <img src="/assets/images/b080.jpg" width="32" height="32"></a>
+        <a href="javascript:changeBG('/assets/images/b0066.png')"> <img src="/assets/images/b0066.png" width="32" height="32"></a>
+        <form><input type="button" value="リセット" onClick="changeBG('none')"></form>
+    </div>
                     
                     <!-- 右側のメニューバー -->
                     <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
@@ -183,6 +197,8 @@
                 <div class="text-white copywriter px-5 c-border">©️ 2021 Y-Kikuchi</div>
                 <a href="/forms/contact" class="text-white copywriter ml-5">お問い合わせ</a>
             </div>
-        </footer>            
+        </footer>
+        {{-- JavaScript --}}
+        <script src="{{ secure_asset('js/main.js') }}"></script>
     </body>
 </html>

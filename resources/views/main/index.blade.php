@@ -10,7 +10,7 @@
             {{-- 左側コンテンツ --}}
             <div class="col-lg-9 col-md-12 left-contents">
                 {{-- 最新記事見出し --}}
-                <div class="mt-5 headline col-10 offset-1">
+                <div class="my-5 headline col-10 offset-1">
                     <h3 class="headline-top">気仙沼の最新の記事</h3>
                 </div>
                 <!-- 記事のメイン画像 -->
@@ -96,7 +96,7 @@
                 <a class="main-btn btn d-block mx-auto mt-3 more d-none" type="button" href="{{ url('article/index') }}">もっと見る</a>
 
                 {{-- 風景写真見出し --}}
-                <div class="user-headline-view col-10 offset-1">
+                <div class="mb-5 user-headline-view col-10 offset-1">
                     <h3 class="headline-view">気仙沼の風景画像</h3>
                 </div>
 
@@ -114,7 +114,6 @@
                     </a>
                     @endforeach
                 </div>
-                
                 <!-- 風景一覧をもっとみる -->
                 <a class="main-btn btn d-block mx-auto mt-3 more d-none" type="button" href="{{ url('article/view') }}">もっと見る</a>
             </div>
