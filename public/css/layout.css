@@ -5,6 +5,14 @@ body {
     /*background-color: #DCDCDC;*/
     background-color: #FFF;
 }
+/*** フォント ***/
+body {
+    font-family: "ヒラギノ丸ゴ ProN","Hiragino Maru Gothic ProN";
+    /*font-family: "Tsukushi A Round Gothic","筑紫A丸ゴシック";*/
+}
+
+
+
 
 
 /*** 上部バー ***/

@@ -137,13 +137,20 @@ class ArticleController extends Controller
     }
     
     
-    //記事を更新
     public function update(Request $request)
     {
         $this->validate($request, Article::$rules);
         
+        //Articleモデルからデータ取得
         $article = Article::find($request->id);
+        //送信されてきたフォームを格納
         $form = $request->all();
+        
+        
+        //dd($form);
+        
+        $path = $request->file('main_image')->store('public/article');
+        $article->main_image = basename($path);
         
         if(isset($form['sub_image_1'])) {
             $path = $request->file('sub_image_1')->store('public/article');
@@ -181,9 +188,6 @@ class ArticleController extends Controller
         $delSub4 = $article->sub_image_4;
         Storage::delete('public/article/'.$delSub4);
         
-        
-        $path = $request->file('main_image')->store('public/article');
-        $article->main_image = basename($path);
         
         unset($form['_token']);
         unset($form['main_image']);
