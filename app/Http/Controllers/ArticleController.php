@@ -142,6 +142,7 @@ class ArticleController extends Controller
         $this->validate($request, Article::$rules);
         
         //Articleモデルからデータ取得
+        //dd($request->id);
         $article = Article::find($request->id);
         //送信されてきたフォームを格納
         $form = $request->all();
@@ -150,6 +151,7 @@ class ArticleController extends Controller
         //dd($form);
         
         $path = $request->file('main_image')->store('public/article');
+        //dd($article);
         $article->main_image = basename($path);
         
         if(isset($form['sub_image_1'])) {
@@ -177,16 +179,16 @@ class ArticleController extends Controller
             $article->sub_image_4 = null;
         }
         
-        $delMain = $article->main_image;
-        Storage::delete('public/article/'.$delMain);
-        $delSub1 = $article->sub_image_1;
-        Storage::delete('public/article/'.$delSub1);
-        $delSub2 = $article->sub_image_2;
-        Storage::delete('public/article/'.$delSub2);
-        $delSub3 = $article->sub_image_3;
-        Storage::delete('public/article/'.$delSub3);
-        $delSub4 = $article->sub_image_4;
-        Storage::delete('public/article/'.$delSub4);
+        // $delMain = $article->main_image;
+        // Storage::delete('public/article/'.$delMain);
+        // $delSub1 = $article->sub_image_1;
+        // Storage::delete('public/article/'.$delSub1);
+        // $delSub2 = $article->sub_image_2;
+        // Storage::delete('public/article/'.$delSub2);
+        // $delSub3 = $article->sub_image_3;
+        // Storage::delete('public/article/'.$delSub3);
+        // $delSub4 = $article->sub_image_4;
+        // Storage::delete('public/article/'.$delSub4);
         
         
         unset($form['_token']);

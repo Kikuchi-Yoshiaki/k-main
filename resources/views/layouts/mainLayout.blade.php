@@ -41,16 +41,6 @@
                         <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
                     </button>
                     
-    {{-- 背景選択JavaScript --}}
-    <div class="d-flex flex-row">※ 背景確認用　
-        <a href="javascript:changeBG('/assets/images/b054.jpg')"> <img src="/assets/images/b054.jpg" width="32" height="32"></a>
-        <a href="javascript:changeBG('/assets/images/b016.jpg')"> <img src="/assets/images/b016.jpg" width="32" height="32"></a>
-        <a href="javascript:changeBG('/assets/images/b0001.png')"> <img src="/assets/images/b0001.png" width="32" height="32"></a>
-        <a href="javascript:changeBG('/assets/images/b080.jpg')"> <img src="/assets/images/b080.jpg" width="32" height="32"></a>
-        <a href="javascript:changeBG('/assets/images/b0066.png')"> <img src="/assets/images/b0066.png" width="32" height="32"></a>
-        <form><input type="button" value="リセット" onClick="changeBG('none')"></form>
-    </div>
-                    
                     <!-- 右側のメニューバー -->
                     <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                         <ul class="navbar-nav">
@@ -115,8 +105,7 @@
 	            <div class="carousel-inner">
 		            <div class="carousel-item active">
 			            <a class="container-fluid title-bar-1" href="{{ url('/') }}">
-                            <h1 class="main-logo">メインロゴ</h1>
-                            <p class="sub-title">サブタイトル・サブテキスト</p>
+                            <img src="/assets/images/k-logo.png" width="500" height="200">
                         </a>
 		            </div>
 		            <div class="carousel-item">

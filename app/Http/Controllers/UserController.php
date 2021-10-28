@@ -47,6 +47,10 @@ class UserController extends Controller
     public function userIndex(Request $request)
     {
         $user = User::find($request->id);
+        if(!isset($user))
+        {
+            return redirect('/');
+        }
         $articles = Article::where('user_id', $user->id)
             ->get()
             ->sortByDesc('updated_at');

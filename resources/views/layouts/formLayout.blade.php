@@ -35,7 +35,7 @@
                 <div class="container">
                 
                     <!-- 左上タイトル -->
-                    <a class="navbar-brand form-main-title" href="{{ url('/') }}">メインロゴ</a>
+                    <a class="navbar-brand form-main-title" href="{{ url('/') }}"><img src="/assets/images/k-logo.png" width="130" height="50"></a>
                     
                     <!-- ハンバーガーメニュー -->
                     <button class="navbar-toggler button-outline" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

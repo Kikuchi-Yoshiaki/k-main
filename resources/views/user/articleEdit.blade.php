@@ -103,7 +103,7 @@
                 
                 <!-- ユーザーIDを登録 -->
                 <input type="hidden" name="user_id" value="{{ Auth::user()->id }}"> 
-
+                <input type="hidden" name="id" value="{{ $form->id }}"> 
                 <!-- 登録ボタン -->
                 <div class="input-box">
                     <button type="submit" class="btn-flat-vertical-border my-5 p-2 col-5">プライバシーポリシー<br>に同意して投稿する</button>
