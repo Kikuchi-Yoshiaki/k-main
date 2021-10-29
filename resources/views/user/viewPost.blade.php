@@ -14,7 +14,10 @@
                 <div class="mb-4">
                     <label class="form-label mb-2 mr-1">画像選択</label>
                     <span class="text-danger small">※必須</span>
-                    <input type="file" class="form-control-file @error('view_image') is-invalid @enderror" name="view_image" autofocus="">
+                    <input type="file" id="edit-view-image" class="form-control-file @error('view_image') is-invalid @enderror" name="view_image" autofocus="">
+                    
+                    <!-- ファイル画像を表示 -->
+                    <img src="" id="view-preview" class="img-responsive">
                     
                     <!-- 画像未選択エラー -->
                     @error('view_image')

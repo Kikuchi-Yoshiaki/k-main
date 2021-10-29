@@ -8,7 +8,7 @@
 
         <title>@yield('title')</title>
 
-        
+        <script src="{{ asset('js/app.js') }}" defer></script>
         <!-- Fonts -->
         <link rel="dns-prefetch" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/   css">
@@ -74,7 +74,7 @@
                             @endguest
                              
                             <!-- 作品投稿・お問い合わせドロップダウン -->
-                            <li class="nav-item dropdown">
+                            <li class="nav-item dropdown post-btn">
                                 <a class="nav-link dropdown-toggle top-nav" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     投稿する
                                 </a>
@@ -97,7 +97,7 @@
                     </div>
                 </div>
             </nav>
- 
+        </div>
  
             <!-- タイトル部分 -->
             <div id="carousel-example" class="carousel slide carousel-fade" data-ride="carousel" data-interval="8000" data-pause="false">
@@ -110,14 +110,12 @@
 		            </div>
 		            <div class="carousel-item">
 			           <a class="container-fluid title-bar-2" href="{{ url('/') }}">
-                            <h1 class="main-logo">メインロゴ</h1>
-                            <p class="sub-title">サブタイトル・サブテキスト</p>
+                            <img src="/assets/images/k-logo.png" width="500" height="200">
                         </a>
 		            </div>
 		            <div class="carousel-item">
 			            <a class="container-fluid title-bar-3" href="{{ url('/') }}">
-                            <h1 class="main-logo">メインロゴ</h1>
-                            <p class="sub-title">サブタイトル・サブテキスト</p>
+                            <img src="/assets/images/k-logo.png" width="500" height="200">
                         </a>
 		            </div>
 	            </div>
@@ -173,6 +171,9 @@
                     <a class="twitter-timeline" href="https://twitter.com/kikuyoshi5?   ref_src=twsrc%5Etfw" data-tweet-limit="5">Tweets by kikuyoshi5</a> <script async   src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                 </div>
             </div>
+        </div>
+    </div>
+</div>
             
             <div id="page_top"><a href="#"></a></div>
         </main>
@@ -187,6 +188,8 @@
                 <a href="/forms/contact" class="text-white copywriter ml-5">お問い合わせ</a>
             </div>
         </footer>
+        {{-- jQueryの読み込み --}}
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
         {{-- JavaScript --}}
         <script src="{{ secure_asset('js/main.js') }}"></script>
     </body>

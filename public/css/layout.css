@@ -11,6 +11,10 @@ body {
     /*font-family: "Tsukushi A Round Gothic","筑紫A丸ゴシック";*/
 }
 
+/*** 全体フォント ***/
+body {
+    color: #444 !important;
+}
 
 
 
@@ -22,8 +26,9 @@ body {
     display: flex;
     padding: 0;
     max-height: 100%;
-    background: rgb(232,247,6);
-    background: linear-gradient(11deg, rgb(232,247,6) 0%, rgb(11,223,144) 25%, rgb(0,127,255) 100%);
+    background: #09C;
+    /*background: rgb(232,247,6);*/
+    /*background: linear-gradient(11deg, rgb(232,247,6) 0%, rgb(11,223,144) 25%, rgb(0,127,255) 100%);*/
 }
 
 /*--- ハンバーガーメニュー ---*/
@@ -45,9 +50,15 @@ body {
 }
 
 /*--- ドロップダウンホバー ---*/
+.post-btn {
+    color: #111;
+}
+
+
 .dropdown-item:hover {
-    background: rgb(232,247,6);
-    background: linear-gradient(11deg, rgba(232,247,6,1) 0%, rgba(11,223,144,1) 33%, rgba(0,127,255,1) 100%);
+    background: #09C;
+    /*background: rgb(232,247,6);*/
+    /*background: linear-gradient(11deg, rgba(232,247,6,1) 0%, rgba(11,223,144,1) 33%, rgba(0,127,255,1) 100%);*/
     opacity: 0.7;
 }
 
@@ -67,11 +78,9 @@ body {
     background-position: bottom ;
     background-color:rgba(255,255,255,0.3);
     background-blend-mode:lighten;
-    color: #000;
 }
 .title-bar-1:hover {
     text-decoration: none;
-    color: #000;
 
 /*--- カルーセル2 ---*/
 }
@@ -87,11 +96,9 @@ body {
     background-position: center;
     background-color:rgba(255,255,255,0.3);
     background-blend-mode:lighten;
-    color: #000;
 }
 .title-bar-2:hover {
     text-decoration: none;
-    color: #000;
 }
 
 /*--- カルーセル3 ---*/
@@ -107,11 +114,9 @@ body {
     background-position: center;
     background-color:rgba(255,255,255,0.3);
     background-blend-mode:lighten;
-    color: #000;
 }
 .title-bar-3:hover {
     text-decoration: none;
-    color: #000;
 }
 
 /*--- メインロゴ ---*/
@@ -130,13 +135,14 @@ body {
 /*** カテゴリーボタン ***/
 /*--- カテゴリー大枠 ---*/
 .category {
-    background: rgb(232,247,6);
-    background: linear-gradient(11deg, rgb(232,247,6) 0%, rgb(11,223,144) 33%, rgb(0,127,255) 100%);
+    background: #09C;
+    /*background: rgb(232,247,6);*/
+    /*background: linear-gradient(11deg, rgb(232,247,6) 0%, rgb(11,223,144) 33%, rgb(0,127,255) 100%);*/
 }
 
 /*--- カテゴリー各項目 ---*/
 .category-name {
-    color: #000;
+    color: #111;
     border-right: 1px solid #FFF;
     border-bottom: 1px solid #FFF;
     padding: 0;
@@ -215,7 +221,7 @@ body {
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
 }
 .main-btn:hover {
-    color: #000;
+    color: #444;
     text-decoration: none;
     background: rgb(232,247,6);
     background: linear-gradient(11deg, rgba(232,247,6,1) 0%, rgba(11,223,144,1) 33%, rgba(0,127,255,1) 100%);
@@ -244,7 +250,7 @@ body {
     line-height: 25px;
     font-size: 17px;
     background: rgba(0,127,255,1);
-    color: #ffffff;
+    color: #FFF;
     font-weight: bold;
     border-radius: 5px 5px 0 0;
 }
@@ -269,7 +275,7 @@ body {
     line-height: 25px;
     font-size: 17px;
     background: rgba(0,127,255,1);
-    color: #ffffff;
+    color: #FFF;
     font-weight: bold;
     border-radius: 5px 5px 0 0;
 }
@@ -283,8 +289,9 @@ body {
 
 footer {
     height: 3em;
-    background: rgba(232,247,6, 1);
-    background: linear-gradient(11deg, rgba(232,247,6,1) 0%, rgba(11,223,144,5) 33%, rgba(0,127,255,1) 100%);
+    background: #09C;
+    /*background: rgba(232,247,6, 1);*/
+    /*background: linear-gradient(11deg, rgba(232,247,6,1) 0%, rgba(11,223,144,5) 33%, rgba(0,127,255,1) 100%);*/
 }
 .copywriter {
     padding-top: 0.6em;

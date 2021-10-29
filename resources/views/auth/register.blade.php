@@ -63,7 +63,11 @@
                 <div class="mb-4">
                     <label class="form-label mb-2 mr-1">{{ __('message.Profile-image') }}</label>
                     <span class="text-secondary small">※任意</span>
-                    <input type="file" class="form-control-file" name="profile_image">
+                    <input type="file" id="edit-user-image" class="form-control-file" name="profile_image">
+                    
+                    <!-- ファイル画像を表示 -->
+                    <img src="" id="user-preview" class="img-responsive">
+                    
                     <button type="button" class="mt-2" onclick="this.form.elements['profile_image'].value=''">画像取り消し</button>
                 </div>
 

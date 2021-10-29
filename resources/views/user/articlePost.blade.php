@@ -52,7 +52,10 @@
                 <div class="mb-5">
                     <label class="form-label mb-3">{{ __('message.Main image') }}</label>
                     <span class="text-danger small">※必須</span>
-                    <input type="file" class="form-control-file @error('main_image') is-invalid @enderror" name="main_image">
+                    <input type="file" id="edit-article-image" class="form-control-file @error('main_image') is-invalid @enderror" name="main_image">
+                
+                    <!-- ファイル画像を表示 -->
+                    <img src="" id="article-preview" class="img-responsive">
                 
                     <!-- 画像未選択エラー -->
                     @error('main_image')

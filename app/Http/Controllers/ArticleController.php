@@ -69,7 +69,11 @@ class ArticleController extends Controller
     public function preview(Request $request)
     {
         $preview = Article::find($request->id);
-        
+        //指定IDがなければトップページに移動
+        if(!isset($article))
+        {
+            return redirect('/');
+        }
         return view('user.articlePreview', ['preview' => $preview])
             ->with('title', '記事が投稿されました！');
     }
@@ -114,7 +118,11 @@ class ArticleController extends Controller
     public function show(Request $request)
     {
         $show = Article::find($request->id);
-        
+        //指定IDがなければトップページに移動
+        if(!isset($article))
+        {
+            return redirect('/');
+        }
         return view('main.detail', ['show' => $show]);
     }
     
@@ -123,7 +131,11 @@ class ArticleController extends Controller
     public function edit(Request $request)
     {
         $article = Article::find($request->id);
-        
+        //指定IDがなければトップページに移動
+        if(!isset($article))
+        {
+            return redirect('/');
+        }
         return view('user.articleEdit', ['form' => $article]);
     }
     
@@ -132,7 +144,11 @@ class ArticleController extends Controller
     public function deleteEdit(Request $request)
     {
         $article = Article::find($request->id);
-        
+        //指定IDがなければトップページに移動
+        if(!isset($article))
+        {
+            return redirect('/');
+        }
         return view('user.articleDelete', ['article' => $article]);
     }
     

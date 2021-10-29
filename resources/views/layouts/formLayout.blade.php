@@ -35,7 +35,7 @@
                 <div class="container">
                 
                     <!-- 左上タイトル -->
-                    <a class="navbar-brand form-main-title" href="{{ url('/') }}"><img src="/assets/images/k-logo.png" width="130" height="50"></a>
+                    <a class="navbar-brand form-main-title" href="{{ url('/') }}"><img src="/assets/images/kf-logo.png" width="100" height="40"></a>
                     
                     <!-- ハンバーガーメニュー -->
                     <button class="navbar-toggler button-outline" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -47,7 +47,7 @@
                         <ul class="navbar-nav">
                             
                             <!-- 作品投稿・お問い合わせドロップダウン -->
-                            <li class="nav-item dropdown">
+                            <li class="nav-item dropdown post-btn">
                                 <a class="nav-link dropdown-toggle top-nav" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     投稿する
                                 </a>
@@ -115,6 +115,10 @@
                 <div class="text-white copywriter px-5 c-border">©️ 2021 Y-Kikuchi</div>
                 <a href="/forms/contact" class="text-white copywriter ml-5">お問い合わせ</a>
             </div>
-        </footer>           
+        </footer>
+        {{-- jQueryの読み込み --}}
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        {{-- JavaScript --}}
+        <script src="{{ secure_asset('js/main.js') }}"></script>
     </body>
 </html>

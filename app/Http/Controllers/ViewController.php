@@ -57,7 +57,11 @@ class ViewController extends Controller
     public function deleteEdit(Request $request)    
     {
         $view = View::find($request->id);
-        
+        //指定IDがなければトップページに移動
+        if(!isset($view))
+        {
+            return redirect('/');
+        }
         return view('user.viewDelete', ['view' => $view]);
     }
     

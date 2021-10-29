@@ -40,7 +40,11 @@
                 <!-- プロフィール画像 -->
                 <div class="mb-2">
                     <label class="form-label mb-4 mr-1">プロフィール画像</label>
-                    <input type="file" class="form-control-file" name="profile_image">
+                    <input type="file" id="update-user-image" class="form-control-file" name="profile_image">
+                    
+                    <!-- ファイル画像を表示 -->
+                    <img src="" id="user-update-preview" class="img-responsive">
+                    
                     <button type="button" class="mt-1" onclick="this.form.elements['profile_image'].value=''">画像取り消し</button>
                 </div>
                 
