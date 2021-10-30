@@ -11,7 +11,7 @@
             <div class="col-lg-9 col-md-12">
 
             <!-- 全てのカテゴリーをみる -->
-            <div class="form-group d-flex justify-content-center mt-3 mb-4 p-3">
+            <div class="form-group  d-flex justify-content-center mt-3 mb-4 p-3">
                 <a href="{{ url('article/index') }}" class="main-btn btn d-block mx-auto mt-3 all-category"><span>全てのカテゴリーをみる</span></a>
             </div>
             
@@ -38,7 +38,7 @@
                         <!-- タイトル -->
                         <div class="card-body">
                             <!-- 投稿日時 -->
-                            <div class="next-news-date d-inline"><i class="far fa-clock mr-2"></i>{{ $article->created_at->format('Y年m月d日') }}</div>
+                            <div class="next-news-date d-flex justify-content-end mr-3"><i class="far fa-clock mr-2 mt-1"></i>{{ $article->created_at->format('Y年m月d日') }}</div>
                             <h4 class="card-title next-title">{{ Str::limit($article->title,32) }}</h4>
                             <!-- 投稿者名 -->
                             <a class="top-profile d-inline" href="/user?id={{ $article->user->id }}">
@@ -82,8 +82,7 @@
                     @endforeach
                 </div>
             <!-- 風景一覧を見る -->
-            <a class="main-btn btn d-block mx-auto mt-3 p-3" type="button" href="{{ url('article/view') }}
-            ">風景一覧<br>を見る</a>
+            <a class="main-btn btn d-block mx-auto mt-3 p-3" type="button" href="{{ url('article/view') }}">風景一覧<br>を見る</a>
         </div>
             
 @endsection

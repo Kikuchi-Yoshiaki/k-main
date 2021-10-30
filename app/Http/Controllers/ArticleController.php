@@ -70,7 +70,7 @@ class ArticleController extends Controller
     {
         $preview = Article::find($request->id);
         //指定IDがなければトップページに移動
-        if(!isset($article))
+        if(!isset($preview))
         {
             return redirect('/');
         }
@@ -119,7 +119,7 @@ class ArticleController extends Controller
     {
         $show = Article::find($request->id);
         //指定IDがなければトップページに移動
-        if(!isset($article))
+        if(!isset($show->id))
         {
             return redirect('/');
         }

@@ -52,6 +52,8 @@
 .all-category {
     background: #FFF;
     width: 20em;
+    min-width: 150px;
+    min-height: 32px;
     border: 1px solid #000;
 }
 
@@ -69,16 +71,16 @@
 /*--- 詳細記事上部 ---*/
 .detail-title {
     margin: 0.2em auto 0.5em;
-    font-size: 3vw;
+    font-size: max(3vw, 24px);
     background: linear-gradient(transparent 70%, #a7d6ff 70%);
     width: 95%;
 }
 .detail-title:first-letter {
-    font-size: 4vw;
+    font-size: max(4vw, 32px);
 }
 
 .detail-news-date {
-    font-size: 1.5vw;
+    font-size: max(1.5vw, 12px);
 }
 
 .category-name {
@@ -128,17 +130,18 @@
 
 
 .detail-profile-image {
-    height: 80px;
-    width: 80px;
+    height: 7vw;
+    min-height: 70px;
+    width: 7vw;
+    min-width: 70px;
     border-radius: 50%;
-    border: solid 5px rgba(119, 195, 223, 0.5);
+    border: solid 2px rgba(119, 195, 223, 0.5);
 }
 
 .detail-profile-name {
-    font-size: 2.5vw;
+    font-size: max(2.2vw, 20px);
     padding: 0 0.2em 0.2em 0.1em;
     color: #444;
-    border-bottom: rgba(119, 195, 223, 0.8) 3px dotted;
 }
 
 .detail-text {

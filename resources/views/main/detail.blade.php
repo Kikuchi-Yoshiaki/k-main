@@ -77,7 +77,7 @@
                 
                 {{-- 投稿者プロフィール --}}
                 <div class="d-flex justify-content-between m-4">
-                    <a class="top-profile d-inline mt-3" href="user?id={{ $show->user->id }}">
+                    <a class="top-profile d-inline mt-3" href="/user?id={{ $show->user->id }}">
                         @if (isset($show->user->profile_image))
                         <img class="detail-profile-image" src="{{ asset('storage/profile/'.$show->user['profile_image'] ) }}">
                         @else
@@ -108,9 +108,7 @@
                 <!-- 記事投稿へ移動 -->
                 <div class="col-lg-6 offset-lg-3 post-box">
                     <div class="">あなたも記事を投稿してみませんか？</div>
-                    <div class="d-none d-lg-block post-btn">
-                        <a href="{{ url('/user/post/article') }}" type="button" class="main-btn">記事・日記<br>を投稿する</a>
-                    </div>
+                    <a class="main-btn btn d-block mx-auto mt-3 p-3" type="button" href="{{ url('/user/post/article') }}">記事・日記<br>を投稿する</a>
                 </div>
                 <a class="goto-top d-block text-center mt-5" href="{{ url('/') }}">トップページに戻る</a>
             </div>

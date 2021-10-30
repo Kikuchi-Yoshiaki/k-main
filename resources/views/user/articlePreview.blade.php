@@ -73,14 +73,14 @@
 
                 <!-- 記事プロフィール -->
                 <div class="d-flex justify-content-between m-4">
-                    <a class="top-profile d-inline mt-3" href="user?id={{ $preview->user->id }}">
+                    <div class="top-profile d-inline mt-3">
                         @if (isset($preview->user->profile_image))
                         <img class="detail-profile-image" src="{{ asset('storage/profile/'.$preview->user['profile_image']) }}">
                         @else
                         <img src="/assets/images/noimage.png" name="no-profile-image" class="detail-profile-image">
                         @endif
                         <div class="detail-profile-name d-inline">{{ $preview->user->name }}さん</div>
-                    </a>
+                    </div>
                 </div>
 
                 <!-- 記事本文 -->

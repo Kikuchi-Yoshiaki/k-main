@@ -10,7 +10,7 @@
             {{-- 左側コンテンツ --}}
             <div class="col-lg-9 col-md-12 left-contents">
                 {{-- 最新記事見出し --}}
-                <div class="my-5 headline col-10 offset-1">
+                <div class="my-5 headline d-flex justify-content-center">
                     <h3 class="headline-top">気仙沼の最新の記事</h3>
                 </div>
                 <!-- 記事のメイン画像 -->
@@ -33,7 +33,7 @@
                     <!-- タイトル -->
                     <div class="card-body">
                         <!-- 投稿日時 -->
-                        <div class="top-news-date d-inline mr-3"><i class="far fa-clock mr-2"></i>{{ $top->created_at->format('Y年m月d日') }}</div>
+                        <div class="top-news-date d-flex justify-content-end mr-3"><i class="far fa-clock mr-2 mt-1"></i>{{ $top->created_at->format('Y年m月d日') }}</div>
                         <h4 class="card-title top-title">{{ Str::limit($top->title,32) }}</h4>
                         <!-- 投稿者名 -->
                         <a class="top-profile d-inline" href="user?id={{ $top->user->id }}">
@@ -72,7 +72,7 @@
                         @endif
                         <div class="card-body">
                             <!-- 投稿日時 -->
-                            <div class="next-news-date d-inline"><i class="far fa-clock mr-2"></i>{{ $top->created_at->format('Y年m月d日') }}</div>
+                            <div class="next-news-date d-flex justify-content-end mr-3"><i class="far fa-clock mr-2 mt-1"></i>{{ $top->created_at->format('Y年m月d日') }}</div>
                             <!-- タイトル -->
                             <h4 class="card-title next-title">{{ Str::limit($post->title,32) }}</h4>
                             <!-- 投稿者名 -->
@@ -96,7 +96,7 @@
                 <a class="main-btn btn d-block mx-auto mt-3 more d-none" type="button" href="{{ url('article/index') }}">もっと見る</a>
 
                 {{-- 風景写真見出し --}}
-                <div class="mb-5 user-headline-view col-10 offset-1">
+                <div class="mb-5 user-headline-view d-flex justify-content-center">
                     <h3 class="headline-view">気仙沼の風景画像</h3>
                 </div>
 

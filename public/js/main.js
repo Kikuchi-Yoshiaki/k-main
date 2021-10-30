@@ -54,12 +54,22 @@ $(function() {
     reader.readAsDataURL(e.target.files[0]);
   });
   
-  
-  
-  
-  
 });
 
+
+//フォームロゴを少し動かす
+// $(function () {
+//     setTimeout('rect()'); //アニメーションを実行
+// });
+
+// function rect() {
+//     $('.form-logo').animate({
+//         marginTop: '-=5px'
+//     }, 800).animate({
+//         marginTop: '+=5px'
+//     }, 800);
+//     setTimeout('rect()', 1600); //アニメーションを繰り返す間隔
+// }
 
 
 

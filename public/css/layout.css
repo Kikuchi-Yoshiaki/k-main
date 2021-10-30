@@ -1,9 +1,6 @@
 /*** 背景色 ***/
 body {
-    /*background: url(/assets/images/b054.jpg);*/
-    /*background-color: #FDD;*/
-    /*background-color: #DCDCDC;*/
-    background-color: #FFF;
+    background-color: rgba(30, 144, 255, 0.05);
 }
 /*** フォント ***/
 body {
@@ -25,8 +22,8 @@ body {
 .top-bar {
     display: flex;
     padding: 0;
-    max-height: 100%;
-    background: #09C;
+    /*background: #09C;*/
+    background: #4D4D4D;
     /*background: rgb(232,247,6);*/
     /*background: linear-gradient(11deg, rgb(232,247,6) 0%, rgb(11,223,144) 25%, rgb(0,127,255) 100%);*/
 }
@@ -34,24 +31,31 @@ body {
 /*--- ハンバーガーメニュー ---*/
 .fa-bars {
     padding-top: 0.3em;
-    color: #000;
+    color: #FFF;
+}
+
+.overview {
+    color: #FFF;
 }
 
 /*--- トップメニューカテゴリー ---*/
 .top-nav {
-    color: #000;
+    /*color: #000;*/
+    color: #FFF;
     margin: 0 0 0.5em 1em;
     padding-bottom: 0;
 }
 .top-nav:hover {
-    color: #000;
+    /*color: #000;*/
+    color: #FFF;
     text-decoration: none;
     border-bottom: 1px solid #FFF;
 }
 
 /*--- ドロップダウンホバー ---*/
 .post-btn {
-    color: #111;
+    /*color: #111;*/
+    color: #FFF;
 }
 
 
@@ -64,6 +68,29 @@ body {
 
 
 /*** ロゴ・背景画面 ***/
+
+/*--- ロゴ ---*/
+.k-logo {
+    width: 50vw;
+    max-width: 400px;
+    min-width: 250px;
+    height: 20vw;
+    max-height: 200px;
+    min-height: 100px;
+}
+
+.form-main-title {
+    padding: 0;
+}
+
+.form-logo {
+    width: 15vw;
+    max-width: 180px;
+    min-width: 100px;
+    height: 5vw;
+    max-height: 60px;
+    min-height: 25px;
+}
 
 /*--- カルーセル１ ---*/
 .title-bar-1 {
@@ -119,34 +146,26 @@ body {
     text-decoration: none;
 }
 
-/*--- メインロゴ ---*/
-.main-logo {
-    text-align: center;
-    font-size: 6vw;
-}
 
-/*--- サブタイトル ---*/
-.sub-title {
-    text-align: center;
-    font-size: 3vw;
-}
 
 
 /*** カテゴリーボタン ***/
 /*--- カテゴリー大枠 ---*/
 .category {
-    background: #09C;
+    /*background: #09C;*/
+    background: #4D4D4D;
     /*background: rgb(232,247,6);*/
     /*background: linear-gradient(11deg, rgb(232,247,6) 0%, rgb(11,223,144) 33%, rgb(0,127,255) 100%);*/
 }
 
 /*--- カテゴリー各項目 ---*/
 .category-name {
-    color: #111;
+    /*color: #111;*/
+    color: #FFF;
     border-right: 1px solid #FFF;
     border-bottom: 1px solid #FFF;
     padding: 0;
-    transition: 3s;
+    transition: 2s;
     position: relative;
 }
 .k-job {
@@ -158,6 +177,7 @@ body {
 }
 .category-name:hover {
     color: #000;
+    background: #FFF;
 }
 .category-name:before {
     content: "";
@@ -206,6 +226,7 @@ body {
 /*--- 投稿ボタン ---*/
 .main-btn {
     width: 150px;
+    min-height: 40px;
     position: relative;
     top: 1em;
     left: 1em;
@@ -216,7 +237,7 @@ body {
     color: #FFF;
     border-radius: 5px;
     text-align: center;
-    font-size: 1.2vw;
+    font-size: max(1.2vw, 16px);
     transition: 1s;
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
 }
@@ -288,15 +309,16 @@ body {
 }
 
 footer {
-    height: 3em;
-    background: #09C;
+    height: 100%;
+    /*background: #09C;*/
+    background: #4D4D4D;
     /*background: rgba(232,247,6, 1);*/
     /*background: linear-gradient(11deg, rgba(232,247,6,1) 0%, rgba(11,223,144,5) 33%, rgba(0,127,255,1) 100%);*/
 }
-.copywriter {
-    padding-top: 0.6em;
-}
 
+footer .row {
+    padding: 5px 0;
+}
 
 /*--- トップページ ---*/
 #page_top{

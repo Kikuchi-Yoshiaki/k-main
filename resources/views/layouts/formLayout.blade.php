@@ -14,7 +14,7 @@
         <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/   css">
 
         <!-- favicon -->
-        <link rel="shortcut icon" type="image/x-icon"  href="/assets/images/k-fav.png">
+        <link rel="shortcut icon" type="image/x-icon"  href="/assets/images/k-favicon.png">
 
         <!-- Styles -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -35,7 +35,7 @@
                 <div class="container">
                 
                     <!-- 左上タイトル -->
-                    <a class="navbar-brand form-main-title" href="{{ url('/') }}"><img src="/assets/images/kf-logo.png" width="100" height="40"></a>
+                    <a class="navbar-brand form-main-title" href="{{ url('/') }}"><img src="/assets/images/kf-logo.png" class="form-logo"></a>
                     
                     <!-- ハンバーガーメニュー -->
                     <button class="navbar-toggler button-outline" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -90,7 +90,7 @@
                             
                             <!-- ハンバーガーメニューでのみ表示される部分 -->
                             <div class="dropdown-divider"></div>
-                            <li class="d-block d-md-none">
+                            <li class="d-block d-md-none ov">
                                 <div>概要説明</div>
                                 <p>　この〇〇〇では気仙沼の観光や風景・グルメ・生活など情報を自由に投稿して共有できるWebサイトです。<br>　今、気仙沼市は大島大橋やかなえ大橋の開通、おかえりモネの放送などで盛り上がっておりますが、まだまだ知らない魅力が数多くあります。<br>　気仙沼や周辺地域の魅力を自由に発信してみませんか？<br><br>〇〇〇管理人</p>
                             </li>  
@@ -110,10 +110,14 @@
         {{-- フッター --}}
         <footer class="container-fluid">
             @yield('footer')
-            <div class="d-flex justify-content-center">
-                <a href="/privacy-policy" class="text-white copywriter mr-5">プライバシーポリシー</a>
-                <div class="text-white copywriter px-5 c-border">©️ 2021 Y-Kikuchi</div>
-                <a href="/forms/contact" class="text-white copywriter ml-5">お問い合わせ</a>
+            <div class="row text-center">
+                <div class="text-white copywriter col-sm-12 col-md-4">©️ 2021 Y-Kikuchi</div>
+                <div class="col-sm-12 col-md-4">
+                    <a href="/privacy-policy" class="text-white copywriter">プライバシーポリシー</a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a href="/forms/contact" class="text-white copywriter">お問い合わせ</a>
+                </div>
             </div>
         </footer>
         {{-- jQueryの読み込み --}}

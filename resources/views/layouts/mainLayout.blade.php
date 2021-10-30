@@ -21,7 +21,7 @@
         <link href="{{ asset('css/user.css') }}" rel="stylesheet">
 
         <!-- favicon -->
-        <link rel="shortcut icon" type="image/x-icon"  href="/assets/images/k-fav.png">
+        <link rel="shortcut icon" type="image/x-icon"  href="/assets/images/k-favicon.png">
 
         <!-- Font Awesome -->
         <script src="https://kit.fontawesome.com/7807b4c945.js" crossorigin="anonymous"></script>
@@ -89,7 +89,7 @@
                             
                             <!-- ハンバーガーメニューでのみ表示される部分 -->
                             <div class="dropdown-divider"></div>
-                            <li class="d-block d-md-none">
+                            <li class="d-block d-md-none overview">
                                 <div>概要説明</div>
                                 <p>　この〇〇〇では気仙沼の観光や風景・グルメ・生活など情報を自由に投稿して共有できるWebサイトです。<br>　今、気仙沼市は大島大橋やかなえ大橋の開通、おかえりモネの放送などで盛り上がっておりますが、まだまだ知らない魅力が数多くあります。<br>　気仙沼や周辺地域の魅力を自由に発信してみませんか？<br><br>〇〇〇管理人</p>
                             </li>  
@@ -105,17 +105,17 @@
 	            <div class="carousel-inner">
 		            <div class="carousel-item active">
 			            <a class="container-fluid title-bar-1" href="{{ url('/') }}">
-                            <img src="/assets/images/k-logo.png" width="500" height="200">
+                            <img src="/assets/images/k-logo.png" class="k-logo">
                         </a>
 		            </div>
 		            <div class="carousel-item">
 			           <a class="container-fluid title-bar-2" href="{{ url('/') }}">
-                            <img src="/assets/images/k-logo.png" width="500" height="200">
+                            <img src="/assets/images/k-logo.png" class="k-logo">
                         </a>
 		            </div>
 		            <div class="carousel-item">
 			            <a class="container-fluid title-bar-3" href="{{ url('/') }}">
-                            <img src="/assets/images/k-logo.png" width="500" height="200">
+                            <img src="/assets/images/k-logo.png" class="k-logo">
                         </a>
 		            </div>
 	            </div>
@@ -182,10 +182,14 @@
         {{-- フッター --}}
         <footer class="container-fluid">
             @yield('footer')
-            <div class="d-flex justify-content-center">
-                <a href="/privacy-policy" class="text-white copywriter mr-5">プライバシーポリシー</a>
-                <div class="text-white copywriter px-5 c-border">©️ 2021 Y-Kikuchi</div>
-                <a href="/forms/contact" class="text-white copywriter ml-5">お問い合わせ</a>
+            <div class="row text-center">
+                <div class="text-white copywriter col-sm-12 col-md-4">©️ 2021 Y-Kikuchi</div>
+                <div class="col-sm-12 col-md-4">
+                    <a href="/privacy-policy" class="text-white copywriter">プライバシーポリシー</a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a href="/forms/contact" class="text-white copywriter">お問い合わせ</a>
+                </div>
             </div>
         </footer>
         {{-- jQueryの読み込み --}}
