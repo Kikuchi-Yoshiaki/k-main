@@ -10,8 +10,8 @@
             {{-- 左側コンテンツ --}}
             <div class="col-lg-9 col-md-12 left-contents">
                 {{-- 最新記事見出し --}}
-                <div class="my-5 headline d-flex justify-content-center">
-                    <h3 class="headline-top">気仙沼の最新の記事</h3>
+                <div class="mt-4 mb-2 headline d-flex justify-content-center">
+                    <h3 class="headline-top">最新の記事</h3>
                 </div>
                 <!-- 記事のメイン画像 -->
                 <div class="card col-lg-9 offset-lg-2 col-md-10 mb-4 top-news">
@@ -93,11 +93,14 @@
                 </div>
                 
                 <!-- 記事一覧をもっとみる -->
-                <a class="main-btn btn d-block mx-auto mt-3 more d-none" type="button" href="{{ url('article/index') }}">もっと見る</a>
+                <!--<a class="main-btn btn d-block mx-auto mt-3 more d-none" type="button" href="{{ url('article/index') }}">もっと見る</a>-->
+                <a class="d-flex justify-content-center mt-3" type="button" href="{{ url('article/index') }}">
+                    <img class="more-btn" src="/assets/images/more_2.png">
+                </a>
 
                 {{-- 風景写真見出し --}}
-                <div class="mb-5 user-headline-view d-flex justify-content-center">
-                    <h3 class="headline-view">気仙沼の風景画像</h3>
+                <div class="mb-2 user-headline-view d-flex justify-content-center">
+                    <h3 class="headline-view">風景写真</h3>
                 </div>
 
                 <!-- 風景写真一覧 -->
@@ -114,8 +117,12 @@
                     </a>
                     @endforeach
                 </div>
+                
                 <!-- 風景一覧をもっとみる -->
-                <a class="main-btn btn d-block mx-auto mt-3 more d-none" type="button" href="{{ url('article/view') }}">もっと見る</a>
+                <!--<a class="main-btn btn d-block mx-auto mt-3 more d-none" type="button" href="{{ url('article/view') }}">もっと見る</a>-->
+                <a class="d-flex justify-content-center mt-3 rect" type="button" href="{{ url('article/view') }}">
+                    <img class="more-btn" src="/assets/images/more_2.png">
+                </a>
             </div>
             
 @endsection

@@ -10,7 +10,7 @@
                 <h3 class="form-title mb-4 mt-3">お問い合わせ</h3>
                 
                 <!-- お名前 -->
-                <div class="form-group mb-4">
+                <div class="form-group mb-4 form-controll">
                     <label class="form-label mr-1">{{ __('message.Name') }}</label>
                     <span class="text-danger small">※必須</span>
                     <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" autocomplete="name" autofocus>
@@ -24,7 +24,7 @@
                 </div>
                 
                 <!-- メールアドレス -->
-                <div class="form-group mb-4">
+                <div class="form-group mb-4 form-controll">
                     <label class="form-label mr-1">{{ __('message.E-Mail Address') }}</label>
                     <span class="text-danger small">※必須</span>
                     <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" autocomplete="email" autofocus>
@@ -38,7 +38,7 @@
                 </div>
 
                 <!-- タイトル -->
-                <div class="form-group mb-4">
+                <div class="form-group mb-4 form-controll">
                     <label class="form-label mr-1">{{ __('message.contact title') }}</label>
                     <span class="text-danger small">※必須</span>
                     <input id="title" type="text" class="form-control @error('title') is-invalid @enderror" name="title" value="{{ old('title') }}" autocomplete="title" autofocus>
@@ -52,7 +52,7 @@
                 </div>
 
                 <!-- 問い合わせ内容 -->
-                <div class="form-group">
+                <div class="form-group form-controll mb-5">
                     <label class="form-label mr-1">{{ __('message.contact body') }}</label>
                     <span class="text-danger small">※必須</span>
                     <textarea id="body" rows="10" type="text" class="form-control @error('body') is-invalid @enderror" name="body" value="{{ old('body') }}" placeholder="お問い合わせ内容をこちらへ" autocomplete="body" autofocus></textarea>

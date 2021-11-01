@@ -10,7 +10,7 @@
                 @csrf
                 <h3 class="form-title mt-3">{{ __('message.Login') }}</h3>
                 
-                <div class="mb-4 mt-4">
+                <div class="mb-4 mt-4 form-controll">
                     <label class="form-label" for="email">{{ __('message.E-Mail Address') }}</label>
                     <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" autocomplete="email" autofocus>
                 
@@ -22,7 +22,7 @@
                     @enderror
                 </div>
                 
-                <div class="mb-4">
+                <div class="mb-4 form-controll">
                     <label for="password" class="form-label">{{ __('message.Password') }}</label>
                     <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" autofocus autocomplete="current-password">
                 
@@ -34,7 +34,7 @@
                     @enderror
                 </div>
                 
-                <div class="form-check mb-4">
+                <div class="form-check mb-4 form-controll">
                     <input class="form-check-input" type="checkbox" id="checkbox1" name="remenber" id="remenber" {{old('remenber') ? 'checked' : '' }}>
                     <label class="form-check-label" for="checkbox1">{{ __('message.Remember Me') }}</label>
                 </div>

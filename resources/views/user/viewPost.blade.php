@@ -16,16 +16,15 @@
                     <span class="text-danger small">※必須</span>
                     <input type="file" id="edit-view-image" class="form-control-file @error('view_image') is-invalid @enderror" name="view_image" autofocus="">
                     
-                    <!-- ファイル画像を表示 -->
-                    <img src="" id="view-preview" class="img-responsive">
-                    
                     <!-- 画像未選択エラー -->
                     @error('view_image')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>
                     @enderror
-                    <button type="button" class="mt-2" onclick="this.form.elements['view_image'].value=''">画像取り消し</button>
+                    <button type="button" id="cancel-view" class="mt-2" onclick="this.form.elements['view_image'].value=''">画像取り消し</button>
+                    <!-- ファイル画像を表示 -->
+                    <img src="" id="view-preview" class="img-responsive">
                 </div>
 
                 <!-- タイトル -->

@@ -43,7 +43,7 @@ class User extends Authenticatable
     protected $guarded = ['id'];
     
     public static $rules = [
-        'name' => 'required',
+        'name' => 'required | max:20',
         'email' => 'required',
         'password' => 'required',
         ];

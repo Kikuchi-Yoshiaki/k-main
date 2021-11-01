@@ -11,27 +11,28 @@
             <div class="col-lg-9 col-md-12">
                 
             {{-- MyProfile --}}
-            <div class="my-profile-box col-sm-9">
-                <h3 class="my-profile">ユーザーページ</h3>
+            <div class="my-profile-box d-flex flex-column">
                 
-                <div class="my-profile-img">
+                <div class="my-profile-img d-flex justify-content-center">
                     <!-- プロフィールイメージ・無ければNoImage -->
                     @if(isset($user->profile_image))
-                    <img  src="{{ asset('storage/profile/'.$user['profile_image'] ) }}" name="profile-image">
+                    <img src="{{ asset('storage/profile/'.$user['profile_image'] ) }}" name="profile-image">
                     @else
                     <img src="/assets/images/noimage.png" name="no-profile-image">
                     @endif
                     <!-- プロフィールネーム -->
-                    <span class="my-profile-name">{{ $user->name }}さんのページ</span>
+                    <div class="my-profile-name d-flex align-items-center">{{ $user->name }}さんのページ</div>
                 </div>
                 <!-- プロフィール編集画面へ移動 -->
+                <div class="d-flex justify-content-end mr-5">
                 @if(Auth::id() === $user->id)
-                <a class="post-btn float-right mr-5" href="/user/edit/profile?id={{ $user->id }}" type="button">プロフィールを変更する</a>
-                @endif            
+                <a class="btn btn-sm btn-outline-primary mt-3 mr-5" href="/user/edit/profile?id={{ $user->id }}" type="button">プロフィールを変更する</a>
+                @endif
+                </div>
             </div>
 
             <div class="mt-5 headline col-8 offset-2">
-                <h3 class="headline-top">{{ $user->name }}さんの記事一覧</h3>
+                <h3 class="headline-top text-center">{{ $user->name }}さん<br>の記事一覧</h3>
             </div>
             
             <div class="d-flex flex-wrap justify-content-around mb-5">
@@ -84,12 +85,15 @@
             
             
             <!-- 全体の記事一覧画面に移動 -->
-            <a class="main-btn btn d-block mx-auto mt-3 more d-none p-3" type="button" href="article/index">記事一覧<br>を見る</a>
+            <!--<a class="main-btn btn d-block mx-auto mt-3 more d-none p-3" type="button" href="article/index">記事一覧<br>を見る</a>-->
+            <a class="d-flex justify-content-center mt-3 rect" type="button" href="{{ url('article/index') }}">
+                <img class="more-btn" src="/assets/images/more_3.png">
+            </a>
 
 
             {{-- My写真見出し --}}
             <div class="user-headline-view col-8 offset-2">
-                <h3 class="headline-view">{{ $user->name }}さんの風景一覧</h3>
+                <h3 class="headline-view  text-center">{{ $user->name }}さん<br>の風景一覧</h3>
             </div>
             
             <div class="d-flex flex-wrap justify-content-center view-index">
@@ -124,7 +128,10 @@
             @endif
             
             <!-- 全体の記事一覧画面に移動 -->
-            <a class="main-btn btn d-block mx-auto mt-3 p-3" type="button" href="{{ url('article/view') }}">風景一覧<br>を見る</a>
+            <!--<a class="main-btn btn d-block mx-auto mt-3 p-3" type="button" href="{{ url('article/view') }}">風景一覧<br>を見る</a>-->
+            <a class="d-flex justify-content-center mt-3 rect" type="button" href="{{ url('article/view') }}">
+                <img class="more-btn" src="/assets/images/more_4.png">
+            </a>
         </div>
 
 @endsection

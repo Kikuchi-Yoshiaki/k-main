@@ -9,6 +9,11 @@ $(function() {
     }
     reader.readAsDataURL(e.target.files[0]);
   });
+  //画像表示取り消し
+  $('#cancel-view').click(function() {
+    //ファイルを取得する
+      $("#view-preview").attr('src', '');
+  });
   
   
   //新規プロフィール画像のファイル表示
@@ -19,6 +24,11 @@ $(function() {
       $("#user-preview").attr('src', e.target.result);
     }
     reader.readAsDataURL(e.target.files[0]);
+  });
+  //画像表示取り消し
+  $('#cancel-register').click(function() {
+    //ファイルを取得する
+      $("#user-preview").attr('src', '');
   });
   
   
@@ -31,6 +41,11 @@ $(function() {
     }
     reader.readAsDataURL(e.target.files[0]);
   });
+  //画像表示取り消し
+  $('#cancel-edit-profile').click(function() {
+    //ファイルを取得する
+      $("#user-update-preview").attr('src', '');
+  });
   
   
   //記事メイン画像のファイル表示
@@ -41,6 +56,11 @@ $(function() {
       $("#article-preview").attr('src', e.target.result);
     }
     reader.readAsDataURL(e.target.files[0]);
+  });
+  //画像表示取り消し
+  $('#cancel-article-main').click(function() {
+    //ファイルを取得する
+      $("#article-preview").attr('src', '');
   });
   
   
@@ -53,23 +73,30 @@ $(function() {
     }
     reader.readAsDataURL(e.target.files[0]);
   });
+  //画像表示取り消し
+  $('#cancel-edit-article').click(function() {
+    //ファイルを取得する
+      $("#article-update-preview").attr('src', '');
+  });
+  
   
 });
 
 
-//フォームロゴを少し動かす
-// $(function () {
-//     setTimeout('rect()'); //アニメーションを実行
-// });
 
-// function rect() {
-//     $('.form-logo').animate({
-//         marginTop: '-=5px'
-//     }, 800).animate({
-//         marginTop: '+=5px'
-//     }, 800);
-//     setTimeout('rect()', 1600); //アニメーションを繰り返す間隔
-// }
+//フォームロゴを少し動かす
+$(function () {
+    setTimeout('rect()'); //アニメーションを実行
+});
+
+function rect() {
+    $('.more-btn').animate({
+        marginRight: '-=10px'
+    }, 800).animate({
+        marginRight: '+=10px'
+    }, 800);
+    setTimeout('rect()', 160); //アニメーションを繰り返す間隔
+}
 
 
 

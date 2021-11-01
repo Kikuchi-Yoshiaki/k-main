@@ -36,6 +36,7 @@ body {
 
 .overview {
     color: #FFF;
+    margin: 0 1.5em;
 }
 
 /*--- トップメニューカテゴリー ---*/
@@ -372,3 +373,16 @@ footer .row {
     background: #FFF;
     border-radius: 50%;
 }
+
+
+/*--- もっと見る ---*/
+.more-btn {
+    width: 200px;
+    height: 100px;
+}
+.more-btn:hover {
+    opacity: 0.8;
+}
+
+
+

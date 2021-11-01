@@ -70,7 +70,10 @@ class UserController extends Controller
         
         //$user = Auth::id();
         $user = User::find($request->id);
-        
+        if(!isset($user))
+        {
+            return redirect('/');
+        }
         return view('user.profileEdit', ['form' => $user]);
     }
     

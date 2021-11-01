@@ -30,7 +30,7 @@ class ContactController extends Controller
 
         return redirect('/forms/message')
             ->with('title', '送信完了')
-            ->with('message', 'お問い合わせを送信しました。');
+            ->with('message', 'お問い合わせを承りました。');
     }
     
 }

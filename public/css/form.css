@@ -5,7 +5,7 @@
 .form-box {
     background: #FFF;
     max-width: 600px;
-    padding: 30px 70px;
+    padding: 30px 30px;
     margin: 0 auto;
     border: solid 1px rgba(0,127,255,1);
     border-top: solid 10px rgba(0,127,255,1);
@@ -63,7 +63,7 @@
 }
 
 .form-text {
-    font-size: 1.2vw;
+    font-size: max(1.5vw, 12px);
     line-height: 2;
 }
 
@@ -128,6 +128,18 @@
   height: auto;
   max-width: 100%;
   margin: 20px 0;
+  border-radius: 5px;
 }
 
 
+
+/*---- フォームサイズ値規制 ---*/
+.category-form {
+    min-width: 200px;
+}
+
+.form-controll {
+    margin: 0 auto;
+    max-width: 400px;
+    min-width: 200px;
+}

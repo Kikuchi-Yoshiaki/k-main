@@ -10,9 +10,7 @@
         <div class="row justify-content-center">
 
             {{-- 左側コンテンツ --}}
-            
-            <div class="col-lg-9 col-md-12">
-                <h2 class="mt-5 preview-top col-5 offset-3">{{ session('title') }}</h3>
+            <div class="col-lg-9 col-md-12 mt-3">
                 <div class="detail-news-date d-block"><i class="far fa-clock mr-2"></i>{{ $preview->created_at->format('Y年m月d日') }}</div>
                 <!-- 記事上部 -->
                 <h2 class="detail-title">{{ $preview->title }}</h2>

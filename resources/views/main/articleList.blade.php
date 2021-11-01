@@ -82,7 +82,10 @@
                     @endforeach
                 </div>
             <!-- 風景一覧を見る -->
-            <a class="main-btn btn d-block mx-auto mt-3 p-3" type="button" href="{{ url('article/view') }}">風景一覧<br>を見る</a>
+            <!--<a class="main-btn btn d-block mx-auto mt-3 p-3" type="button" href="{{ url('article/view') }}">風景一覧<br>を見る</a>-->
+            <a class="d-flex justify-content-center mt-3 rect" type="button" href="{{ url('article/view') }}">
+                <img class="more-btn" src="/assets/images/more_2.png">
+            </a>
         </div>
             
 @endsection

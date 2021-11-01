@@ -7,7 +7,7 @@
     @if(Auth::id() === $view->user->id)
     <div class="container form-container">
         <div class="wrapper">
-            <div class="form-box user-box">
+            <div class="form-box form-box">
                 <h4 class="form-title mt-3">画像を削除しますか？</h4>
                 <p class="form-text mt-4">投稿日時：{{ $view->created_at->format('Y年m月d日')  }}</p>
                 @if (isset($view->title))

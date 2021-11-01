@@ -7,7 +7,7 @@
     @if(Auth::id() === $form->user->id)
     <div class="container form-container">
         <div class="wrapper">
-            <form action="{{ action('ArticleController@update') }}" method="POST" class="user-box" enctype="multipart/form-data">
+            <form action="{{ action('ArticleController@update') }}" method="POST" class="form-box" enctype="multipart/form-data">
                 <h3 class="form-title mb-4 mt-3">記事・日記を編集する</h3>
                 
                 <!-- タイトル -->
@@ -28,7 +28,7 @@
                 <div class="form-group">
                     <label class="form-label">{{ __('message.category') }}</label>
                     <span class="text-danger small">※必須</span>
-                    <select class="form-control col-5" name="category">
+                    <select class="form-control col-5 category-form" name="category">
                         <option>気仙沼の遊ぶ</option>
                         <option>気仙沼の食べる</option>
                         <option>気仙沼の生活</option>
@@ -55,16 +55,15 @@
                     <span class="text-danger small">※必須</span>
                     <input type="file" id="update-article-image" class="form-control-file @error('main_image') is-invalid @enderror" name="main_image">
                     
-                    <!-- ファイル画像を表示 -->
-                    <img src="" id="article-update-preview" class="img-responsive">
-                    
                     <!-- 画像未選択エラー -->
                     @error('main_image')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>
                     @enderror
-                    <button type="button" class="mt-2" onclick="this.form.elements['main_image'].value=''">画像取り消し</button>
+                    <button type="button" id="cancel-edit-article" class="mt-2" onclick="this.form.elements['main_image'].value=''">画像取り消し</button>
+                    <!-- ファイル画像を表示 -->
+                    <img src="" id="article-update-preview" class="img-responsive">
                 </div>
 
                 <!-- イメージ解説文 -->

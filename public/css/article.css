@@ -173,23 +173,4 @@
 }
 
 
-/*--- プレビュー画面 ---*/
-.preview-top {
-  position: relative;
-  padding: 0.6em;
-  background: #a7d6ff;
-  border-radius: 10px;
-  text-align: center;
-}
-
-.preview-top:after {
-  position: absolute;
-  content: '';
-  top: 100%;
-  left: 30px;
-  border: 15px solid transparent;
-  border-top: 15px solid #a7d6ff;
-  width: 0;
-  height: 0;
-}
 

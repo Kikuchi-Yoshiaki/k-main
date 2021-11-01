@@ -11,7 +11,7 @@
             <div class="col-lg-9 col-md-12">
 
                 {{-- 風景写真見出し --}}
-                <div class="mt-5 headline col-10 offset-1">
+                <div class="mt-4 mb-2 headline d-flex justify-content-center">
                     <h3 class="headline-view">気仙沼の風景画像</h3>
                 </div>
                 <!-- 風景写真一覧 -->
@@ -33,7 +33,7 @@
 
 
                 {{-- 記事２件をランダム表示 --}}
-                <div class="mt-5 headline col-10 offset-1">
+                <div class="mt-4 mb-2 headline d-flex justify-content-center">
                     <h3 class="headline-top">記事・日記TOPIX</h3>
                 </div>
                 <div class="d-flex flex-wrap justify-content-around mb-5">
@@ -78,7 +78,10 @@
                 </div>
                 
                 <!-- 記事一覧をもっとみる -->
-                <a class="main-btn btn d-block mx-auto mt-3 p-3" type="button" href="{{ url('article/index') }}">記事一覧<br>を見る</a>
+                <!--<a class="main-btn btn d-block mx-auto mt-3 p-3" type="button" href="{{ url('article/index') }}">記事一覧<br>を見る</a>-->
+                <a class="d-flex justify-content-center mt-3 rect" type="button" href="{{ url('article/index') }}">
+                    <img class="more-btn" src="/assets/images/more_2.png">
+                </a>
             </div>
             
 @endsection

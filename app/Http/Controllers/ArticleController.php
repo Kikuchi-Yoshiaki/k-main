@@ -59,8 +59,7 @@ class ArticleController extends Controller
         $articles->fill($form);
         $articles->save();
         
-        return redirect('article/preview?id=' . $articles->id)
-            ->with('title', '記事が投稿されました！');
+        return redirect('article/preview?id=' . $articles->id);
         
         //return redirect('article/preview?id=' . $articles->id);
            
