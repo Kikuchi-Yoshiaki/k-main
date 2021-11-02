@@ -12,7 +12,7 @@
 
                 {{-- 風景写真見出し --}}
                 <div class="mt-4 mb-2 headline d-flex justify-content-center">
-                    <h3 class="headline-view">気仙沼の風景画像</h3>
+                    <h3 class="headline-view">風景写真一覧</h3>
                 </div>
                 <!-- 風景写真一覧 -->
                 <div class="d-flex flex-wrap justify-content-center view-index">

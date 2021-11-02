@@ -9,6 +9,7 @@ use App\Article;
 use App\View;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\ViewRequest;
 
 
 class UserController extends Controller

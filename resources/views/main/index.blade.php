@@ -33,7 +33,7 @@
                     <!-- タイトル -->
                     <div class="card-body">
                         <!-- 投稿日時 -->
-                        <div class="top-news-date d-flex justify-content-end mr-3"><i class="far fa-clock mr-2 mt-1"></i>{{ $top->created_at->format('Y年m月d日') }}</div>
+                        <div class="top-news-date d-flex justify-content-end mr-3"><i class="far fa-clock mr-2 mt-1"></i>{{ $top->updated_at->format('Y年m月d日') }}</div>
                         <h4 class="card-title top-title">{{ Str::limit($top->title,32) }}</h4>
                         <!-- 投稿者名 -->
                         <a class="top-profile d-inline" href="user?id={{ $top->user->id }}">
@@ -72,7 +72,7 @@
                         @endif
                         <div class="card-body">
                             <!-- 投稿日時 -->
-                            <div class="next-news-date d-flex justify-content-end mr-3"><i class="far fa-clock mr-2 mt-1"></i>{{ $top->created_at->format('Y年m月d日') }}</div>
+                            <div class="next-news-date d-flex justify-content-end mr-3"><i class="far fa-clock mr-2 mt-1"></i>{{ $post->created_at->format('Y年m月d日') }}</div>
                             <!-- タイトル -->
                             <h4 class="card-title next-title">{{ Str::limit($post->title,32) }}</h4>
                             <!-- 投稿者名 -->

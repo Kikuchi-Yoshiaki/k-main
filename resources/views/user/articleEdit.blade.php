@@ -78,13 +78,39 @@
                     <div class="sub-image-body p-3">
                         <label class="form-label">{{ __('message.Sub image') }}(最大４枚まで追加できます)</label>
                         <span class="text-secondary small">※任意</span>
-                        <input type="file" class="form-control-file" name="sub_image_1">
+                        
+                        <input type="file" class="form-control-file @error('sub_image_1') is-invalid @enderror" name="sub_image_1">
+                        <!-- 画像拡張子エラー -->
+                        @error('sub_image_1')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
                         <button type="button" class="mt-1 mb-3" onclick="this.form.elements['sub_image_1'].value=''">取り消し</button>
-                        <input type="file" class="form-control-file" name="sub_image_2">
+                        
+                        <input type="file" class="form-control-file @error('sub_image_2') is-invalid @enderror" name="sub_image_2">
+                        <!-- 画像拡張子エラー -->
+                        @error('sub_image_2')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
                         <button type="button" class="mt-1 mb-3" onclick="this.form.elements['sub_image_2'].value=''">取り消し</button>
-                        <input type="file" class="form-control-file" name="sub_image_3">
+                        
+                        <input type="file" class="form-control-file @error('sub_image_3') is-invalid @enderror" name="sub_image_3">
+                        @error('sub_image_3')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
                         <button type="button" class="mt-1 mb-3" onclick="this.form.elements['sub_image_3'].value=''">取り消し</button>
-                        <input type="file" class="form-control-file" name="sub_image_4">
+                        
+                        <input type="file" class="form-control-file @error('sub_image_4') is-invalid @enderror" name="sub_image_4">
+                        @error('sub_image_4')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
                         <button type="button" class="mt-1 mb-3" onclick="this.form.elements['sub_image_4'].value=''">取り消し</button>
                     </div>
                 </div>

@@ -8,6 +8,7 @@ use App\View;
 use App\Article;
 use App\User;
 use Illuminate\Support\Facades\Storage;
+use App\Http\Requests\ViewRequest;
 //Image Magic
 //use Intervention\Image\Facades\Image;
 
@@ -15,7 +16,7 @@ class ViewController extends Controller
 {
     
     //風景画像を投稿してメッセージページに移動
-    public function create(Request $request)
+    public function create(ViewRequest $request)
     {
         $this->validate($request, View::$rules);
         

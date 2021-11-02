@@ -83,8 +83,8 @@ return [
         'string'  => ':attributeは、:max文字以下にしてください。',
         'array'   => ':attributeの項目は、:max個以下にしてください。',
     ],
-    'mimes' => 'The :attribute must be a file of type: :values.',
-    'mimetypes' => 'The :attribute must be a file of type: :values.',
+    'mimes' => ':attributeには、:valuesタイプのファイルを指定してください。',
+    'mimetypes' => ':attributeには、:valuesタイプのファイルを指定してください。',
     'min' => [
         'numeric' => 'The :attribute must be at least :min.',
         'file' => 'The :attribute must be at least :min kilobytes.',
@@ -158,7 +158,11 @@ return [
         'password' => 'パスワード',
         'view_image' => '画像',
         'contact_name' => 'お名前',
-        
+        'profile_image' => 'プロフィール画像',
+        'sub_image_1' => 'サブ画像１',
+        'sub_image_2' => 'サブ画像２',
+        'sub_image_3' => 'サブ画像３',
+        'sub_image_4' => 'サブ画像４',
         
         ],
 

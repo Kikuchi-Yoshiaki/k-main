@@ -8,6 +8,7 @@ use App\Article;
 use App\View;
 use App\User;
 use Illuminate\Support\Facades\Storage;
+use App\Http\Requests\ViewRequest;
 
 class ArticleController extends Controller
 {

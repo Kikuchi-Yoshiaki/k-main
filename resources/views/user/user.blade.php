@@ -76,7 +76,7 @@
 
             @if(!isset($article->id))
             <div class="user-article-box col-8 text-center mb-5">
-                <h4 class="form-title mt-2">{{ $user->name }}さんはまだ<br>記事の投稿がありません</h4>
+                <h4 class="form-title mt-2">{{ $user->name }}さんの<br>投稿はまだありません</h4>
                 <div class="d-none d-lg-block post-btn my-4">
                     <a href="{{ url('/user/post/article') }}" type="button" class="main-btn d-inline-block">記事・日記<br>を投稿する</a>
                 </div>
@@ -120,7 +120,7 @@
             
             @if(!isset($view->id))    
             <div class="user-view-box col-8 text-center mb-5">
-                <h4 class="form-title mt-2">{{ $user->name }}さんはまだ<br>風景の投稿がありません</h4>
+                <h4 class="form-title mt-2">{{ $user->name }}さんの<br>投稿はまだありません</h4>
                 <div class="d-none d-lg-block post-btn my-4">
                     <a href="{{ url('/user/post/view') }}" type="button" class="main-btn d-inline-block">風景・写真<br>を投稿する</a>
                 </div>

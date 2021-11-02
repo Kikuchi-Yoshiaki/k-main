@@ -65,7 +65,7 @@
 
             {{-- My写真ランダム表示 --}}
             <div class="mt-5 headline col-10 offset-1">
-                <h3 class="headline-view">風景画像TOPIX</h3>
+                <h3 class="headline-view">風景写真TOPIX</h3>
             </div>
             <!-- 風景写真本体 -->
             <div class="d-flex flex-wrap justify-content-center view-index">
