@@ -49,7 +49,7 @@ class ViewController extends Controller
         $views = View::orderBy('updated_at', 'desc')
             ->paginate(24);
         
-        $articles = Article::all()->random(2);
+        $articles = Article::all();//->random(2);
         
         return view('main.view', ['views' => $views, 'articles' => $articles]);
     }

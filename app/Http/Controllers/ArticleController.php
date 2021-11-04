@@ -108,7 +108,7 @@ class ArticleController extends Controller
         }
         
         
-        $views = View::all()->random(6);
+        $views = View::all();//->random(6);
         
         return view('main.articleList', ['articles' => $articles, 'views' => $views]);
     }

@@ -227,8 +227,14 @@
 }
 
 
-
-
+/*--- 投稿まだなし ---*/
+.null-data {
+    text-align: center;
+    font-size: 2vw;
+}
+.null-btn {
+    margin-bottom: 150px;
+}
 
 
 /*--- トップページ風景画像欄 ---*/

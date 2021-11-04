@@ -10,8 +10,12 @@
             {{-- 左側コンテンツ --}}
             <div class="col-lg-9 col-md-12">
 
+            {{-- 最新記事見出し --}}
+            <div class="mt-5 headline d-flex justify-content-center">
+                <h3 class="headline-top">記事一覧</h3>
+            </div>
             <!-- 全てのカテゴリーをみる -->
-            <div class="form-group  d-flex justify-content-center mt-3 mb-4 p-3">
+            <div class="form-group  d-flex justify-content-center mb-4 p-3">
                 <a href="{{ url('article/index') }}" class="main-btn btn d-block mx-auto mt-3 all-category"><span>全てのカテゴリーをみる</span></a>
             </div>
             
@@ -59,10 +63,15 @@
                 
                 {{--ページネーション--}}
                 <div class="d-flex justify-content-center mt-5">{{ $articles->links() }}</div>
-
-
-
-
+                
+                <!-- 未投稿時 -->
+                @if(!isset($article->id))
+                <div class="null-data">投稿はまだありません。</div>
+                <div class="d-flex justify-content-center mr-5 post-btn null-btn">
+                    <a href="{{ url('/user/post/article') }}" type="button" class="main-btn d-inline-block">記事・日記<br>を投稿する</a>
+                </div>
+                @endif
+             
             {{-- My写真ランダム表示 --}}
             <div class="mt-5 headline col-10 offset-1">
                 <h3 class="headline-view">風景写真TOPIX</h3>
@@ -82,11 +91,20 @@
                     @endforeach
                 </div>
             <!-- 風景一覧を見る -->
-            <!--<a class="main-btn btn d-block mx-auto mt-3 p-3" type="button" href="{{ url('article/view') }}">風景一覧<br>を見る</a>-->
+            @if(isset($view->id))
             <a class="d-flex justify-content-center mt-3 rect" type="button" href="{{ url('article/view') }}">
                 <img class="more-btn" src="/assets/images/more_2.png">
             </a>
+            <!-- 未投稿時 -->
+            @else
+            <div class="null-data">投稿はまだありません。</div>
+            <div class="d-flex justify-content-center mr-5 post-btn">
+                <a href="{{ url('/user/post/view') }}" type="button" class="main-btn d-inline-block">風景・写真<br>を投稿する</a>
+            </div>
+            @endif
+            
         </div>
+        
             
 @endsection
 

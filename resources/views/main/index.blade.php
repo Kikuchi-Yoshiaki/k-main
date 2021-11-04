@@ -1,6 +1,6 @@
 @extends('layouts.mainLayout')
 
-@section('title', 'トップページ')
+@section('title', '気仙沼うぉーかー')
 
 @section('content')
 
@@ -13,6 +13,15 @@
                 <div class="mt-4 mb-2 headline d-flex justify-content-center">
                     <h3 class="headline-top">最新の記事</h3>
                 </div>
+                
+                <!-- 未投稿時 -->
+                @if(!isset($top->id))
+                <div class="null-data">投稿はまだありません。</div>
+                <div class="d-flex justify-content-center mr-5 post-btn">
+                    <a href="{{ url('/user/post/article') }}" type="button" class="main-btn d-inline-block">記事・日記<br>を投稿する</a>
+                </div>
+                @else
+                
                 <!-- 記事のメイン画像 -->
                 <div class="card col-lg-9 offset-lg-2 col-md-10 mb-4 top-news">
                     <img class="card-img-top" src="{{ asset('storage/article/'.$top['main_image'] ) }}">
@@ -49,14 +58,15 @@
                         <a class="float-right" href="/article/detail/?id={{ $top->id }}">続きを読む</a>
                     </div>
                 </div>
+                @endif
 
                 {{-- ２〜５件目の記事 --}}
                 <div class="d-flex flex-wrap justify-content-around mb-5">
                     @foreach ($posts as $post)
                     <div class="card col-lg-5 col-md-10 next-news">
-                        <!-- 記事のメイン画像 -->
+                         <!--記事のメイン画像 -->
                         <img class="card-img-next" src="{{ asset('storage/article/'.$post['main_image'] ) }}">
-                        <!-- カテゴリー分け -->
+                         <!--カテゴリー分け -->
                         @if ($post->category == "気仙沼の遊ぶ")
                         <div class="tags1">
                             <span>{{ $post->category }}</span>
@@ -71,11 +81,11 @@
                         </div>
                         @endif
                         <div class="card-body">
-                            <!-- 投稿日時 -->
+                             <!--投稿日時 -->
                             <div class="next-news-date d-flex justify-content-end mr-3"><i class="far fa-clock mr-2 mt-1"></i>{{ $post->created_at->format('Y年m月d日') }}</div>
-                            <!-- タイトル -->
+                             <!--タイトル -->
                             <h4 class="card-title next-title">{{ Str::limit($post->title,32) }}</h4>
-                            <!-- 投稿者名 -->
+                             <!--投稿者名 -->
                             <a class="top-profile d-inline" href="user?id={{ $post->user->id }}">
                                 @if (isset($post->user->profile_image))
                                 <img class="next-profile-img" src="{{ asset('storage/profile/'.$post->user['profile_image'] ) }}">
@@ -84,7 +94,7 @@
                                 @endif
                                 <div class="next-news-profile d-inline">{{ $post->user->name }}さん</div>
                             </a>
-                            <!-- 記事本文 -->
+                             <!--記事本文 -->
                             <p class="card-text next-text">{{ $post->body }}</p>
                             <a class="float-right" href="/article/detail/?id={{ $post->id }}">続きを読む</a>
                         </div>
@@ -92,11 +102,12 @@
                     @endforeach
                 </div>
                 
+                @if(isset($top->id))
                 <!-- 記事一覧をもっとみる -->
-                <!--<a class="main-btn btn d-block mx-auto mt-3 more d-none" type="button" href="{{ url('article/index') }}">もっと見る</a>-->
                 <a class="d-flex justify-content-center mt-3" type="button" href="{{ url('article/index') }}">
                     <img class="more-btn" src="/assets/images/more_2.png">
                 </a>
+                @endif
 
                 {{-- 風景写真見出し --}}
                 <div class="mb-2 user-headline-view d-flex justify-content-center">
@@ -119,10 +130,17 @@
                 </div>
                 
                 <!-- 風景一覧をもっとみる -->
-                <!--<a class="main-btn btn d-block mx-auto mt-3 more d-none" type="button" href="{{ url('article/view') }}">もっと見る</a>-->
+                @if(isset($view->id))
                 <a class="d-flex justify-content-center mt-3 rect" type="button" href="{{ url('article/view') }}">
                     <img class="more-btn" src="/assets/images/more_2.png">
                 </a>
+                <!-- 未投稿時 -->
+                @else
+                <div class="null-data">投稿はまだありません。</div>
+                <div class="d-flex justify-content-center mr-5 post-btn">
+                    <a href="{{ url('/user/post/view') }}" type="button" class="main-btn d-inline-block">風景・写真<br>を投稿する</a>
+                </div>
+                @endif
             </div>
             
 @endsection

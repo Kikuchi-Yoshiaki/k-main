@@ -118,6 +118,16 @@
                             <img src="/assets/images/k-logo.png" class="k-logo">
                         </a>
 		            </div>
+		            <div class="carousel-item">
+			            <a class="container-fluid title-bar-4" href="{{ url('/') }}">
+                            <img src="/assets/images/k-logo.png" class="k-logo">
+                        </a>
+		            </div>
+		            <div class="carousel-item">
+			            <a class="container-fluid title-bar-5" href="{{ url('/') }}">
+                            <img src="/assets/images/k-logo.png" class="k-logo">
+                        </a>
+		            </div>
 	            </div>
             </div>
 

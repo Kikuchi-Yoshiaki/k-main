@@ -14,6 +14,8 @@
                 <div class="mt-4 mb-2 headline d-flex justify-content-center">
                     <h3 class="headline-view">風景写真一覧</h3>
                 </div>
+                
+                
                 <!-- 風景写真一覧 -->
                 <div class="d-flex flex-wrap justify-content-center view-index">
                     @foreach ($views as $view)
@@ -27,11 +29,19 @@
                     </a>
                     @endforeach
                 </div>
-                
+
                 {{--ページネーション--}}
                 <div class="d-flex justify-content-center mt-5">{{ $views->links() }}</div>
 
-
+                <!-- まだ何も無い時 -->
+                @if(!isset($view->id))
+                <div class="null-data">投稿はまだありません。</div>
+                <div class="d-flex justify-content-center mr-5 post-btn null-btn">
+                    <a href="{{ url('/user/post/view') }}" type="button" class="main-btn d-inline-block">風景・写真<br>を投稿する</a>
+                </div>
+                @endif
+                
+                
                 {{-- 記事２件をランダム表示 --}}
                 <div class="mt-4 mb-2 headline d-flex justify-content-center">
                     <h3 class="headline-top">記事・日記TOPIX</h3>
@@ -78,11 +88,19 @@
                 </div>
                 
                 <!-- 記事一覧をもっとみる -->
-                <!--<a class="main-btn btn d-block mx-auto mt-3 p-3" type="button" href="{{ url('article/index') }}">記事一覧<br>を見る</a>-->
+                @if(isset($article->id))
                 <a class="d-flex justify-content-center mt-3 rect" type="button" href="{{ url('article/index') }}">
                     <img class="more-btn" src="/assets/images/more_2.png">
                 </a>
+                <!-- 未投稿時 -->
+                @else
+                <div class="null-data">投稿はまだありません。</div>
+                <div class="d-flex justify-content-center mr-5 post-btn">
+                    <a href="{{ url('/user/post/article') }}" type="button" class="main-btn d-inline-block">記事・日記<br>を投稿する</a>
+                </div>
+                @endif
             </div>
+            
             
 @endsection
 

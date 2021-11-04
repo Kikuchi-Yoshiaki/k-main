@@ -101,17 +101,17 @@ body {
     align-items: center;
     padding: 50px 0;
     height: 100%;
-    background-image: url(/assets/images/2222.JPG);
+    background-image: url(/assets/images/5725.JPG);
     background-size: cover;
-    background-position: bottom ;
+    background-position: bottom;
     background-color:rgba(255,255,255,0.3);
     background-blend-mode:lighten;
 }
 .title-bar-1:hover {
     text-decoration: none;
+}
 
 /*--- カルーセル2 ---*/
-}
 .title-bar-2 {
     display: flex;
     flex-direction: column;
@@ -119,9 +119,10 @@ body {
     align-items: center;
     padding: 50px 0;
     height: 100%;
-    background-image: url(/assets/images/kearashi.jpg);
+    /*お魚市場前*/
+    background-image: url(/assets/images/0934.JPG);
     background-size: cover;
-    background-position: center;
+    background-position: bottom ;
     background-color:rgba(255,255,255,0.3);
     background-blend-mode:lighten;
 }
@@ -137,7 +138,7 @@ body {
     align-items: center;
     padding: 50px 0;
     height: 100%;
-    background-image: url(/assets/images/yakei.jpg);
+    background-image: url(/assets/images/0875.JPG);
     background-size: cover;
     background-position: center;
     background-color:rgba(255,255,255,0.3);
@@ -147,7 +148,41 @@ body {
     text-decoration: none;
 }
 
+/*--- カルーセル4 ---*/
+.title-bar-4 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+    height: 100%;
+    background-image: url(/assets/images/2222.JPG);
+    background-size: cover;
+    background-position: bottom;
+    background-color:rgba(255,255,255,0.3);
+    background-blend-mode:lighten;
+}
+.title-bar-4:hover {
+    text-decoration: none;
+}
 
+/*--- カルーセル5 ---*/
+.title-bar-5 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+    height: 100%;
+    background-image: url(/assets/images/0872.JPG);
+    background-size: cover;
+    background-position: bottom;
+    background-color:rgba(255,255,255,0.2);
+    background-blend-mode:lighten;
+}
+.title-bar-5:hover {
+    text-decoration: none;
+}
 
 
 /*** カテゴリーボタン ***/
