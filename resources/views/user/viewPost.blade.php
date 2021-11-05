@@ -13,7 +13,7 @@
                 <!-- 画像選択 -->
                 <div class="mb-4">
                     <label class="form-label mb-2 mr-1">画像選択</label>
-                    <span class="text-danger small">※必須</span>
+                    <span class="text-danger small">※任意(jpg, png, jpeg形式,最大10MBまで)</span>
                     <input type="file" id="edit-view-image" class="form-control-file @error('view_image') is-invalid @enderror" name="view_image" autofocus="">
                     
                     <!-- 画像未選択エラー -->
@@ -22,6 +22,7 @@
                         <strong>{{ $message }}</strong>
                     </span>
                     @enderror
+                    
                     <button type="button" id="cancel-view" class="mt-2" onclick="this.form.elements['view_image'].value=''">画像取り消し</button>
                     <!-- ファイル画像を表示 -->
                     <img src="" id="view-preview" class="img-responsive">
@@ -30,8 +31,16 @@
                 <!-- タイトル -->
                 <div class="mb-5 mt-3">
                     <label class="form-label mr-1">画像のタイトル名</label>
-                    <span class="text-secondary small">※任意</span>
-                    <input type="text" class="form-control" name="title" placeholder="写真のタイトル" autofocus="">
+                    <span class="text-secondary small">※任意（最大20文字）</span>
+                    <input type="text" class="form-control @error('title') is-invalid @enderror" name="title" placeholder="写真のタイトルがあれば入力してください" autofocus="">
+                    
+                    <!--プロフィール画像エラー表示 -->
+                    @error('title')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                    
                 </div>
                 
                 <!-- ユーザーIDを登録 -->

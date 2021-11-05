@@ -9,9 +9,9 @@ class Contact extends Model
     protected $guarded = ['id'];
     
     public static $rules = [
-        'name' => 'required',
+        'contact_name' => 'required | max:30',
         'email' => 'required',
-        'title' => 'required',
-        'body' => 'required',
+        'contact_title' => 'required | max:30',
+        'contact_body' => 'required | max:300',
         ];
 }

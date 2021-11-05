@@ -13,9 +13,9 @@ return [
     |
     */
 
-    'failed' => 'メールアドレスとパスワードが一致していません。',
+    'failed' => 'メールアドレスとパスワードが一致していません',
     //'failed' => 'These credentials do not match our records.',
-    'throttle' => 'ログイン試行が規定回数を超えました。:seconds秒後に再開できます。',
+    'throttle' => 'ログイン試行が規定回数を超えました。:seconds秒後に再開できます',
     //'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
 
 ];

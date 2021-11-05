@@ -9,7 +9,6 @@
 
             {{-- 左側コンテンツ --}}
             <div class="col-lg-9 col-md-12">
-                <div class="detail-news-date d-block mt-5"><i class="far fa-clock mr-2"></i>{{ $show->created_at->format('Y年m月d日') }}</div>
                 <!-- 記事タイトル -->
                 <h2 class="detail-title">{{ $show->title }}</h2>
                 
@@ -86,6 +85,7 @@
                         <div class="detail-profile-name d-inline">{{ $show->user->name }}さん</div>
                     </a>
                 </div>
+                <div class="detail-news-date d-flex justify-content-end"><i class="far fa-clock mr-2"></i>{{ $show->created_at->format('Y年m月d日') }}</div>
 
                 {{-- 記事本体 --}}
                 <div class="card">

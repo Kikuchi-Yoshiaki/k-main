@@ -62,7 +62,7 @@
                 <!-- プロフィール画像 -->
                 <div class="mb-4 form-controll">
                     <label class="form-label mb-2 mr-1">{{ __('message.Profile-image') }}</label>
-                    <span class="text-secondary small">※任意</span>
+                    <span class="text-secondary small">※任意(jpg, png, jpeg形式,最大10MBまで)</span>
                     <input type="file" id="edit-user-image" class="form-control-file @error('profile_image') is-invalid @enderror" name="profile_image">
                     
                      <!--プロフィール画像エラー表示 -->

@@ -10,10 +10,12 @@ class Article extends Model
     
     public static $rules = [
         'user_id' => 'required',
-        'title' => 'required',
-        'body' => 'required',
+        'title' => 'required | max:50',
+        'body' => 'required | max:500',
         'main_image' => 'required|file|mimes:jpg,png,jpeg|max:10000',
         'category' => 'required',
+        'image_text' => 'max:30',
+        'link_text' => 'max:50',
         'sub_image_1' => 'file|mimes:jpg,png,jpeg|max:10000',
         'sub_image_2' => 'file|mimes:jpg,png,jpeg|max:10000',
         'sub_image_3' => 'file|mimes:jpg,png,jpeg|max:10000',

@@ -11,7 +11,6 @@
 
             {{-- 左側コンテンツ --}}
             <div class="col-lg-9 col-md-12 mt-3">
-                <div class="detail-news-date d-block"><i class="far fa-clock mr-2"></i>{{ $preview->created_at->format('Y年m月d日') }}</div>
                 <!-- 記事上部 -->
                 <h2 class="detail-title">{{ $preview->title }}</h2>
                 <div class="container">
@@ -80,6 +79,7 @@
                         <div class="detail-profile-name d-inline">{{ $preview->user->name }}さん</div>
                     </div>
                 </div>
+                <div class="detail-news-date d-flex justify-content-end"><i class="far fa-clock mr-2"></i>{{ $preview->created_at->format('Y年m月d日') }}</div>
 
                 <!-- 記事本文 -->
                 <div class="card">
@@ -99,12 +99,12 @@
 
                 <!-- 下側部分 -->
                 <div class="col-lg-6 offset-lg-3 post-box">
-                    <div class="d-none d-lg-block post-btn mb-5">
+                    <div class="post-btn mb-5 mr-5">
                         <a href="/user/edit/article/?id={{ $preview->id }}" type="button" class="main-btn">編集する</a>
                     </div>
     @endif
                     
-                    <div class="d-none d-lg-block post-btn">
+                    <div class="post-btn mr-3">
                         <a class="goto-top d-block mb-3" href="{{ url('/') }}">トップページに戻る</a>
                     </div>
                 </div>

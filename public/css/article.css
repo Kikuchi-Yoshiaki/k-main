@@ -81,6 +81,7 @@
 
 .detail-news-date {
     font-size: max(1.5vw, 12px);
+    color: #808080;
 }
 
 .category-name {
@@ -146,6 +147,7 @@
 
 .detail-text {
     min-height: 300px;
+    font-size: 1.5vw;
 }
 
 .url-box {

@@ -12,13 +12,13 @@
                 <!-- お名前 -->
                 <div class="form-group mb-4 form-controll">
                     <label class="form-label mr-1">{{ __('message.Name') }}</label>
-                    <span class="text-danger small">※必須</span>
-                    <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" autocomplete="name" autofocus>
+                    <span class="text-danger small">※任意（最大30文字）</span>
+                    <input id="contact_name" type="text" class="form-control @error('contact_name') is-invalid @enderror" name="contact_name" value="{{ old('contact_name') }}" autocomplete="contact_name" autofocus>
                 
                     <!-- 名前エラーメッセージ -->
-                    @error('name')
+                    @error('contact_name')
                         <span class="invalid-feedback" role="alert">
-                            <strong>お名前を入力してください。</strong>
+                            <strong>{{ $message }}</strong>
                         </span>
                     @enderror
                 </div>
@@ -40,13 +40,13 @@
                 <!-- タイトル -->
                 <div class="form-group mb-4 form-controll">
                     <label class="form-label mr-1">{{ __('message.contact title') }}</label>
-                    <span class="text-danger small">※必須</span>
-                    <input id="title" type="text" class="form-control @error('title') is-invalid @enderror" name="title" value="{{ old('title') }}" autocomplete="title" autofocus>
+                    <span class="text-danger small">※任意（最大30文字）</span>
+                    <input id="contact_title" type="text" class="form-control @error('contact_title') is-invalid @enderror" name="contact_title" value="{{ old('contact_title') }}" autocomplete="contact_title" autofocus>
                 
                     <!-- タイトルエラーメッセージ -->
-                    @error('title')
+                    @error('contact_title')
                         <span class="invalid-feedback" role="alert">
-                            <strong>お問い合わせタイトルを入力してください。</strong>
+                            <strong>{{ $message }}</strong>
                         </span>
                     @enderror
                 </div>
@@ -54,13 +54,13 @@
                 <!-- 問い合わせ内容 -->
                 <div class="form-group form-controll mb-5">
                     <label class="form-label mr-1">{{ __('message.contact body') }}</label>
-                    <span class="text-danger small">※必須</span>
-                    <textarea id="body" rows="10" type="text" class="form-control @error('body') is-invalid @enderror" name="body" value="{{ old('body') }}" placeholder="お問い合わせ内容をこちらへ" autocomplete="body" autofocus></textarea>
+                    <span class="text-danger small">※任意（最大300文字）</span>
+                    <textarea id="cotact_body" rows="10" type="text" class="form-control @error('contact_body') is-invalid @enderror" name="contact_body" value="{{ old('contact_body') }}" autocomplete="contact_body" autofocus></textarea>
                 
                     <!-- 本文エラーメッセージ -->
-                    @error('body')
+                    @error('contact_body')
                         <span class="invalid-feedback" role="alert">
-                            <strong>お問い合わせ内容を入力してください。</strong>
+                            <strong>{{ $message }}</strong>
                         </span>
                     @enderror
                 </div>

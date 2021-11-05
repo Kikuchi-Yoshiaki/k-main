@@ -20,6 +20,9 @@
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <link href="{{ asset('css/layout.css') }}" rel="stylesheet">
         <link href="{{ asset('css/form.css') }}" rel="stylesheet">
+        
+        <!-- favicon -->
+        <link rel="shortcut icon" type="image/x-icon"  href="/assets/images/k-fav.png">
 
         <!-- Font Awesome -->
         <script src="https://kit.fontawesome.com/7807b4c945.js" crossorigin="anonymous"></script>

@@ -13,8 +13,8 @@
                 <!-- タイトル -->
                 <div class="mb-4">
                     <label class="form-label">{{ __('message.title') }}</label>
-                    <span class="text-danger small">※必須</span>
-                    <input type="text" class="form-control @error('title') is-invalid @enderror" name="title" placeholder="タイトル名" aria-describedby="" autofocus="" value="{{ $form->title }}">
+                    <span class="text-danger small">※必須（最大50文字）</span>
+                    <input type="text" class="form-control @error('title') is-invalid @enderror" name="title" aria-describedby="" autofocus="" value="{{ $form->title }}">
                 
                     <!-- タイトルエラー表示 -->
                     @error('title')
@@ -38,8 +38,8 @@
                 <!-- 記事本文 -->
                 <div class="form-group">
                     <label class="form-label">{{ __('message.Article body') }}</label>
-                    <span class="text-danger small">※必須</span>
-                    <textarea rows="30" class="form-control @error('body') is-invalid @enderror" name="body" placeholder="〇〇文字以内で入力してください">{{ $form->body }}"</textarea>
+                    <span class="text-danger small">※必須（最大500文字）</span>
+                    <textarea rows="30" class="form-control @error('body') is-invalid @enderror" name="body">{{ $form->body }}</textarea>
                 
                     <!-- 本文エラー表示 -->
                     @error('body')
@@ -69,14 +69,20 @@
                 <!-- イメージ解説文 -->
                 <div class="mb-2">
                     <label class="form-label">画像解説</label>
-                    <span class="text-secondary small">※任意</span>
-                    <input type="text" class="form-control" name="image_text" placeholder="画像の下に文章を入れることができます" aria-describedby="" autofocus="" value="{{ $form->image_text }}">
+                    <span class="text-secondary small">※任意（最大30文字）</span>
+                    <input type="text" class="form-control @error('image_text') is-invalid @enderror" name="image_text" value="{{ $form->image_text }}" placeholder="画像の下に文字を入れられます" aria-describedby="" autofocus="" value="{{ $form->image_text }}">
+                
+                     @error('image_text')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
                 </div>
 
                 <!-- サブ画像 -->
                 <div class="sub-image-contaiter mb-2">
                     <div class="sub-image-body p-3">
-                        <label class="form-label">{{ __('message.Sub image') }}(最大４枚まで追加できます)</label>
+                        <label class="form-label">{{ __('message.Sub image') }}(最大４枚まで)</label>
                         <span class="text-secondary small">※任意</span>
                         
                         <input type="file" class="form-control-file @error('sub_image_1') is-invalid @enderror" name="sub_image_1">
@@ -122,11 +128,17 @@
                     <input type="url" class="form-control" for="link-url" placeholder="リンク先URLがありましたらこちらに入力してください" aria-describedby="" autofocus="" value="{{ $form->link_url }}">
                 </div>
 
-                <!-- ラストメッセージ -->
+                <!-- 文末メッセージ -->
                 <div class="mb-4">
-                    <label class="form-label" id="link-text">URL説明文</label>
-                    <span class="text-secondary small">※任意</span>
-                    <input type="text" class="form-control" for="link-text" placeholder="URLの下に文章を入れることができます" aria-describedby="" autofocus="" value="{{ $form->link_text }}">
+                    <label class="form-label" id="link-text">文末メッセージ</label>
+                    <span class="text-secondary small">※任意（最大50文字）</span>
+                    <input type="text" class="form-control @error('link_text') is-invalid @enderror" name="link_text" placeholder="文末にメッセージを入力できます" aria-describedby="" autofocus="" value="{{ $form->link_text }}">
+            
+                    @error('link_text')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>入力できる最大文字数は50文字以下です</strong>
+                    </span>
+                    @enderror
                 </div>
                 
                 <!-- ユーザーIDを登録 -->

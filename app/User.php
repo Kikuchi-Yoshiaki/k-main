@@ -46,7 +46,7 @@ class User extends Authenticatable
         'name' => 'required | max:20',
         'email' => 'required',
         'password' => 'required',
-        'profile_image' => 'file | mimes:jpg,png,jpeg',
+        'profile_image' => 'file|mimes:jpg,png,jpeg|max:10000',
         ];
         
     public function articles()

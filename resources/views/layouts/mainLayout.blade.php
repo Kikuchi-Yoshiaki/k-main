@@ -12,6 +12,10 @@
         <!-- Fonts -->
         <link rel="dns-prefetch" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/   css">
+        <!-- 見出しフォント -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
 
         <!-- Styles -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -21,7 +25,7 @@
         <link href="{{ asset('css/user.css') }}" rel="stylesheet">
 
         <!-- favicon -->
-        <link rel="shortcut icon" type="image/x-icon"  href="/assets/images/k-favicon.png">
+        <link rel="shortcut icon" type="image/x-icon"  href="/assets/images/k-fav.png">
 
         <!-- Font Awesome -->
         <script src="https://kit.fontawesome.com/7807b4c945.js" crossorigin="anonymous"></script>
@@ -134,17 +138,17 @@
             <!-- カテゴリー欄 -->
             <div class="container-fluid category">
                 <div class="row category-menu">
-                    <div class="category-tags col-sm-6 col-md-3">
-                        <a class="nav-link category-name k-job" href="{{ url('article/index?category=enjoy') }}">気仙沼の<span> 遊ぶ</span></a>
+                    <div class="category-tags col-6 col-md-3">
+                        <a class="nav-link category-name k-job" href="{{ url('article/index?category=enjoy') }}">気仙沼の<span>遊ぶ</span></a>
                     </div>
-                    <div class="category-tags col-sm-6 col-md-3">
-                        <a class="nav-link category-name k-food" href="{{ url('article/index?category=food') }}">気仙沼の<span> 食べる<span></span></a>
+                    <div class="category-tags col-6 col-md-3">
+                        <a class="nav-link category-name k-food" href="{{ url('article/index?category=food') }}">気仙沼の<span>食べる<span></span></a>
                     </div>
-                    <div class="category-tags col-sm-6 col-md-3">
-                        <a class="nav-link category-name k-life" href="{{ url('article/index?category=life') }}">気仙沼の<span> 生活</span></a>
+                    <div class="category-tags col-6 col-md-3">
+                        <a class="nav-link category-name k-life" href="{{ url('article/index?category=life') }}">気仙沼の<span>生活</span></a>
                     </div>
-                    <div class="category-tags col-sm-6 col-md-3">
-                        <a class="nav-link category-name k-view" href="{{ url('article/view') }}">気仙沼の<span> 風景</span></a>
+                    <div class="category-tags col-6 col-md-3">
+                        <a class="nav-link category-name k-view" href="{{ url('article/view') }}">気仙沼の<span>風景</span></a>
                     </div>
                 </div>
             </div>
@@ -188,13 +192,13 @@
         {{-- フッター --}}
         <footer class="container-fluid">
             @yield('footer')
-            <div class="row text-center">
-                <div class="text-white copywriter col-sm-12 col-md-4">©️ 2021 Y-Kikuchi</div>
+            <div class="row text-center footer">
+                <div class="copywriter col-sm-12 col-md-4">©️ 2021 Y-Kikuchi</div>
                 <div class="col-sm-12 col-md-4">
-                    <a href="/privacy-policy" class="text-white copywriter">プライバシーポリシー</a>
+                    <a href="/privacy-policy" class="copywriter">プライバシーポリシー</a>
                 </div>
                 <div class="col-sm-12 col-md-4">
-                    <a href="/forms/contact" class="text-white copywriter">お問い合わせ</a>
+                    <a href="/forms/contact" class="copywriter">お問い合わせ</a>
                 </div>
             </div>
         </footer>

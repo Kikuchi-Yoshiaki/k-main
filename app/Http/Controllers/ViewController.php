@@ -16,7 +16,7 @@ class ViewController extends Controller
 {
     
     //風景画像を投稿してメッセージページに移動
-    public function create(ViewRequest $request)
+    public function create(Request $request)
     {
         $this->validate($request, View::$rules);
         

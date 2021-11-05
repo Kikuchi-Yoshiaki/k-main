@@ -10,7 +10,9 @@ class View extends Model
     
     public static $rules = [
         //'user_id' => 'required',
-        'view_image' => 'required',
+        // 'view_image' => 'required',
+        'view_image' => 'required|file|mimes:jpg,png,jpeg|max:10000',
+        'title' => 'required | max:20',
         ];
     
     public function user()

@@ -8,6 +8,7 @@
     color: #444;
     border-bottom: solid 5px #666;
     padding: 0 30px;
+    font-family: 'Yusei Magic', sans-serif;
 }
 .headline-top:after {
     position: absolute;
@@ -123,10 +124,9 @@
 
 .card-img-top {
     margin: 0 auto;
-    width: auto;
-    max-width: 100%;
-    height: 35em;
-    
+    width: 100%;
+    /*height: 35em;*/
+    max-heignt: 35em;
 }
 
 .top-title {
@@ -141,6 +141,7 @@
 
 .top-news-date {
     font-size: max(1.8vw, 12px);
+    color: #808080;
 }
 
 .top-profile-img {
@@ -184,9 +185,9 @@
 
 .card-img-next {
     margin: 0 auto;
-    width: auto;
     width: 100%;
-    height: 20rem;
+    /*height: 35em;*/
+    max-heignt: 30em;
 }
 
 .next-title {
@@ -201,6 +202,7 @@
 
 .next-news-date {
     font-size: max(1.2vw, 12px);
+    color: #808080;
 }
 .next-profile-img {
     height: 5vw;
