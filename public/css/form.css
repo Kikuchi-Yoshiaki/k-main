@@ -131,6 +131,14 @@
   border-radius: 5px;
 }
 
+.sub-responsive {
+  display: block;
+  max-height: 150px;
+  max-width: 100%;
+  margin: 20px 0;
+  border-radius: 5px;
+}
+
 
 
 /*---- フォームサイズ値規制 ---*/

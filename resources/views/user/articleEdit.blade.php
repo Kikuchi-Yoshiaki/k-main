@@ -85,39 +85,51 @@
                         <label class="form-label">{{ __('message.Sub image') }}(最大４枚まで)</label>
                         <span class="text-secondary small">※任意</span>
                         
-                        <input type="file" class="form-control-file @error('sub_image_1') is-invalid @enderror" name="sub_image_1">
-                        <!-- 画像拡張子エラー -->
+                        <!-- サブ画像1 -->
+                        <input type="file" id="update-sub1-image" class="form-control-file @error('sub_image_1') is-invalid @enderror" name="sub_image_1">
+                        <!-- エラー表示 -->
                         @error('sub_image_1')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                         @enderror
-                        <button type="button" class="mt-1 mb-3" onclick="this.form.elements['sub_image_1'].value=''">取り消し</button>
+                        <button type="button" id="cancel-update-sub1" class="mt-1" onclick="this.form.elements['sub_image_1'].value=''">取り消し</button>
+                        <!-- ファイル画像を表示 -->
+                        <img src="" id="sub1-update-preview" class="sub-responsive">
                         
-                        <input type="file" class="form-control-file @error('sub_image_2') is-invalid @enderror" name="sub_image_2">
+                        <!-- サブ画像2 -->
+                        <input type="file" id="update-sub2-image" class="form-control-file @error('sub_image_2') is-invalid @enderror" name="sub_image_2">
                         <!-- 画像拡張子エラー -->
                         @error('sub_image_2')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                         @enderror
-                        <button type="button" class="mt-1 mb-3" onclick="this.form.elements['sub_image_2'].value=''">取り消し</button>
+                        <button type="button" id="cancel-update-sub2" class="mt-1" onclick="this.form.elements['sub_image_2'].value=''">取り消し</button>
+                        <!-- ファイル画像を表示 -->
+                        <img src="" id="sub2-update-preview" class="sub-responsive">
                         
-                        <input type="file" class="form-control-file @error('sub_image_3') is-invalid @enderror" name="sub_image_3">
+                        <!-- サブ画像3 -->
+                        <input type="file" id="update-sub3-image" class="form-control-file @error('sub_image_3') is-invalid @enderror" name="sub_image_3">
                         @error('sub_image_3')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                         @enderror
-                        <button type="button" class="mt-1 mb-3" onclick="this.form.elements['sub_image_3'].value=''">取り消し</button>
+                        <button type="button" id="cancel-update-sub3" class="mt-1" onclick="this.form.elements['sub_image_3'].value=''">取り消し</button>
+                        <!-- ファイル画像を表示 -->
+                        <img src="" id="sub3-update-preview" class="sub-responsive">
                         
-                        <input type="file" class="form-control-file @error('sub_image_4') is-invalid @enderror" name="sub_image_4">
+                        <!-- サブ画像4 -->
+                        <input type="file" id="update-sub4-image" class="form-control-file @error('sub_image_4') is-invalid @enderror" name="sub_image_4">
                         @error('sub_image_4')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                         @enderror
-                        <button type="button" class="mt-1 mb-3" onclick="this.form.elements['sub_image_4'].value=''">取り消し</button>
+                        <button type="button" id="cancel-update-sub4" class="mt-1" onclick="this.form.elements['sub_image_4'].value=''">取り消し</button>
+                        <!-- ファイル画像を表示 -->
+                        <img src="" id="sub4-update-preview" class="sub-responsive">
                     </div>
                 </div>
 
