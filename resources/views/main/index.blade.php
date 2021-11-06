@@ -8,9 +8,9 @@
         <div class="row justify-content-center">
 
             {{-- 左側コンテンツ --}}
-            <div class="col-lg-9 col-md-12 left-contents">
+            <div class="col-lg-9 col-md-12">
                 {{-- 最新記事見出し --}}
-                <div class="mt-4 mb-2 headline d-flex justify-content-center">
+                <div class="mt-4 mb-2 d-flex justify-content-center">
                     <h3 class="headline-top">最新の記事</h3>
                 </div>
                 
@@ -45,7 +45,7 @@
                         <div class="top-news-date d-flex justify-content-end mr-3"><i class="far fa-clock mr-2 mt-1"></i>{{ $top->updated_at->format('Y年m月d日') }}</div>
                         <h4 class="card-title top-title">{{ Str::limit($top->title,32) }}</h4>
                         <!-- 投稿者名 -->
-                        <a class="top-profile d-inline" href="user?id={{ $top->user->id }}">
+                        <a class="d-inline" href="user?id={{ $top->user->id }}">
                             @if (isset($top->user->profile_image))
                             <img class="top-profile-img" src="{{ asset('storage/profile/'.$top->user['profile_image'] ) }}">
                             @else
@@ -117,7 +117,7 @@
                 <!-- 風景写真一覧 -->
                 <div class="d-flex flex-wrap justify-content-center view-index">
                     @foreach ($views as $view)
-                    <a class="card view-image mb-1 text-center" href="{{ asset('storage/view/'.$view['view_image'] ) }}" target="_blank">
+                    <a class="card view-list mb-1 text-center" href="{{ asset('storage/view/'.$view['view_image'] ) }}" target="_blank">
                         <img class="card-img-top" src="{{ asset('storage/view/'.$view['view_image'] ) }}">
                        
                         @if (isset($view->title))

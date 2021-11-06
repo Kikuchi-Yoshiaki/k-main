@@ -15,7 +15,7 @@
                 {{-- 画像のコンテナ --}}
                 <div class="container">
                     <div class="row flex-wrap">
-                        <div class="col-lg-12 main">
+                        <div class="col-lg-12 main-card">
                             <!-- メイン画像 -->
                             <img class="main-image col-lg-12" src="{{ asset('storage/article/'.$show['main_image'] ) }}">
                             
@@ -44,28 +44,28 @@
                         
                         <!-- サブ画像があれば表示 -->
                         @if (isset($show->sub_image_1))
-                        <div class="col-lg-3 col-md-3 col-sm-6 sub sub1">
+                        <div class="col-lg-3 col-md-3 col-sm-6 sub-box">
                             <img class="sub-image col-lg-12" src="{{ asset('storage/article/'.$show['sub_image_1'] ) }}">
                         </div>
                         @else
                         <div></div>
                         @endif
                         @if (isset($show->sub_image_2))
-                        <div class="col-lg-3 col-md-3 col-sm-6 sub sub2">
+                        <div class="col-lg-3 col-md-3 col-sm-6 sub-box">
                             <img class="sub-image col-lg-12" src="{{ asset('storage/article/'.$show['sub_image_2'] ) }}">
                         </div>
                         @else
                         <div></div>
                         @endif
                         @if (isset($show->sub_image_3))
-                        <div class="col-lg-3 col-md-3 col-sm-6 sub sub3">
+                        <div class="col-lg-3 col-md-3 col-sm-6 sub-box">
                             <img class="sub-image col-lg-12" src="{{ asset('storage/article/'.$show['sub_image_3'] ) }}">
                         </div>
                         @else
                         <div></div>
                         @endif
                         @if (isset($show->sub_image_4))
-                        <div class="col-lg-3 col-md-3 col-sm-6 sub sub4">
+                        <div class="col-lg-3 col-md-3 col-sm-6 sub-box">
                             <img class="sub-image col-lg-12" src="{{ asset('storage/article/'.$show['sub_image_4'] ) }}">
                         </div>
                         @else
@@ -97,7 +97,7 @@
                         @if ($show->link_text || $show->link_url)
                         <div class="url-box col-12">
                             <p class="mb-3">{{ $show->link_text }}</p>
-                            <a class="card-rink" target='_blank' href="{{ $show->link_url }}">{{ $show->link_url }}</a>
+                            <a class="card-link" target='_blank' href="{{ $show->link_url }}">{{ $show->link_url }}</a>
                         </div>
                         @else
                         <div></div>

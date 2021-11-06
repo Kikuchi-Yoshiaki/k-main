@@ -1,54 +1,87 @@
-/***全体部分***/
+/*** カテゴリー部分 ***/
 
-.main {
-    margin: 0 !important;
-    padding: 0 !important;
-    background-color: rosybrown;
-    max-height: 100%;
+/*--- カテゴリータグ ---*/
+.tags1 {
+	position: absolute;
+	top: -3px;
+	left: -6px;
+	padding: 10px 15px;
+	padding-right: 100px;
+	font-size: max(1.5vw, 12px);
+	color: #FFFFEE;
+	background: linear-gradient(-45deg,transparent,transparent 25%,#F66 0%,#F66);
 }
-.main-body {
-    padding-right: 0;
+.tags1:before {
+	position: absolute;
+	z-index: 5;
+	top: 100%;
+	left: 0;
+	content: ' ';
+	border: 3px solid transparent;
+	border-top: 3px solid #800;
+	border-right: 3px solid #800;
+}
+.tags2 {
+	position: absolute;
+	top: -3px;
+	left: -6px;
+	padding: 10px 15px;
+	padding-right: 100px;
+	font-size: max(1.5vw, 12px);
+	color: #FFFFEE;
+	background: linear-gradient(-45deg,transparent,transparent 25%,#02E 0%,#02E);
+}
+.tags2:before {
+	position: absolute;
+	z-index: 5;
+	top: 100%;
+	left: 0;
+	content: ' ';
+	border: 3px solid transparent;
+	border-top: 3px solid #026;
+	border-right: 3px solid #026;
+}
+.tags3 {
+	position: absolute;
+	top: -3px;
+	left: -6px;
+	padding: 10px 15px;
+	padding-right: 100px;
+	font-size: max(1.5vw, 12px);
+	color: #444;
+	background: linear-gradient(-45deg,transparent,transparent 25%,#FE1 0%,#FE1);
+}
+.tags3:before {
+	position: absolute;
+	z-index: 5;
+	top: 100%;
+	left: 0;
+	content: ' ';
+	border: 3px solid transparent;
+	border-top: 3px solid #FC1;
+	border-right: 3px solid #FC1;
 }
 
 
-/***左側部分***/
-
-/*--- 一覧記事部分 ---*/
-.article-index {
-    padding: 1em 0.5em;
-    border-radius: 15px;
-    justify-content: center;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.article-index-card {
-    width: 350px;
-    height: 600px;
-}
-.article-index-card img{
-    max-width: 350px;
-    max-height: 400px;
-}
-.article-index-card .card-title {
-    font-size: 1vw;
-    background: rgb(232,247,6);
-    background: linear-gradient(11deg, rgba(232,247,6,0.5) 0%, rgba(11,223,144,0.5) 33%, rgba(0,127,255,0.8) 100%);
-}
-.article-index-card .card-text {
-    margin: 0 0.5em !important;
-    font-size: 0.8vw;
-    display: -webkit-box;
-    overflow: hidden;
-    -webkit-line-clamp: 12;
-    -webkit-box-orient: vertical;    
-}
-.article-index-card .news-tag {
-    font-size: 0.8vw;
-    padding: 0 0.5em;
-}
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*-- 全てのカテゴリーを見る --*/
 .all-category {
     background: #FFF;
     width: 20em;
@@ -56,7 +89,6 @@
     min-height: 32px;
     border: 1px solid #000;
 }
-
 .all-category span{
     font-size: 1.5vw;
     color: #444;
@@ -66,9 +98,75 @@
 
 
 
+/*** 風景一覧 ***/
+
+/*-- 風景画像ヘッドライン --*/
+.headline-view {
+    font-size: max(3vw, 24px);
+    position: relative;
+    color: #444;
+    border-bottom: solid 5px #666;
+    padding: 0 30px;
+    font-family: 'Yusei Magic', sans-serif;
+}
+.headline-view:after {
+    position: absolute;
+    content: " ";
+    display: block;
+    border-bottom: solid 5px #6F6;
+    bottom: -5px;
+    left: 0;
+    width: 30%;
+}
+
+/*-- 風景一覧インデックス --*/
+.view-index {
+    padding: 1em 0.5em;
+    border-radius: 15px;
+    text-align: center;
+    margin-left: 2em;
+}
+
+/*-- 風景一覧画像調整 --*/
+.view-list {
+    max-width: 300px;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    color: #FFF;
+    font-size: 1.2vw;
+    transition: 1s;
+}
+.view-list img{
+    width: 100%;
+    max-height: 300px;
+}
+.view-list:hover {
+    color: #FFF;
+    text-decoration: none;
+    background: rgba(11,223,144,0.6);
+}
+
+/*-- 風景タイトル --*/
+.view-text {
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.2vw;
+    margin-bottom: 0;
+}
+.view-text:hover {
+    background-color: rgba(0, 0, 0, 1);
+    color: #FFF;
+}
 
 
-/*--- 詳細記事上部 ---*/
+
+
+
+/*** 記事詳細プレビュー共通 ***/
+
+/*-- 詳細タイトル --*/
 .detail-title {
     margin: 0.2em auto 0.5em;
     font-size: max(3vw, 24px);
@@ -79,21 +177,13 @@
     font-size: max(4vw, 32px);
 }
 
-.detail-news-date {
-    font-size: max(1.5vw, 12px);
-    color: #808080;
+/*-- メイン画像の調整 --*/
+.main-card {
+    margin: 0 !important;
+    padding: 0 !important;
+    background-color: rosybrown;
+    max-height: 100%;
 }
-
-.category-name {
-    font-size: 1.5vw;
-}
-
-.category-box {
-    font-size: 1.8vw;
-}
-
-
-
 /*--- 詳細記事画像 ---*/
 .main-image {
     max-width: 100%;
@@ -102,6 +192,7 @@
     box-sizing: border-box;
 }
 
+/*-- 画面解説 --*/
 .image-text {
     position: absolute;
     bottom: 0;
@@ -114,22 +205,22 @@
     color: #FFF;
 }
 
-
-.sub {
+/*-- サブ画像の箱 --*/
+.sub-box {
     margin: 0 !important;
     padding: 0 !important;
     height: 20vw;
     max-width: 20vw;
     margin: 0 auto;
 }
+/*-- サブ画像のサイズと余白 --*/
 .sub-image {
     padding: 0;
     height: 20vw;
     max-width: 20vw;
 }
 
-
-
+/*-- 記事詳細ユーザー画像 --*/
 .detail-profile-image {
     height: 7vw;
     min-height: 70px;
@@ -139,17 +230,26 @@
     border: solid 2px rgba(119, 195, 223, 0.5);
 }
 
+/*-- 記事詳細ユーザー名 --*/
 .detail-profile-name {
     font-size: max(2.2vw, 20px);
     padding: 0 0.2em 0.2em 0.1em;
     color: #444;
 }
 
+/*-- 記事詳細投稿日時 --*/
+.detail-news-date {
+    font-size: max(1.5vw, 12px);
+    color: #808080;
+}
+
+/*-- 記事詳細本文 --*/
 .detail-text {
     min-height: 300px;
     font-size: 1.5vw;
 }
 
+/*-- 外部リンクURL --*/
 .url-box {
     padding: 0.5em 1em;
     margin: 1em 0; 
@@ -160,19 +260,17 @@
     min-height: 100px;
     font-size: 1.2vw;
 }
+
+/*-- 文末メッセージ --*/
 .url-box p {
     margin: 0; 
     padding: 0;
 }
 
-
-
-/*--- 下側コンテンツ ---*/
+/*-- 記事詳細の下の投稿誘導欄 --*/
 .post-box {
     text-align: center;
     padding: 1em 1em 2em;
     color: #444;
 }
-
-
 

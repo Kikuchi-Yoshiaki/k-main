@@ -15,7 +15,7 @@
                 <h2 class="detail-title">{{ $preview->title }}</h2>
                 <div class="container">
                     <div class="row flex-wrap">
-                        <div class="col-lg-12 main">
+                        <div class="col-lg-12 main-card">
                             <img class="main-image col-lg-12" src="{{ asset('storage/article/'.$preview['main_image'] ) }}">
                             @if ($preview->image_text)
                             <div class="col-lg-12 image-text">{{ $preview->image_text }}</div>
@@ -38,28 +38,28 @@
                         </div>
                         <!-- サブイメージ -->
                         @if (isset($preview->sub_image_1))
-                        <div class="col-lg-3 col-md-3 col-sm-6 sub sub1">
+                        <div class="col-lg-3 col-md-3 col-sm-6 sub-box">
                             <img class="sub-image col-lg-12" src="{{ asset('storage/article/'.$preview['sub_image_1'] ) }}">
                         </div>
                         @else
                         <div></div>
                         @endif
                         @if (isset($preview->sub_image_2))
-                        <div class="col-lg-3 col-md-3 col-sm-6 sub sub2">
+                        <div class="col-lg-3 col-md-3 col-sm-6 sub-box">
                             <img class="sub-image col-lg-12" src="{{ asset('storage/article/'.$preview['sub_image_2'] ) }}">
                         </div>
                         @else
                         <div></div>
                         @endif
                         @if (isset($preview->sub_image_3))
-                        <div class="col-lg-3 col-md-3 col-sm-6 sub sub3">
+                        <div class="col-lg-3 col-md-3 col-sm-6 sub-box">
                             <img class="sub-image col-lg-12" src="{{ asset('storage/article/'.$preview['sub_image_3'] ) }}">
                         </div>
                         @else
                         <div></div>
                         @endif
                         @if (isset($preview->sub_image_4))
-                        <div class="col-lg-3 col-md-3 col-sm-6 sub sub4">
+                        <div class="col-lg-3 col-md-3 col-sm-6 sub-box">
                             <img class="sub-image col-lg-12" src="{{ asset('storage/article/'.$preview['sub_image_4'] ) }}">
                         </div>
                         @else
@@ -89,7 +89,7 @@
                         @if ($preview->link_text || $preview->link_url)
                         <div class="url-box col-12">
                             <p class="mb-3">{{ $preview->link_text }}</p>
-                            <a class="card-rink" target='_blank' href="{{ $preview->link_url }}">{{ $preview->link_url }}</a>
+                            <a class="card-link" target='_blank' href="{{ $preview->link_url }}">{{ $preview->link_url }}</a>
                         </div>
                         @else
                         <div></div>

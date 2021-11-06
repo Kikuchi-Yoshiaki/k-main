@@ -1,8 +1,60 @@
-/***左側部分***/
+/*** 全体で使う ***/
 
-/*--- 最新記事見出し ---*/
-.headline-top,
-.headline-view {
+/*-- もっと見るボタン --*/
+.more-btn {
+    width: 200px;
+    height: 100px;
+}
+.more-btn:hover {
+    opacity: 0.8;
+}
+
+/*-- 投稿まだなし --*/
+.null-data {
+    text-align: center;
+    font-size: 2vw;
+}
+.null-btn {
+    margin-bottom: 150px;
+}
+
+
+
+
+
+/*** カードを調整 ***/
+
+/*-- カード画像をサイズ調整 --*/
+.card-img-top {
+    margin: 0 auto;
+    width: 100%;
+    max-heignt: 35em;
+}
+.card-img-next {
+    margin: 0 auto;
+    width: 100%;
+    max-heignt: 30em;
+}
+
+/*-- カード本文を調整 --*/
+.card-body {
+    padding-top: 0;
+    max-width: 100%;
+}
+
+/*-- カードタイトルを調整 --*/
+.card-title {
+    padding-top: 0.5em;
+}
+
+
+
+
+
+/*** トップ記事 ***/
+
+/*-- 最新記事見出し --*/
+.headline-top {
     font-size: max(3vw, 24px);
     position: relative;
     color: #444;
@@ -19,20 +71,8 @@
     left: 0;
     width: 30%;
 }
-.headline-view:after {
-    position: absolute;
-    content: " ";
-    display: block;
-    border-bottom: solid 5px #6F6;
-    bottom: -5px;
-    left: 0;
-    width: 30%;
-}
 
-
-
-
-/*--- ニュース記事トップ ---*/
+/*-- トップ記事の外枠 --*/
 .top-news {
     padding: 0 !important;
     margin:0 auto;
@@ -40,95 +80,13 @@
     border-radius: 5px;
 }
 
-
-.card-body {
-    padding-top: 0;
-    max-width: 100%;
+/*-- トップ記事の更新日時 --*/
+.top-news-date {
+    font-size: max(1.8vw, 12px);
+    color: #808080;
 }
 
-.news-tag {
-    position: absolute;
-    top: 0.5em;
-    left: 0.5em;
-    padding: 0.5em 1em;
-    font-size: 1vw;
-    color: #FFF;
-    border-radius: 0px;
-    background: rgba(255,0,0,0.8);
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
-}
-
-/*--- カテゴリータグ ---*/
-.tags1 {
-	position: absolute;
-	top: -3px;
-	left: -6px;
-	padding: 10px 15px;
-	padding-right: 100px;
-	font-size: max(1.5vw, 12px);
-	color: #FFFFEE;
-	background: linear-gradient(-45deg,transparent,transparent 25%,#F66 0%,#F66);
-}
-.tags1:before {
-	position: absolute;
-	z-index: 5;
-	top: 100%;
-	left: 0;
-	content: ' ';
-	border: 3px solid transparent;
-	border-top: 3px solid #800;
-	border-right: 3px solid #800;
-}
-.tags2 {
-	position: absolute;
-	top: -3px;
-	left: -6px;
-	padding: 10px 15px;
-	padding-right: 100px;
-	font-size: max(1.5vw, 12px);
-	color: #FFFFEE;
-	background: linear-gradient(-45deg,transparent,transparent 25%,#02E 0%,#02E);
-}
-.tags2:before {
-	position: absolute;
-	z-index: 5;
-	top: 100%;
-	left: 0;
-	content: ' ';
-	border: 3px solid transparent;
-	border-top: 3px solid #026;
-	border-right: 3px solid #026;
-}
-.tags3 {
-	position: absolute;
-	top: -3px;
-	left: -6px;
-	padding: 10px 15px;
-	padding-right: 100px;
-	font-size: max(1.5vw, 12px);
-	color: #444;
-	background: linear-gradient(-45deg,transparent,transparent 25%,#FE1 0%,#FE1);
-}
-.tags3:before {
-	position: absolute;
-	z-index: 5;
-	top: 100%;
-	left: 0;
-	content: ' ';
-	border: 3px solid transparent;
-	border-top: 3px solid #FC1;
-	border-right: 3px solid #FC1;
-}
-
-
-
-.card-img-top {
-    margin: 0 auto;
-    width: 100%;
-    /*height: 35em;*/
-    max-heignt: 35em;
-}
-
+/*-- トップ記事のタイトル --*/
 .top-title {
     margin: 0 auto 0.5em;
     font-size: max(3vw, 24px);
@@ -139,11 +97,7 @@
     font-size: max(3.5vw, 32px);
 }
 
-.top-news-date {
-    font-size: max(1.8vw, 12px);
-    color: #808080;
-}
-
+/*-- トップ記事のユーザー画像 --*/
 .top-profile-img {
     height: 6vw;
     min-height: 70px;
@@ -153,7 +107,7 @@
     border: solid 2px rgba(119, 195, 223, 0.5);
 }
 
-
+/*-- トップ記事のユーザー名 --*/
 .top-news-profile {
     font-size: max(2vw, 16px);
     color: #444;
@@ -163,6 +117,7 @@
     border-bottom: none;
 }
 
+/*-- トップ記事本文 --*/
 .top-text {
     margin-top: 1em;
     font-size: 1.5vw;
@@ -173,7 +128,12 @@
 }
 
 
-/*--- ２〜４個目のニュース ---*/
+
+
+
+/*** 記事リスト ***/
+
+/*-- 記事リストの外枠 --*/
 .next-news {
     padding: 0 !important;
     margin:1em 2px !important;
@@ -182,14 +142,13 @@
     max-width: 500px;
 }
 
-
-.card-img-next {
-    margin: 0 auto;
-    width: 100%;
-    /*height: 35em;*/
-    max-heignt: 30em;
+/*-- 記事リストの更新日時 --*/
+.next-news-date {
+    font-size: max(1.2vw, 12px);
+    color: #808080;
 }
 
+/*-- 記事リストのタイトル --*/
 .next-title {
     margin: 0.5em auto 0.5em;
     font-size: max(2vw, 20px);
@@ -200,10 +159,7 @@
     font-size: max(2.5vw, 28px);
 }
 
-.next-news-date {
-    font-size: max(1.2vw, 12px);
-    color: #808080;
-}
+/*-- 記事リストのユーザー画像 --*/
 .next-profile-img {
     height: 5vw;
     min-height: 60px;
@@ -213,12 +169,14 @@
     border: solid 2px rgba(119, 195, 223, 0.5);
 }
 
+/*-- 記事リストのユーザー名 --*/
 .next-news-profile {
     font-size: max(1.8vw, 14px);
     padding: 0 0.2em 0.2em 0;
     color: #444;
 }
 
+/*-- 記事リスト本文 --*/
 .next-text {
     margin-top: 1em;
     font-size: 1vw;
@@ -227,89 +185,3 @@
     -webkit-line-clamp: 5;
     -webkit-box-orient: vertical;
 }
-
-
-/*--- 投稿まだなし ---*/
-.null-data {
-    text-align: center;
-    font-size: 2vw;
-}
-.null-btn {
-    margin-bottom: 150px;
-}
-
-
-/*--- トップページ風景画像欄 ---*/
-.view-container {
-    padding: 0.5em;
-    border-radius: 15px;
-    max-width: 1200px;
-    justify-content: center;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.view-container .card-title {
-    padding-top: 0.5em;
-}
-
-.photo-card {
-    background: rgba(0,0,0,0.7);
-    color: #FFF;
-    transition: 1s;
-}
-
-.photo-card:hover {
-    font-size: 1vw;
-    color: #000;
-    text-decoration: none;
-    background: rgba(11,223,144,0.6);
-}
-
-
-
-/*--- 風景一覧ページ ---*/
-.view-index {
-    padding: 1em 0.5em;
-    border-radius: 15px;
-    text-align: center;
-    margin-left: 2em;
-}
-
-.view-list {
-    max-width: 300px;
-    height: 100%;
-    background: rgba(0,0,0,0.7);
-    color: #FFF;
-    font-size: 1.2vw;
-    transition: 1s;
-}
-.view-list img{
-    width: 100%;
-    max-height: 300px;
-}
-
-.view-image {
-    max-width: 240px;
-    max-height: 240px;
-}
-.view-list:hover {
-    color: #FFF;
-    text-decoration: none;
-    background: rgba(11,223,144,0.6);
-}
-
-.view-text {
-    position: absolute;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.4);
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 1.2vw;
-    margin-bottom: 0;
-}
-.view-text:hover {
-    background-color: rgba(0, 0, 0, 1);
-    color: #FFF;
-}
-
-

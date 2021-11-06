@@ -80,8 +80,8 @@
                 </div>
 
                 <!-- サブ画像 -->
-                <div class="sub-image-contaiter mb-2">
-                    <div class="sub-image-body p-3">
+                <div class="mb-2">
+                    <div class="p-3">
                         <label class="form-label">{{ __('message.Sub image') }}(最大４枚まで)</label>
                         <span class="text-secondary small">※任意</span>
                         
@@ -157,8 +157,8 @@
                 <input type="hidden" name="user_id" value="{{ Auth::user()->id }}"> 
                 <input type="hidden" name="id" value="{{ $form->id }}"> 
                 <!-- 登録ボタン -->
-                <div class="input-box">
-                    <button type="submit" class="btn-flat-vertical-border my-5 p-2 col-5">プライバシーポリシー<br>に同意して投稿する</button>
+                <div class="text-center">
+                    <button type="submit" class="privacy-btn my-5 p-2 col-5">プライバシーポリシー<br>に同意して投稿する</button>
                     {{ csrf_field() }}
                 </div>
                 @endif

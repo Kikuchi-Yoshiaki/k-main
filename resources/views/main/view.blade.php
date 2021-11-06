@@ -5,7 +5,7 @@
 @section('content')
 
     <div class="container-fluid">
-        <div class="row view-row">
+        <div class="row">
 
             {{-- 左側コンテンツ --}}
             <div class="col-lg-9 col-md-12">
@@ -43,7 +43,7 @@
                 
                 
                 {{-- 記事２件をランダム表示 --}}
-                <div class="mt-4 mb-2 headline d-flex justify-content-center">
+                <div class="mt-4 mb-2 d-flex justify-content-center">
                     <h3 class="headline-top">記事・日記TOPIX</h3>
                 </div>
                 <div class="d-flex flex-wrap justify-content-around mb-5">
@@ -71,7 +71,7 @@
                             <div class="next-news-date d-inline"><i class="far fa-clock mr-2"></i>{{ $article->created_at->format('Y年m月d日') }}</div>
                             <h4 class="card-title next-title">{{ $article->title }}</h4>
                             <!-- 投稿者名 -->
-                            <a class="top-profile d-inline" href="/user?id={{ $article->user->id }}">
+                            <a class="d-inline" href="/user?id={{ $article->user->id }}">
                                 @if (isset($article->user->profile_image))
                                 <img class="next-profile-img" src="{{ asset('storage/profile/'.$article->user['profile_image'] ) }}">
                                 @else

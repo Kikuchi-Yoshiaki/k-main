@@ -9,13 +9,13 @@
         <div class="wrapper">
             <div class="form-box form-box">
                 <h4 class="form-title mt-3">画像を削除しますか？</h4>
-                <p class="form-text mt-4">投稿日時：{{ $view->created_at->format('Y年m月d日')  }}</p>
+                <p class="message-text mt-4">投稿日時：{{ $view->created_at->format('Y年m月d日')  }}</p>
                 @if (isset($view->title))
-                <p class="form-text">タイトル：{{ $view->title }}</p>
+                <p class="message-text">タイトル：{{ $view->title }}</p>
                 @else
-                <p class="form-text">タイトル：No Title</p>
+                <p class="message-text">タイトル：No Title</p>
                 @endif
-                <img class="card-img-top mb-5" src="{{ asset('storage/view/'.$view['view_image'] ) }}">
+                <img class="del-image mb-5" src="{{ asset('storage/view/'.$view['view_image'] ) }}">
                 
                 <div class="btn-group-sm d-flex justify-content-around mb-2" role="group" aria-label="Basic example">
                     

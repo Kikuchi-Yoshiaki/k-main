@@ -12,7 +12,6 @@
                 
             {{-- MyProfile --}}
             <div class="my-profile-box d-flex flex-column">
-                
                 <div class="my-profile-img d-flex justify-content-center">
                     <!-- プロフィールイメージ・無ければNoImage -->
                     @if(isset($user->profile_image))
@@ -25,13 +24,13 @@
                 </div>
                 <!-- プロフィール編集画面へ移動 -->
                 <div class="d-flex justify-content-end mr-5">
-                @if(Auth::id() === $user->id)
-                <a class="btn btn-sm btn-outline-primary mt-3 mr-5" href="/user/edit/profile?id={{ $user->id }}" type="button">プロフィールを変更する</a>
-                @endif
+                    @if(Auth::id() === $user->id)
+                    <a class="btn btn-sm btn-outline-primary mt-3 mr-5" href="/user/edit/profile?id={{ $user->id }}" type="button">プロフィールを変更する</a>
+                    @endif
                 </div>
             </div>
 
-            <div class="mt-5 headline col-8 offset-2">
+            <div class="mt-5 col-8 offset-2">
                 <h3 class="headline-top text-center">{{ $user->name }}さん<br>の記事一覧</h3>
             </div>
             
@@ -85,7 +84,6 @@
             
             
             <!-- 全体の記事一覧画面に移動 -->
-            <!--<a class="main-btn btn d-block mx-auto mt-3 more d-none p-3" type="button" href="article/index">記事一覧<br>を見る</a>-->
             <a class="d-flex justify-content-center mt-3 rect" type="button" href="{{ url('article/index') }}">
                 <img class="more-btn" src="/assets/images/more_3.png">
             </a>
@@ -128,7 +126,6 @@
             @endif
             
             <!-- 全体の記事一覧画面に移動 -->
-            <!--<a class="main-btn btn d-block mx-auto mt-3 p-3" type="button" href="{{ url('article/view') }}">風景一覧<br>を見る</a>-->
             <a class="d-flex justify-content-center mt-3 rect" type="button" href="{{ url('article/view') }}">
                 <img class="more-btn" src="/assets/images/more_4.png">
             </a>

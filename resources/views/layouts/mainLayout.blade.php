@@ -10,7 +10,7 @@
         <!-- タイトル -->
         <title>@yield('title')</title>
         <!-- favicon -->
-        <link rel="shortcut icon" type="image/x-icon"  href="/assets/images/k-fav.png">
+        <link rel="icon" type="image/x-icon"  href="/assets/images/k-fav.png">
 
         <!-- Fonts -->
         <link rel="dns-prefetch" href="https://fonts.gstatic.com">
@@ -139,7 +139,7 @@
 
             <!-- カテゴリー欄 -->
             <div class="container-fluid category">
-                <div class="row category-menu">
+                <div class="row">
                     <div class="category-tags col-6 col-md-3">
                         <a class="nav-link category-name k-job" href="{{ url('article/index?category=enjoy') }}">気仙沼の<span>遊ぶ</span></a>
                     </div>

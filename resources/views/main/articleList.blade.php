@@ -11,7 +11,7 @@
             <div class="col-lg-9 col-md-12">
 
             {{-- 最新記事見出し --}}
-            <div class="mt-5 headline d-flex justify-content-center">
+            <div class="mt-5 d-flex justify-content-center">
                 <h3 class="headline-top">記事一覧</h3>
             </div>
             <!-- 全てのカテゴリーをみる -->
@@ -79,7 +79,7 @@
             <!-- 風景写真本体 -->
             <div class="d-flex flex-wrap justify-content-center view-index">
                     @foreach ($views as $view)
-                    <a class="card view-image mb-1 text-center" href="{{ asset('storage/view/'.$view['view_image'] ) }}" target="_blank">
+                    <a class="card view-list mb-1 text-center" href="{{ asset('storage/view/'.$view['view_image'] ) }}" target="_blank">
                         <img class="card-img-top" src="{{ asset('storage/view/'.$view['view_image'] ) }}">
                        
                         @if (isset($view->title))

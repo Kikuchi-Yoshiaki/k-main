@@ -1,17 +1,12 @@
-/*--- MyProfile ---*/
+/*** MyProfile ***/
 
+/*-- 自己紹介欄の枠 --*/
 .my-profile-box {  
   margin: 15px 5vw;
   padding: 10px 0;
 }
 
-.my-profile-name {
-    font-size: max(2.5vw, 16px);
-    color: #444;
-    margin-left: 0.5em;
-    font-family: 'Yusei Magic', sans-serif;
-}
-
+/*-- プロフィール画像 --*/
 .my-profile-img img {
     height: 7vw;
     min-height: 70px;
@@ -22,83 +17,21 @@
     border: solid 2px rgba(11,223,144,0.5);
 }
 
-
-
-/*--- My記事一覧 ---*/
-.my-article-box {
-    background: #f1f1f1;
-    padding: 1em 0.5em;
-    border-radius: 5px;
-    max-width: 1000px;
-    justify-content: space-around;
-    margin: 2em;
-    text-align: center;
-}
-
-.my-article-card {
-    width: 300px;
-    height: 750px;
-    margin-bottom: 3em;
-}
-.my-article-card img{
-    max-width: 350px;
-    max-height: 300px;
-}
-.my-article-card .card-title {
-    font-size: 1vw;
-    background: rgb(232,247,6);
-    background: linear-gradient(11deg, rgba(232,247,6,0.5) 0%, rgba(11,223,144,0.5) 33%, rgba(0,127,255,0.8) 100%);
-}
-.my-article-card .card-text {
-    margin: 0 1em !important;
-    font-size: 1vw;
-    display: -webkit-box;
-    overflow: hidden;
-    -webkit-line-clamp: 10;
-    -webkit-box-orient: vertical;
-}
-
-.photo-card {
-    margin-bottom: 1em;
-    font-size: 0.8vw;
-}
-.photo-card a {
-    font-size: 0.5vw;
+/*-- ユーザー名 --*/
+.my-profile-name {
+    font-size: max(2.5vw, 16px);
+    color: #444;
+    margin-left: 0.5em;
+    font-family: 'Yusei Magic', sans-serif;
 }
 
 
 
-/*--- 風景画像欄 ---*/
-.user-headline-view {
-    margin-top: 10rem;
-    text-align: center;
-}
-
-.view-box {
-    background: #f1f1f1;
-    padding: 2em;
-    border-radius: 5px;
-    max-width: 1000px;
-    justify-content: space-around;
-    text-align: center;
-}
-
-.photo-card {
-    margin-bottom: 1em;
-    font-size: 1vw;
-}
-.photo-card img {
-    max-width: 200px;
-    height: 200px;
-}
-
-.user-view-title {
-    margin: 0 !important;
-}
 
 
+/*** ユーザー記事欄 ***/
 
-/*--- 記事未投稿 ---*/
+/*--- ユーザー記事未投稿時 ---*/
 .user-article-box {
     background: #FFF;
     max-width: 500px;
@@ -110,7 +43,13 @@
     border-radius: 5px;
 }
 
-/*--- 風景未投稿 ---*/
+
+
+
+
+/*** ユーザー投稿写真 ***/
+
+/*-- 風景未投稿時 --*/
 .user-view-box {
     background: #FFF;
     max-width: 500px;
@@ -121,3 +60,15 @@
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
     border-radius: 5px;
 }
+
+/*-- 風景画像欄 --*/
+.user-headline-view {
+    margin-top: 10rem;
+    text-align: center;
+}
+
+/*-- 風景タイトル --*/
+.user-view-title {
+    margin: 0 !important;
+}
+

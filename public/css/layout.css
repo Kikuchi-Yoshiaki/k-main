@@ -1,89 +1,21 @@
-/*** 背景色 ***/
-body {
-    background-color: rgba(30, 144, 255, 0.05);
-}
-/*** フォント ***/
-body {
-    font-family: "ヒラギノ丸ゴ ProN","Hiragino Maru Gothic ProN";
-    /*font-family: "Tsukushi A Round Gothic","筑紫A丸ゴシック";*/
-}
+/*** 全体に設定する ***/
 
-/*** 全体フォント ***/
 body {
+/*-- 背景色 --*/
+    background-color: rgba(30, 144, 255, 0.05);
+/*-- フォント --*/
+    font-family: "ヒラギノ丸ゴ ProN","Hiragino Maru Gothic ProN";
+/*-- 全体フォント --*/
     color: #444 !important;
 }
 
 
 
 
-/*** 上部バー ***/
 
-/*--- トップバー幅と背景色 ---*/
-.top-bar {
-    display: flex;
-    padding: 0;
-    /*background: #09C;*/
-    background: #4D4D4D;
-    /*background: rgb(232,247,6);*/
-    /*background: linear-gradient(11deg, rgb(232,247,6) 0%, rgb(11,223,144) 25%, rgb(0,127,255) 100%);*/
-}
+/*** フォーム専用のロゴ ***/
 
-/*--- ハンバーガーメニュー ---*/
-.fa-bars {
-    padding-top: 0.3em;
-    color: #EEE;
-}
-
-.overview {
-    color: #EEE;
-    margin: 0 1.5em;
-}
-
-/*--- トップメニューカテゴリー ---*/
-.top-nav {
-    /*color: #000;*/
-    color: #EEE;
-    margin: 0 0 0.5em 1em;
-    padding-bottom: 0;
-}
-.top-nav:hover {
-    /*color: #000;*/
-    color: #EEE;
-    text-decoration: none;
-    border-bottom: 1px solid #EEE;
-}
-
-/*--- ドロップダウンホバー ---*/
-.post-btn {
-    /*color: #111;*/
-    color: #EEE;
-}
-
-
-.dropdown-item:hover {
-    background: #09C;
-    /*background: rgb(232,247,6);*/
-    /*background: linear-gradient(11deg, rgba(232,247,6,1) 0%, rgba(11,223,144,1) 33%, rgba(0,127,255,1) 100%);*/
-    opacity: 0.7;
-}
-
-
-/*** ロゴ・背景画面 ***/
-
-/*--- ロゴ ---*/
-.k-logo {
-    width: 50vw;
-    max-width: 400px;
-    min-width: 250px;
-    height: 20vw;
-    max-height: 200px;
-    min-height: 100px;
-}
-
-.form-main-title {
-    padding: 0;
-}
-
+/*-- フォームロゴのサイズ --*/
 .form-logo {
     width: 15vw;
     max-width: 180px;
@@ -93,7 +25,78 @@ body {
     min-height: 25px;
 }
 
-/*--- カルーセル１ ---*/
+/*-- フォームロゴの余白調整 --*/
+.form-main-title {
+    padding: 0;
+}
+
+
+
+
+
+/*** 共通上部 ***/
+
+/*-- トップバー幅と背景色 --*/
+.top-bar {
+    display: flex;
+    padding: 0;
+    background: #4D4D4D;
+}
+
+
+/*--- トップメニュー右側 ---*/
+.top-nav {
+    color: #EEE;
+    margin: 0 0 0.5em 1em;
+    padding-bottom: 0;
+}
+.top-nav:hover {
+    color: #EEE;
+    text-decoration: none;
+    border-bottom: 1px solid #EEE;
+}
+
+/*-- 右上の投稿するの色 --*/
+.post-btn {
+    color: #EEE;
+}
+
+/*-- 右上のドロップダウン項目にマウスが乗った時 --*/
+.dropdown-item:hover {
+    background: #09C;
+    opacity: 0.7;
+}
+
+/*-- 左側に出るハンバーガーメニュー --*/
+.fa-bars {
+    padding-top: 0.3em;
+    color: #EEE;
+}
+
+/*-- ハンバーガーメニューの概要説明 --*/
+.overview {
+    color: #EEE;
+    margin: 0 1.5em;
+}
+
+
+
+
+
+/*** カルーセル・メインロゴ ***/
+
+/*-- メインロゴ・レスポンシブ対応 --*/
+.k-logo {
+    width: 50vw;
+    max-width: 400px;
+    min-width: 250px;
+    height: 20vw;
+    max-height: 200px;
+    min-height: 100px;
+}
+
+
+/*-- カルーセル１ --*/
 .title-bar-1 {
     display: flex;
     flex-direction: column;
@@ -111,7 +114,7 @@ body {
     text-decoration: none;
 }
 
-/*--- カルーセル2 ---*/
+/*-- カルーセル2 --*/
 .title-bar-2 {
     display: flex;
     flex-direction: column;
@@ -130,7 +133,7 @@ body {
     text-decoration: none;
 }
 
-/*--- カルーセル3 ---*/
+/*-- カルーセル3 --*/
 .title-bar-3 {
     display: flex;
     flex-direction: column;
@@ -148,7 +151,7 @@ body {
     text-decoration: none;
 }
 
-/*--- カルーセル4 ---*/
+/*-- カルーセル4 --*/
 .title-bar-4 {
     display: flex;
     flex-direction: column;
@@ -166,7 +169,7 @@ body {
     text-decoration: none;
 }
 
-/*--- カルーセル5 ---*/
+/*-- カルーセル5 --*/
 .title-bar-5 {
     display: flex;
     flex-direction: column;
@@ -185,18 +188,18 @@ body {
 }
 
 
+
+
+
 /*** カテゴリーボタン ***/
-/*--- カテゴリー大枠 ---*/
+
+/*-- カテゴリー欄の背景 --*/
 .category {
-    /*background: #09C;*/
     background: #4D4D4D;
-    /*background: rgb(232,247,6);*/
-    /*background: linear-gradient(11deg, rgb(232,247,6) 0%, rgb(11,223,144) 33%, rgb(0,127,255) 100%);*/
 }
 
-/*--- カテゴリー各項目 ---*/
+/*-- カテゴリー各項目 --*/
 .category-name {
-    /*color: #111;*/
     color: #EEE;
     border-right: 1px solid #EEE;
     border-bottom: 1px solid #EEE;
@@ -206,10 +209,7 @@ body {
     min-height: 50px;
     font-family: 'Yusei Magic', sans-serif;
 }
-.k-job {
-    border-left: 1px solid #EEE;
-}
-/*--- カテゴリー装飾 ---*/
+/*-- カテゴリー装飾 --*/
 .category-name:hover:before {
     transform: scale(1);
 }
@@ -230,7 +230,8 @@ body {
 	transition: 2s;
 	opacity: 0.8;
 }
-/*--- カテゴリー別アンダーライン ---*/
+
+/*-- カテゴリー別アンダーライン色 --*/
 .k-job:before {
     background: #F66;
 }
@@ -244,7 +245,12 @@ body {
     background: #6F6;
 }
 
-/*--- カテゴリーフォントサイズ ---*/
+/*-- カテゴリー左の線 --*/
+.k-job {
+    border-left: 1px solid #EEE;
+}
+
+/*-- カテゴリーフォントサイズ --*/
 .category-tags {
     text-align: center;
     padding: 0;
@@ -255,12 +261,25 @@ body {
 
 
 
+
+
+/*** メインのボディ余白調整 ***/
+
+.main-body {
+    padding-bottom: 10em;
+    padding-right: 3em;
+}
+
+
+
 /*** 右側部分 ***/
+
+/*-- 右側コンテンツをflex --*/
 .right-contents {
     justify-content: center;
 }
 
-/*--- 投稿ボタン ---*/
+/*-- 記事・風景の投稿ボタン --*/
 .main-btn {
     width: 150px;
     min-height: 40px;
@@ -285,8 +304,7 @@ body {
     background: linear-gradient(11deg, rgba(232,247,6,1) 0%, rgba(11,223,144,1) 33%, rgba(0,127,255,1) 100%);
 }
 
-
-/*--- 概要説明 ---*/
+/*-- 概要説明の枠 --*/
 .explanation {
     position: relative;
     top: 5em;
@@ -298,6 +316,8 @@ body {
     line-height: 1.5;
     font-size: 1vw;
 }
+
+/*-- 概要説明の内部 --*/
 .exp-title {
     position: absolute;
     display: inline-block;
@@ -313,7 +333,7 @@ body {
     border-radius: 5px 5px 0 0;
 }
 
-/*--- Twitter欄 ---*/
+/*-- Twitter欄の枠 --*/
 .twitter {
     position: relative;
     top: 8em;
@@ -323,6 +343,8 @@ body {
     border-radius: 0 5px 5px 5px;
     background-color: #FFF;
 }
+
+/*-- Twitter欄の内部 --*/
 .twitter-title {
     position: absolute;
     display: inline-block;
@@ -339,12 +361,12 @@ body {
 }
 
 
-/*** フッター ***/
-.main-body {
-    padding-bottom: 10em;
-    padding-right: 3em;
-}
 
+
+
+/*** フッター ***/
+
+/*-- フッターの枠と色 --*/
 footer {
     height: 100%;
     background: #4D4D4D;
@@ -353,12 +375,16 @@ footer {
 .footer a {
     color: #EEE;
 }
-
 footer .row {
     padding: 5px 0;
 }
 
-/*--- トップページ ---*/
+
+
+
+
+/*** スクロールトップ ***/
+
 #page_top{
   width: 90px;
   height: 90px;
@@ -404,22 +430,8 @@ footer .row {
   text-align: center;
   color: #F80;
 }
-
 #page_top:hover {
     opacity: 1;
     background: #FFF;
     border-radius: 50%;
 }
-
-
-/*--- もっと見る ---*/
-.more-btn {
-    width: 200px;
-    height: 100px;
-}
-.more-btn:hover {
-    opacity: 0.8;
-}
-
-
-

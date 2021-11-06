@@ -62,8 +62,8 @@
                 <!-- 更新ボタン -->
                 <input type="hidden" name="id" value="{{ $form->id }}">
                 {{ csrf_field() }}
-                <div class="input-box">
-                    <input type="submit" class="btn-flat-vertical-border mt-5 col-3" value="更新する">
+                <div class="text-center">
+                    <input type="submit" class="privacy-btn mt-5 col-3" value="更新する">
                 </div>
                 @endif
                 
