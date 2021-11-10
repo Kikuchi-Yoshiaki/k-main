@@ -71,7 +71,7 @@
             </div>
             
             {{--ページネーション--}}
-            {{--<div class="d-flex justify-content-center mt-5">{{ $articles->links() }}</div>--}}
+            <div class="d-flex justify-content-center mt-5">{{ $articles->links() }}</div>
 
             @if(!isset($article->id))
             <div class="user-article-box col-8 text-center mb-5">

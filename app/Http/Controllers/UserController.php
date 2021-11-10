@@ -52,12 +52,12 @@ class UserController extends Controller
         {
             return redirect('/');
         }
+        // $articles = Article::where('user_id', $user->id)
+        //     ->get()
+        //     ->sortByDesc('updated_at');
         $articles = Article::where('user_id', $user->id)
-            ->get()
-            ->sortByDesc('updated_at');
-        //$articles = Article::where('user_id', $user->id)
-            //->orderByDesc('updated_at')
-            //->paginate(4);
+            ->orderByDesc('updated_at')
+            ->paginate(4);
         $views = View::where('user_id', $user->id)
             ->get()
             ->sortByDesc('updated_at');

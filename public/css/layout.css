@@ -263,20 +263,12 @@ body {
 
 
 
-/*** メインのボディ余白調整 ***/
-
-.main-body {
-    padding-bottom: 10em;
-    padding-right: 3em;
-}
-
-
-
 /*** 右側部分 ***/
 
 /*-- 右側コンテンツをflex --*/
 .right-contents {
     justify-content: center;
+    padding-bottom: 10rem;
 }
 
 /*-- 記事・風景の投稿ボタン --*/

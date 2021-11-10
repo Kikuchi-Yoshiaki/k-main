@@ -107,8 +107,7 @@
 
                 <!-- 記事投稿へ移動 -->
                 <div class="col-lg-6 offset-lg-3 post-box">
-                    <div class="">あなたも記事を投稿してみませんか？</div>
-                    <a class="main-btn btn d-block mx-auto mt-3 p-3" type="button" href="{{ url('/user/post/article') }}">記事・日記<br>を投稿する</a>
+                    <a class="main-btn btn d-block mx-auto mt-3 p-3 mr-5" type="button" href="{{ url('/user/post/article') }}">記事・日記<br>を投稿する</a>
                 </div>
                 <a class="goto-top d-block text-center mt-5" href="{{ url('/') }}">トップページに戻る</a>
             </div>

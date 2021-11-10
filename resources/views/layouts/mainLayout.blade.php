@@ -157,7 +157,7 @@
         </div>
         
         {{-- メインコンテンツ --}}
-        <main class="main-body" >
+        <main class="d-flex justify-content-center">
             @yield('content')
             {{-- 右側バー --}}
             <div class="col-lg-3 right-contents col-md-6">

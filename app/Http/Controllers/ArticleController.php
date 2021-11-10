@@ -107,8 +107,12 @@ class ArticleController extends Controller
                 ->paginate(4);
         }
         
-        
-        $views = View::all();//->random(6);
+        // dd(View::count());
+        if(View::count() >= 6) {
+            $views = View::all()->random(6);
+        } else {
+            $views = View::all();
+        }
         
         return view('main.articleList', ['articles' => $articles, 'views' => $views]);
     }

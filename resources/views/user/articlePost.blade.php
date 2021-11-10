@@ -51,7 +51,7 @@
                 <!-- メイン画像 -->
                 <div class="mb-5">
                     <label class="form-label mb-3">{{ __('message.Main image') }}</label>
-                    <span class="text-danger small">※必須</span>
+                    <span class="text-danger small">※必須(jpg, png, jpeg形式,最大10MB)</span>
                     <input type="file" id="edit-article-image" class="form-control-file @error('main_image') is-invalid @enderror" name="main_image">
                 
                     <!-- 画像選択エラー -->
