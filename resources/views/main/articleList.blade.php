@@ -87,6 +87,7 @@
                         @else
                         <span></span>
                         @endif
+                        <div class="view-user-name">{{ $view->user->name }}さん</div>
                     </a>
                     @endforeach
                 </div>

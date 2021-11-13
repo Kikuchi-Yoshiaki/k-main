@@ -180,7 +180,7 @@
                 <!-- Twitter -->
                 <div class="twitter">
                     <span class="twitter-title">Twitter</span>
-                    <a class="twitter-timeline" href="https://twitter.com/kikuyoshi5?   ref_src=twsrc%5Etfw" data-tweet-limit="5">Tweets by kikuyoshi5</a> <script async   src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                    <a class="twitter-timeline" href="https://twitter.com/numa_walker?   ref_src=twsrc%5Etfw" data-tweet-limit="5">Tweets by numa_walker</a> <script async   src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                 </div>
             </div>
         </div>
@@ -195,7 +195,7 @@
         <footer class="container-fluid">
             @yield('footer')
             <div class="row text-center footer">
-                <div class="copywriter col-sm-12 col-md-4">©️ 2021 Y-Kikuchi</div>
+                <div class="copywriter col-sm-12 col-md-4">©️ 2021 Kesennuma-Walker</div>
                 <div class="col-sm-12 col-md-4">
                     <a href="/privacy-policy" class="copywriter">プライバシーポリシー</a>
                 </div>

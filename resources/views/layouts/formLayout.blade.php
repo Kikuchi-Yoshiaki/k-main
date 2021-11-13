@@ -113,7 +113,7 @@
         <footer class="container-fluid">
             @yield('footer')
             <div class="row text-center">
-                <div class="text-white copywriter col-sm-12 col-md-4">©️ 2021 Y-Kikuchi</div>
+                <div class="text-white copywriter col-sm-12 col-md-4">©️ 2021 Kesennuma-Walker</div>
                 <div class="col-sm-12 col-md-4">
                     <a href="/privacy-policy" class="text-white copywriter">プライバシーポリシー</a>
                 </div>

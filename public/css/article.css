@@ -160,6 +160,15 @@
     color: #FFF;
 }
 
+/*-- 風景投稿者 --*/
+.view-user-name {
+   position: absolute;
+   top:0;
+   background-color: rgba(255, 255, 255, 0.8);
+   color: #444;
+   font-size: 1vw;
+}
+
 
 
 
