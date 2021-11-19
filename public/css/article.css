@@ -255,7 +255,7 @@
 /*-- 記事詳細本文 --*/
 .detail-text {
     min-height: 300px;
-    font-size: 1.5vw;
+    /*font-size: 1.5vw;*/
 }
 
 /*-- 外部リンクURL --*/
