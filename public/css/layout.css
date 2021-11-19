@@ -276,8 +276,6 @@ body {
     width: 150px;
     min-height: 40px;
     position: relative;
-    top: 1em;
-    left: 1em;
     padding: 0.5em 0.5em;
     margin: 0.5em 0.5em;
     text-decoration: none;
@@ -285,10 +283,10 @@ body {
     color: #EEE;
     border-radius: 5px;
     text-align: center;
-    font-size: max(1.2vw, 16px);
     transition: 1s;
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
 }
+
 .main-btn:hover {
     color: #444;
     text-decoration: none;
@@ -329,7 +327,6 @@ body {
 .twitter {
     position: relative;
     top: 8em;
-    margin-left:1em; 
     padding: 0.5em 1em;
     border: solid 3px rgba(0,127,255,1);
     border-radius: 0 5px 5px 5px;

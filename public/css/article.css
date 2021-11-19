@@ -90,7 +90,7 @@
     border: 1px solid #000;
 }
 .all-category span{
-    font-size: 1.5vw;
+    font-size: 18px;
     color: #444;
 }
 
@@ -124,7 +124,6 @@
     padding: 1em 0.5em;
     border-radius: 15px;
     text-align: center;
-    margin-left: 2em;
 }
 
 /*-- 風景一覧画像調整 --*/
@@ -152,8 +151,13 @@
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.4);
     color: rgba(255, 255, 255, 0.8);
-    font-size: 1.2vw;
+    font-size: 18px;
     margin-bottom: 0;
+}
+@media(max-width: 599){
+    .view-text {
+        font-size: 14px;
+    }
 }
 .view-text:hover {
     background-color: rgba(0, 0, 0, 1);
@@ -164,11 +168,16 @@
 .view-user-name {
    position: absolute;
    top:0;
-   background-color: rgba(255, 255, 255, 0.8);
-   color: #444;
-   font-size: 1vw;
+   background-color: rgba(0, 0, 0, 0.4);
+   color: #FFF;
+   font-size: 18px;
+   margin: 0 5px;
 }
-
+@media(max-width: 599){
+    .view-user-name {
+        font-size: 14px;
+    }
+}
 
 
 
@@ -207,7 +216,12 @@
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.4);
     color: rgba(255, 255, 255, 0.8);
-    font-size: 1.5vw;
+    font-size: 24px;
+}
+@media(max-width: 599){
+    .image-text {
+        font-size: 14px;
+    }
 }
 .image-text:hover {
     background-color: rgba(0, 0, 0, 1);
@@ -255,7 +269,13 @@
 /*-- 記事詳細本文 --*/
 .detail-text {
     min-height: 300px;
-    /*font-size: 1.5vw;*/
+    font-size: 24px;
+}
+@media(max-width: 599){
+    .detail-text {
+        min-height: 300px;
+        font-size: 16px;
+    }
 }
 
 /*-- 外部リンクURL --*/
@@ -267,8 +287,14 @@
     border-left: double 7px rgba(0,127,255,1);/*左線*/
     border-right: double 7px rgba(0,127,255,1);/*右線*/
     min-height: 100px;
-    font-size: 1.2vw;
+    font-size: 20px;
 }
+@media(max-width: 599){
+    .url-box {
+        font-size: 14px;
+    }
+}
+
 
 /*-- 文末メッセージ --*/
 .url-box p {

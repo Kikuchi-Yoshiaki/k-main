@@ -15,7 +15,7 @@
                 <h3 class="headline-top">記事一覧</h3>
             </div>
             <!-- 全てのカテゴリーをみる -->
-            <div class="form-group  d-flex justify-content-center mb-4 p-3 mr-5">
+            <div class="form-group  d-flex justify-content-center mb-4 p-3">
                 <a href="{{ url('article/index') }}" class="main-btn btn d-block mx-auto mt-3 all-category"><span>全てのカテゴリーをみる</span></a>
             </div>
             
